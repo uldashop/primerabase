@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_talent_growth_tree" model="ir.ui.view">
+        <field name="name">Talent Growth</field>
+        <field name="model">hr.talent.growth</field>
+        <field name="arch" type="xml">
+        <tree create="false" edit="false">
+            <field name="employee_id"/>
+            <field name="performance"/>
+            <field name="kpi"/>
+            <field name="assessment_center"/>
+            <field name="cognitive"/>
+            <field name="emotional"/>
+            <field name="total"/>
+        </tree>
+        </field>
+        </record>
+
+        <act_window id="hr_talent_growth_action"
+        name="Talent Growth"
+        res_model="hr.talent.growth"
+        view_mode="tree"
+        />
+
+        <menuitem id="talent_growth_menu_root" name="Talent Growth" groups="l10n_ec_talent_growth.group_hr_talent_growth_manager" web_icon="l10n_ec_talent_growth,static/description/icon.png" sequence="10"/>
+        <menuitem id="talent_growth_menu" action="hr_talent_growth_action" parent="talent_growth_menu_root" groups="l10n_ec_talent_growth.group_hr_talent_growth_manager" sequence="1" />
+    </data>
+</odoo>

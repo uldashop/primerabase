@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="report_teenths_form_2" model="ir.ui.view">
+        <field name="name">tenths.report.form</field>
+        <field name="model">report.tenths</field>
+        <field name="inherit_id" ref="l10n_ec_hr_payroll.report_teenths_form"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="pay_id"/>
+            </field>
+        </field>
+        </record>
+    </data>
+</odoo>

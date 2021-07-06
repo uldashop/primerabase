@@ -1,0 +1,268 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * l10n_ec_hr_recruitment
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: hr (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-18 13:10+0000\n"
+"PO-Revision-Date: 2015-08-13 14:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-hr-8-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_study
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_study_action
+msgid "Studies"
+msgstr "Estudios"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_study__name
+msgid "Study Name"
+msgstr "Nombre del Estudio"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_study__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_res_lang__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_function__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_challenge__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_decision__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_physical_condition__job_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_rick_factor__job_ids
+msgid "Job Position"
+msgstr "Puesto de Trabajo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.ui.menu,name:l10n_ec_hr_recruitment.menu_hr_job_view_employee
+msgid "Job Positions"
+msgstr "Puestos de Trabajo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_study__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_study__type_study
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_equipment__type_equipment
+msgid "Type"
+msgstr "Tipo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__study_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_applicant__partner_study
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_study__type_study__study
+msgid "Academic Preparation"
+msgstr "Preparación Academica"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__further_training_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_applicant__partner_futher
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_study__type_study__complementary
+msgid "Further Training"
+msgstr "Formación Complementaria"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_function__name
+msgid "Function Name"
+msgstr "Nombre del Función"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_function__type_periodicity
+msgid "Type Periodicity"
+msgstr "Tipo de Periodicidad"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_function__periodicity
+msgid "Periodicity"
+msgstr "Periodicidad"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_function__type_periodicity__hour
+msgid "Hour(s)"
+msgstr "Hora(s)"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_function__type_periodicity__day
+msgid "Day"
+msgstr "Dia(s)"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_function__type_periodicity__week
+msgid "Week"
+msgstr "Semana(s)"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_function__type_periodicity__month
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_function__type_periodicity__year
+msgid "Year(s)"
+msgstr "Año(s)"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_challenge__name
+msgid "Challenge"
+msgstr "Desafío"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_job_challenge
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_job_challenge_action
+msgid "Challenge of Job"
+msgstr "Desafíos del Puesto"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_job_function
+msgid "Functions"
+msgstr "Funciones"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__function_ids
+msgid "Function"
+msgstr "Función"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_job_function_action
+msgid "Job Function"
+msgstr "Función del Puesto"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__relation
+msgid "Internal/External Relation"
+msgstr "Relación Interna/Externa"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__mission
+msgid "Job Mission"
+msgstr "Misión Del Puesto"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__challenge_ids
+msgid "Challege or Dare"
+msgstr "Reto o Desafío"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__decision_ids
+msgid "Decisions to Consult"
+msgstr "Decisiones a Consultar"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__wage
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__wage_to
+msgid "Wage"
+msgstr "Salario"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__experience
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_applicant__partner_experience
+msgid "Work Experience"
+msgstr "Experiencia Laboral"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__lang_ids
+msgid "Language"
+msgstr "Idioma"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_job_decision
+msgid "Decisions of Job"
+msgstr "Decisiones del Puesto"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_job_decision_action
+msgid " Job Decisions"
+msgstr "Decisiones del Puesto"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_decision__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_job_equipment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__equipment_ids
+msgid "Job Equipment"
+msgstr "Herramienta de Trabajo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_equipment__name
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_job_equipment_action
+msgid "Equipment"
+msgstr "Herramienta/Equipo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_equipment__type_equipment__general
+msgid "General"
+msgstr ""
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields.selection,name:l10n_ec_hr_recruitment.selection__hr_job_equipment__type_equipment__protective
+msgid "Protective"
+msgstr "Preventivo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__protective_ids
+msgid "Protective Equipment"
+msgstr "Equipo de Protección"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_physical_condition
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__physical_condition_ids
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_physical_condition__name
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_physical_condition_action
+msgid "Physical Condition"
+msgstr "Condición Física"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_rick_factor
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__rick_ids
+#: model:ir.actions.act_window,name:l10n_ec_hr_recruitment.hr_rick_factor_action
+msgid "Rick Factor's"
+msgstr "Factores de Riesgo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_rick_factor__name
+msgid "Rick Name"
+msgstr "Nombre del Riesgo"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model,name:l10n_ec_hr_recruitment.model_hr_job_history
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__history_ids
+msgid "Selection History"
+msgstr "Historial de Selección"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_history__date_start
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_history__date_end
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job__date_end
+msgid "End Date"
+msgstr "Fecha Finalización"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_history__date_planned
+msgid "Expected End Date"
+msgstr "Fecha Fin Prevista"
+
+#. module: l10n_ec_hr_recruitment
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_challenge__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_decision__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_equipment__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_job_function__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_study__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_physical_condition__active
+#: model:ir.model.fields,field_description:l10n_ec_hr_recruitment.field_hr_rick_factor__active
+msgid "Active"
+msgstr ""

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- Competencias -->
+    <record model="ir.ui.view" id="hr_recruiment_competition_tree">
+        <field name="name">hr.recruitment.competition.tree</field>
+        <field name="model">hr.recruitment.competition</field>
+        <field name="arch" type="xml">
+          <tree editable="top">
+            <field name="name" required="1"/>
+            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+            <field name="general"/>
+            <field name="active"/>
+          </tree>
+        </field>
+    </record>
+
+    <act_window id="hr_recruitment_competition_action"
+        name="Competencias"
+        res_model="hr.recruitment.competition"
+        view_mode="tree"/>
+
+    <!-- Niveles de Competencias -->
+    <record id="hr_recruitement_competetion_level_tree" model="ir.ui.view">
+        <field name="name">hr.recruitment.competition.level.tree</field>
+        <field name="model">hr.recruitment.competition.level</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+            <field name="level"/>
+            <field name="description"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+          </tree>
+        </field>
+    </record>
+
+    <record id="hr_recruitment_competition_level_form" model="ir.ui.view">
+        <field name="name">hr.recruitment.competition.level.form</field>
+        <field name="model">hr.recruitment.competition.level</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group col="4" colspan="2">
+                <field name="name" required="1"/>
+                <field name="level" required="1"/>
+                <field name="competition_id" required="1"/>
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+              </group>
+              <field name="description" placeholder="Descripcion de nivel de Competencia" required="1"/>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <act_window id="hr_recruitment_competition_level_action"
+        name="Nivel de Competencia"
+        res_model="hr.recruitment.competition.level"
+        view_mode="tree,form"/>
+
+  </data>
+</odoo>

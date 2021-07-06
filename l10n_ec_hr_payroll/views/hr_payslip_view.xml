@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record id="hr_input_tree" model="ir.ui.view">
+        <field name="name">Inputs</field>
+        <field name="model">hr.input</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" decoration-muted="state == False" decoration-info="state == True">
+                <field name="name" optional="hide" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="date" required="1" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="input_type_id" required="1" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="employee_id" options="{'no_create':True}" required="1" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="amount" required="1" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="total_discount" readonly="1" optional="hide"/>
+                <field name="amount_unpaid" readonly="1" optional="hide"/>
+                <field name="company_id" required="1" groups="base.group_multi_company" attrs="{'readonly':[('state','=',False)]}"/>
+                <field name="state" readonly="1" invisible="1"/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="hr_input_search" model="ir.ui.view">
+        <field name="name">Inputs</field>
+        <field name="model">hr.input</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="date"/>
+                <field name="input_type_id"/>
+                <group expand="1" string="Inputs">
+                    <filter name="group_by_date" string="Date" domain="[]" context="{'group_by':'date'}"/>
+                    <filter name="group_by_input" string="Inputs" domain="[]" context="{'group_by':'input_type_id'}"/>
+                </group>
+            </search>
+        </field>
+        </record>
+
+        <act_window id="hr_input_action"
+        name="Inputs"
+        res_model="hr.input"
+        view_mode="tree"
+        context="{'search_default_group_by_date': True, 'search_default_group_by_input': True}"
+        />
+
+        <menuitem id="hr_input_menu" action="hr_input_action"
+            parent="hr_payroll.menu_hr_payroll_work_entries_root" sequence="1"/>
+
+        <record id="hr_payslip_run_form_2" model="ir.ui.view">
+        <field name="name">hr.payslip.run.button.form</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_draft']" position="after">
+                <button name="print_xlsx_payroll" string="Imprimir Nomina Excel" type="object" class="oe_highlight"/>
+            </xpath>
+             <xpath expr="//sheet/group" position="inside">
+                <group>
+                    <field name="type_payroll" required="1"/>
+                </group>
+            </xpath>
+        </field>
+        </record>
+
+        <record id="hr_payslip_input_type_view_form_2" model="ir.ui.view">
+        <field name="name">hr.payslip.input.type.form</field>
+        <field name="model">hr.payslip.input.type</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_input_type_view_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="type"/>
+            </field>
+        </field>
+        </record>
+
+    </data>
+</odoo>

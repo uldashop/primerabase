@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+        <record id="hr_personal_expenses_form" model="ir.ui.view">
+            <field name="name">Personal Expenses</field>
+            <field name="model">hr.personal.expenses</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>DECLARATION OF PERSONAL EXPENSES</h1>
+                    </div>
+                    <notebook colspan="4">
+                        <page string="Employee Data">
+                            <group>
+                                <field name="date" invisible="1"/>
+                                <field name="employee_id" required="1"/>
+                                <field name="fiscal_year" required="1"/>
+                                <field name="city"/>
+                                <field name="day"/>
+                            </group>
+                        </page>
+                        <page string="Projected Incomes">
+                            <group>
+                                <field name="incomes"/>
+                                <field name="other_income"/>
+                                <field name="projected_income"/>
+                            </group>
+                        </page>
+                        <page string="Projected Expenses" attrs="{'invisible':[('employee_id','=',False)]}">
+                            <group>
+                                <field name="housing_expense"/>
+                                <field name="education_expense"/>
+                                <field name="health_expense"/>
+                                <field name="clothing_expense"/>
+                                <field name="food_expense"/>
+                                <field name="projected_expense"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+        </record>
+      
+        <record id="hr_personal_expense_tree" model="ir.ui.view">
+            <field name="name">Personal Expenses</field>
+            <field name="model">hr.personal.expenses</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" />
+                <field name="fiscal_year"/>
+                <field name="city" optional="show" />
+                <field name="incomes" optional="hide"/>
+                <field name="other_income" optional="hide"/>
+                <field name="projected_income"/>
+                <field name="housing_expense" optional="hide"/>
+                <field name="education_expense" optional="hide"/>
+                <field name="health_expense" optional="hide"/>
+                <field name="clothing_expense" optional="hide"/>
+                <field name="food_expense" optional="hide"/>
+                <field name="projected_expense"/>
+                <field name="tax_pay" optional="show"/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="hr_personal_expense_search" model="ir.ui.view">
+        <field name="name">hr.personal.expenses</field>
+        <field name="model">hr.personal.expenses</field>
+        <field name="arch" type="xml">
+            <search string="Search For Year">
+                <field name="fiscal_year"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_year" string="Year" domain="[]" context="{'group_by':'fiscal_year'}"/>
+                </group>
+            </search>
+        </field>
+        </record>
+
+        <act_window id="action_hr_personal_expense"
+            name="Personal Expenses"
+            res_model="hr.personal.expenses"
+            view_mode="tree,form"
+            context="{'search_default_group_by_year': True}"/>
+
+        <menuitem  id="hr_personal_expense_menu"
+            name="Personal Expenses"
+            action="action_hr_personal_expense"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            groups="hr_payroll.group_hr_payroll_manager"
+            sequence="99"/>
+
+        <record id="hr_personal_expenses_limit_form" model="ir.ui.view">
+            <field name="name">Personal Expenses Limit</field>
+            <field name="model">hr.personal.expenses.limit</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1><field name="name" required="1"/></h1>
+                    <group>
+                        <group string="Continent">
+                            <field name="housing_expense"/>
+                            <field name="education_expense"/>
+                            <field name="health_expense"/>
+                            <field name="clothing_expense"/>
+                            <field name="food_expense"/>
+                            <field name="projected_expense"/>
+                            <field name="catastrophic_diseases"/>
+                        </group>
+                        <group string="Galapagos Island">
+                            <field name="housing_expense_extra"/>
+                            <field name="education_expense_extra"/>
+                            <field name="health_expense_extra"/>
+                            <field name="clothing_expense_extra"/>
+                            <field name="food_expense_extra"/>
+                            <field name="projected_expense_extra"/>
+                            <field name="catastrophic_diseases_extra"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+        </record>
+      
+        <record id="hr_personal_expense_tree" model="ir.ui.view">
+            <field name="name">Personal Expenses Limit</field>
+            <field name="model">hr.personal.expenses.limit</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="housing_expense" optional="show"/>
+                <field name="education_expense" optional="show"/>
+                <field name="health_expense" optional="show"/>
+                <field name="clothing_expense" optional="show"/>
+                <field name="food_expense" optional="show"/>
+                <field name="projected_expense" optional="show"/>
+                <field name="catastrophic_diseases" optional="show"/>
+                <field name="housing_expense_extra" optional="hide"/>
+                <field name="education_expense_extra" optional="hide"/>
+                <field name="health_expense_extra" optional="hide"/>
+                <field name="clothing_expense_extra" optional="hide"/>
+                <field name="food_expense_extra" optional="hide"/>
+                <field name="projected_expense_extra" optional="hide"/>
+                <field name="catastrophic_diseases_extra" optional="hide"/>
+            </tree>
+        </field>
+        </record>
+
+        <act_window id="action_hr_personal_expense_limit"
+            name="Personal Expenses Limit"
+            res_model="hr.personal.expenses.limit"
+            view_mode="tree,form"
+            context="{'search_default_group_by_year': True}"/>
+
+        <menuitem  id="hr_personal_expense_limit_menu"
+            name="Personal Expenses Limit"
+            action="action_hr_personal_expense_limit"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            groups="hr_payroll.group_hr_payroll_manager"
+            sequence="99"/>
+
+    </data>
+</odoo>

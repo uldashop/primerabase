@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_generate_pay_fortnight_2" model="ir.ui.view">
+        <field name="name">view_payfortnight_2</field>
+        <field name="model">wizard.hr.fortnight</field>
+        <field name="inherit_id" ref="l10n_ec_hr_payroll.view_generate_pay_fortnight"/>
+        <field name="arch" type="xml">
+            <field name="date_to" position="after">
+                <field name="journal_id" required="1"/>
+            </field>
+        </field>
+        </record>
+    </data>
+</odoo>

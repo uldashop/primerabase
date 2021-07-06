@@ -1,0 +1,19 @@
+<odoo>
+    <data noupdate="1">
+        <record id="disbursement_supplier" model="ir.sequence">
+            <field name="name">Comprobante de Egreso</field>
+            <field name="code">comprobante_egreso</field>
+            <field name="padding">4</field>
+            <field name="active">True</field>
+            <field name="implementation">standard</field>
+        </record>
+
+        <record id="disbursement_customer" model="ir.sequence">
+            <field name="name">Comprobante de Ingreso</field>
+            <field name="code">comprobante_ingreso</field>
+            <field name="padding">4</field>
+            <field name="active">True</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</odoo>

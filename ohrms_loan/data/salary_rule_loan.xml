@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Adding a salary rule for loan-->
+	<data noupdate="0">
+
+		<record id="input_loan" model="hr.payslip.input.type">
+            <field name="name">Prestamo</field>
+            <field name="code">LO</field>
+            <field name="type">expense</field>
+        </record>
+
+        <!--<record id="hr_rule_input_loan" model="hr.rule.input">
+            <field name="code">LO</field>
+            <field name="name">Loan</field>
+            <field name="input_id" ref="hr_rule_loan"/>
+        </record>-->
+
+	</data>
+</odoo>

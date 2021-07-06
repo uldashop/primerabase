@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+    <record id="email_template_rol" model="mail.template">
+      <field name="name">Send Rol</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="email_to">${object.employee_id.work_email}</field>
+      <field name="subject">Rol de Pago</field>
+      <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="hr_payroll.action_report_payslip"/>
+      <field name="report_name">Rol de pago ${object.employee_id.name}</field>
+      <field name="lang">${object.employee_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimado (a) ${ object.employee_id.name },
+
+      Se adjunta rol de pago correspondiente al mes de ${format_date(object.date_from, date_format="MMMM y")}.
+      ]]>
+      </field>
+    </record>
+  </data>
+</openerp>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.inherit.hr.attendance</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='hr_attendance']" position="inside">
+                    <h2>Horas Extra</h2>
+                    <div class="row mt16 o_settings_container" id="extra_hours">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class='o_setting_left_pane'>
+                            <field name="approved_hour" widget="upgrade_boolean"/>
+                        </div>
+                        <div class='o_setting_right_pane'>
+                            <div class="content-group">
+                                <span class="o_form_label">Horas Extra Desde</span>
+                                <div class="text-muted">
+                                    Hora desde la cual se contabilizan las horas extra.
+                                </div>
+                                <field name="hours_after_attendance" widget="float_time"/>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

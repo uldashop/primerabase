@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="competition_1" model="hr.recruitment.competition">
+          <field name="name">Flexibilidad</field>
+          <field name="active">1</field>
+          <field name="general">1</field>
+        </record>
+
+        <record id="competition_2" model="hr.recruitment.competition">
+          <field name="name">Autoconfianza</field>
+          <field name="active">1</field>
+          <field name="general">1</field>
+        </record>
+
+        <record id="competition_3" model="hr.recruitment.competition">
+          <field name="name">Integridad</field>
+          <field name="active">1</field>
+          <field name="general">1</field>
+        </record>
+
+        <record id="competition_4" model="hr.recruitment.competition">
+          <field name="name">Identificación con la empresa</field>
+          <field name="active">1</field>
+          <field name="general">1</field>
+        </record>
+
+        <record id="competition_5" model="hr.recruitment.competition">
+          <field name="name">Pensamiento analá­tico</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_6" model="hr.recruitment.competition">
+          <field name="name">Pensamiento conceptual</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_7" model="hr.recruitment.competition">
+          <field name="name">Búsqueda de información</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_8" model="hr.recruitment.competition">
+          <field name="name">Orientación a resultados</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_9" model="hr.recruitment.competition">
+          <field name="name">Iniciativa</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_10" model="hr.recruitment.competition">
+          <field name="name">Orientación al cliente</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+        
+        <record id="competition_11" model="hr.recruitment.competition">
+          <field name="name">Comprensión interpersonal</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_12" model="hr.recruitment.competition">
+          <field name="name">Comprensión de la organización</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_13" model="hr.recruitment.competition">
+          <field name="name">Impacto e influencia</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_14" model="hr.recruitment.competition">
+          <field name="name">Desarrollo de relaciones</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_15" model="hr.recruitment.competition">
+          <field name="name">Desarrollo de personas</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_16" model="hr.recruitment.competition">
+          <field name="name">Dirección de personas</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_17" model="hr.recruitment.competition">
+          <field name="name">Liderazgo</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_18" model="hr.recruitment.competition">
+          <field name="name">Trabajo en equipo</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_19" model="hr.recruitment.competition">
+          <field name="name">Autocontrol</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+
+        <record id="competition_20" model="hr.recruitment.competition">
+          <field name="name">Orden y calidad</field>
+          <field name="active">1</field>
+          <field name="general">0</field>
+        </record>
+    </data>
+</odoo>

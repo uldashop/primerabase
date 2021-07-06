@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="detail_expand" inherit_id="website_hr_recruitment.detail">
+            <xpath expr="//div[@t-field='job.website_description']" position="before">
+                <div class="container"><div class="col-lg-12 text-left">
+                    <p><span t-field="job.description"/></p>
+                </div></div>
+                <div class="container"><div class="row">
+                    <div class="col-lg-4 text-left"><ul><li type="none">
+                        <span><strong>RESPONSABILIDADES</strong></span></li>
+                        <t t-foreach="job.function_ids" t-as="function">
+                            <li type="none"><span t-field="function.name"/></li>
+                        </t></ul>
+                    </div>
+                    <div class="col-lg-4 text-left"><ul><li type="none">
+                        <span><strong>DESAFIOS</strong></span></li>
+                        <t t-foreach="job.challenge_ids" t-as="challenge">
+                            <li type="none"><span t-field="challenge.name"/></li>
+                        </t></ul>
+                    </div>
+                    <div class="col-lg-4 text-left"><ul><li type="none">
+                        <span><strong>DEBE TENER</strong></span></li>
+                        <t t-foreach="job.competition_ids" t-as="competition">
+                            <li type="none"><span t-field="competition.name"/></li>
+                        </t></ul>
+                    </div>
+                </div></div>
+            </xpath>
+        </template>
+        <template id="apply" inherit_id="website_hr_recruitment.apply">
+            <xpath expr="//form/div[3]" position="after">
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="salary_expected">Salario Esperado</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <input type="integer" class="form-control o_website_form_input" name="salary_expected" required=""/>
+                    </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="partner_experience">Experiencia Laboral</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <input type="text" class="form-control o_website_form_input" name="partner_experience" required=""/>
+                    </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="partner_further">Formacion Complementaria</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <li t-foreach="training" t-as="futher" t-att-data-id="futher.id" class="o_documents_selector_tag list-group-item border-0 list-group-item-action">
+                            <t t-set="partner_futher" t-value="futher.id"/>
+                            <header t-att-title="partner_futher">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="partner_futher" t-att-name="partner_futher" t-att-id="partner_futher" class="custom-control-input" >
+                                    <label t-att-for="partner_futher" class="custom-control-label d-block">
+                                        <t t-esc="futher.name"/>
+                                    </label>
+                                    </input>
+                                </div>
+                            </header>
+                        </li>
+
+                        <!-- <input type="checkbox" name="partner_further" multiple="multiple" class="custom-control-input"/>
+                        <t t-foreach="" t-as="">
+                            <label t-att-for="further" class="custom-control-label d-block">
+                                <option t-att-value="futher.id"><t t-esc="futher.name"/></option>
+                                <b t-if="tag.__count > 0" class="o_documents_selector_count pull-right mr-2"><t t-esc="tag.__count"/></b>
+                            </label>
+                        </t> -->
+                        <!-- <select type="radio" class="form-control select" name="partner_further" multiple="multiple">
+                        <option/>
+                        <t t-foreach="training" t-as="futher">
+                            <option t-att-value="futher.id"><t t-esc="futher.name"/></option>
+                        </t>
+                        </select> -->
+                        <!-- <input type="text" class="form-control o_website_form_input" name="partner_further" required=""/> -->
+                    </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="partner_study">Preparacion Academica</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <select name="partner_study" class="form-control" data-placeholder="Selecciona area de Estudio" required="required">
+                        <option/>
+                        <t t-foreach="studies" t-as="study">
+                            <option t-att-value="study.id"><t t-esc="study.name"/></option>
+                        </t>
+                        </select>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
