@@ -18,7 +18,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly test
+    # any module necessary for this one to work correctly alexander
     'depends': ['website', 'website_sale', 'website_sale_require_login'],
 
     # always loaded
