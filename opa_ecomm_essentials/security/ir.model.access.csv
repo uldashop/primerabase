@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_opa_ecomm_essentials_shipping_city,opa_ecomm_essentials.shipping_city,model_shipping_city,base.group_user,1,1,1,1
