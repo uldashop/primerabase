@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="myweb_footer_assets" inherit_id="website.assets_frontend"
+              active="false" priority="17">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/web_ulda/static/src/styles/footer.scss"/>
+        </xpath>
+        </template>
+        <template id="myweb_footer" inherit_id="website.footer_custom" active="True">
+            <xpath expr="//div[@id='footer']" position="replace">
+                <div id="footer" class="footer oe_structure oe_structure_solo">
+                    <section class="footer__body">
+                        <div class="container">
+                            <div class="footer__grid">
+                                <div class="columna columna1">
+                                    <figure>
+                                        <img src="/web_ulda/static/img/site/general/logo_ulda_white.png" alt="Logo Ulda"/>
+                                    </figure>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim in dui, eget risus quam viverra enim. Ipsum vestibulum at varius ut id. </p>
+
+                                    <div class="footer_social_network">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-square"></i>
+                                        </a>
+
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="columna columna2">
+                                    <h5>Matriz</h5>
+                                    <span>Av. Mariscal Sucre 527-252 y Diego Céspedes</span>
+                                    <span class="d-block">Quito-Ecuador</span>
+                                </div>
+
+                                <div class="columna columna3">
+                                    <h5>Contacto</h5>
+                                    <a href="#" class="d-block mb-2">info@acerocenter.com</a>
+                                    <a href="#" class="d-block mb-2">+593 412 34567</a>
+                                </div>
+
+                                <!-- <div class="columna columna3">
+                                    <h5>Conéctate</h5>
+                                    <a href="#" class="d-block mb-2">Contacto</a>
+                                    <a href="#" class="d-block mb-2">Blog</a>
+                                    <a href="#" class="d-block mb-2">Corporativo</a>
+                                </div>
+
+                                <div class="columna columna4">
+                                    <h5>Conéctate</h5>
+                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-linkedin"></i>Linkedin</a>
+                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-youtube"></i>Youtube</a>
+                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-facebook"></i>Facebook</a>
+                                    
+                                </div> -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Copyright Text -->
+                <div class="footer__copy">
+                    <div class="container pb-3 te_end_ftr_container pt-2">
+                    <div class="row align-items-center">
+                        <div class="te_copyright_add_language col-md-6">
+                            <span>Copyright &amp;copy;</span>
+                            <span t-field="res_company.name" itemprop="name">Company name</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

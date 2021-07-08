@@ -1,0 +1,137 @@
+
+
+//product
+#wrap > .te_product_breadcrumb{
+    margin-top: 100px;
+    
+    @media(min-width: 1600px){
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+}
+
+#wrap > #product_detail{
+    margin-bottom:100px !important;
+    @media(min-width: 1200px){
+        margin-bottom: 120px;
+    }
+
+    @media(min-width: 1600px){
+        margin-top: 130px !important;
+        margin-bottom: 200px !important;
+    }
+
+    @media(max-width: 599px){
+        margin-bottom: 0;
+    }
+}
+
+.aqua_product_bg{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    img{
+        width: 100%;
+    }
+
+    @media(max-width:991px){
+        img{
+            width: unset;
+            height: 50vh;
+        }
+    }
+}
+
+
+
+#product_details{
+    .oe_price{
+        color: var(--aqua-color-2);
+    }
+
+    .input-group-prepend, .input-group-append{
+        a{
+            border: 1px solid var(--aqua-color-2)!important;
+        }
+    }
+
+    input.quantity{
+        border: 1px solid var(--aqua-color-2)!important;
+    }
+
+    hr,p.text-muted{
+        display: none;
+    }
+
+    .te_product_name{
+        font-weight: 700;
+        font-size: 26px!important;
+    }
+}
+
+
+
+
+//popup add to cart-jerry
+#product_details{
+
+    .js_main_product{
+        
+        .oe_price_h4{
+            color: var(--aqua-color-2)!important;
+
+        }
+
+    }
+
+    #add_to_cart{
+        background-color: var(--aqua-color-2)!important;
+        color:white!important;
+        font-family: var(--fuente-general);
+        font-weight: bold;
+        border-color: var(--aqua-color-2)!important;
+        padding:10px 20px;
+
+        .fa-shopping-cart{
+            display:none;
+        }   
+    }
+}
+
+
+//product_tabs
+
+div.tabs_container_main ul#te_product_tabs li {
+
+    a.active{
+        border-bottom: 3px solid var(--aqua-color-2);
+        color: var(--aqua-color-2);
+    }
+
+    a:hover:after{
+        border-color: var(--aqua-color-1);
+    }
+}
+//checkout process
+.oe_website_sale{
+    
+    .oe_cart{
+        a.te_theme_button.btn-secondary{
+            border: none!important;
+            &:hover{
+                background-color: white!important;
+                color: var(--aqua-color-1)!important;
+                text-decoration: underline!important;
+            }
+    
+        }
+    }
+    
+    .te_cart_table{
+        a{
+            color: black!important;
+        }
+    }
+}
+
+

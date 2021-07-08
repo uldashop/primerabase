@@ -1,0 +1,349 @@
+/**********************************************************
+
+CLASES Y VARIABLES GENERALES
+
+**********************************************************/
+
+//fuentes
+// @font-face {
+//     font-family: 'JosefinSanz';
+//     src: url('/web_acerocenter/static/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf');
+//     src: url('/web_acerocenter/static/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&display=swap');
+
+:root {
+    --web__color1:#CBA6C3;
+    --web__color2:#AAABD3;
+    --web__color3:#353866;
+    --web__color4:#424242;
+    --alpha:#353866!important;
+    --primary:#353866!important;
+    
+    // --gradiente-azul:linear-gradient(30deg, rgba(0,115,172,1) 20%, rgba(0,165,247,1) 100%);
+    
+
+
+    // --fuente-titulos:'Montserrat', sans-serif;
+    --fuente-titulos:'Open Sans', sans-serif;; 
+    --fuente-general:'Nunito', sans-serif;
+    
+    --t1:68px;
+    --t2:45px;
+    --t3:30px;
+    --t4:20px;
+    --t5:17px;
+    --t6:14px;
+
+    --texto:16px;
+}
+
+
+.wrapper{
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    @media(max-width:1200px){
+        max-width: 90%;
+    }
+}
+
+.container{
+    max-width: 1400px;
+}
+
+body{
+    font-family: var(--fuente-general)!important;
+    font-size: var(--texto);
+}
+
+p{
+    font-size: var(--texto);
+}
+
+h1,h2,h3,h4,h5{
+    font-family: var(--fuente-titulos)!important;
+}
+
+hr.border-primary{
+    border-color: black!important;
+}
+
+.titulo-seccion{
+    font-size: var(--t3);
+    text-align: center;
+    display: block!important;
+    font-weight: 700!important;
+
+    &::before{
+        left: auto;
+        right: auto;
+    }
+
+    @media(max-width:599px){
+        font-size: var(--h4);
+    }
+}
+
+
+.badge-primary{
+    background-color: var(--acerocenter__color--1)!important;
+}
+
+
+//botones
+
+#wrapwrap{
+
+    .btn{
+        font-family:var(--fuente-general);
+        font-weight: 700;
+    }
+    
+    .btn-strech{
+        padding: 0.4rem 1rem!important;
+    }
+    
+    .btn-outline-ulda{
+        background: transparent!important;
+        border: 1px solid var(--web__color2)!important;
+        color: var(--web__color2)!important;
+
+        &:hover{
+            background: var(--web__color2)!important;
+            color: white!important;
+        }
+    }
+    
+    @mixin mycustomize__btn-primary{
+        border-color: var(--web__color2)!important;
+        background-color:var(--web__color2);
+        color: white!important;
+    
+        &:hover{
+            background-color: var(--web__color1)!important;
+            border-color: var(--web__color1)!important;
+        }
+    }
+    
+    .btn-primary{
+        @include mycustomize__btn-primary;
+    }
+    
+    
+    
+    @mixin mycustomize_btn-secondary{
+        background-color: transparent!important;
+        border: 1px solid;
+        border-color: var(--web__color2)!important;
+        color:var(--web__color1)!important;
+    
+        &:hover{
+            background-color: var(--web__color1)!important;
+            border-color: var(--web__color1)!important;
+            color: white!important;
+        }
+    }
+    
+    .btn-outline-primary, .mycustomize__btn-secondary, .btn-secondary{
+        @include mycustomize_btn-secondary;
+    }
+    
+    a.te_theme_button.btn-secondary{
+        @include mycustomize_btn-secondary;
+    }
+    
+    .mycart-popover{
+        a.btn-primary.mb-2{
+            @include mycustomize_btn-secondary;
+        }
+    }
+}
+
+#add_to_cart{
+    i,span{
+        display: none;
+    }
+}
+
+#buy_now{
+    i,span{
+        display: none;
+    }
+}
+
+.btn-transparencia{
+    background-color: rgba(196, 196, 196, 0.15)!important;
+    border-color: rgba(196, 196, 196, 0.15)!important;
+
+    &:hover{
+        background-color: rgba(196, 196, 196, 0.5)!important;
+        border-color: rgba(196, 196, 196, 0.5)!important;
+    }
+}
+
+
+
+
+
+
+//efects
+.sombra{
+    box-shadow: 0 0 20px 0 var(--sombra);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.sombra-hover:hover{
+    box-shadow: 0 0 20px 0 var(--sombra);
+}
+
+.oculto{
+    display: none!important;
+}
+
+.invisible{
+    visibility: hidden!important;
+}
+
+
+//animations
+.fadeIn{
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-name:fadeIn;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+
+.slide-bottom {
+	-webkit-animation: slide-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+	animation: slide-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+
+
+//componentes
+
+.title_ulda{
+
+    margin-bottom: -10px;
+    .te_title_sub_div{
+        width: 100%;
+        padding-left: 0!important;
+        &::before{
+            width: 38%!important;
+            left: 62%!important;
+            margin-top: 0!important;
+            background: black!important;
+        }
+        
+        &::after{
+            width: 38%!important;
+            background: black!important;
+        }
+    
+        h4{
+            max-width: 22%!important;
+            padding-right: 0;
+            font-size: 22px;
+            font-weight: 400;
+            &::before{
+                display: none;
+            }
+            &::after{
+                display: none;
+            }
+        }
+    }
+
+
+    @media(max-width:991px){
+        .te_title_sub_div{
+            &::before{
+                width: 25%!important;
+                left: 75%!important;
+            }
+
+            &::after{
+                width: 25%!important;
+            }
+
+            h4{
+                max-width: 50%!important;
+            }
+
+        }
+    }
+
+    @media(max-width:599px){
+        .te_title_sub_div{
+            &::before{
+                width: 10%!important;
+                left: 90%!important;
+            }
+
+            &::after{
+                width: 10%!important;
+            }
+
+            h4{
+                max-width: 80%!important;
+            }
+        }
+    }
+}
+
+
+
+//--banner standar
+.banner_standar{
+    img{
+        width: 100%;
+    }
+}
