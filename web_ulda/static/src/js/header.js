@@ -1,3 +1,4 @@
+
 const $header = document.querySelector('.te_header_style_2_main')
 
 const $header_icon_wish = $header.querySelector('.te_wish_icon_head a')
@@ -16,10 +17,12 @@ $header_icon_wish.appendChild($imagen_wish)
 $header_icon_cart.appendChild($imagen_cart)
 $header_icon_user.appendChild($imagen_user)
 
-const icon_i_wish=$header_icon_wish.querySelector('i')
-const icon_i_cart=$header_icon_cart.querySelector('i')
-const icon_i_user=$header_icon_user.querySelector('i')
+const icon_i_wish = $header_icon_wish.querySelector('i')
+const icon_i_cart = $header_icon_cart.querySelector('i')
+const icon_i_user = $header_icon_user.querySelector('i')
 
 icon_i_wish.setAttribute('style', 'display:none!important;')
 icon_i_cart.setAttribute('style', 'display:none!important;')
 icon_i_user.setAttribute('style', 'display:none!important;')
+
+

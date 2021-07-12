@@ -17,6 +17,15 @@
         column-gap: 15px;
         .columna{
             font-size: 0.813rem;
+
+            &_center{
+                display: flex;
+                justify-content: center;
+            }
+
+            &_content{
+                width: 80%;
+            }
             
             h5{
                 font-weight: 700;

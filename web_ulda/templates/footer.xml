@@ -37,19 +37,27 @@
                                         <a href="#">
                                             <i class="fab fa-twitter"></i>
                                         </a>
+
+                                        <a href="#">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
                                     </div>
                                 </div>
 
-                                <div class="columna columna2">
-                                    <h5>Matriz</h5>
-                                    <span>Av. Mariscal Sucre 527-252 y Diego Céspedes</span>
-                                    <span class="d-block">Quito-Ecuador</span>
+                                <div class="columna columna_center columna2">
+                                    <div class="columna_content">
+                                        <h5>Matriz</h5>
+                                        <span>Av. Mariscal Sucre 527-252 y Diego Céspedes</span>
+                                        <span class="d-block">Quito-Ecuador</span>
+                                    </div>
                                 </div>
 
-                                <div class="columna columna3">
-                                    <h5>Contacto</h5>
-                                    <a href="#" class="d-block mb-2">info@acerocenter.com</a>
-                                    <a href="#" class="d-block mb-2">+593 412 34567</a>
+                                <div class="columna columna_center columna3">
+                                    <div class="columna_content">
+                                        <h5>Contacto</h5>
+                                        <a href="#" class="d-block mb-2">info@acerocenter.com</a>
+                                        <a href="#" class="d-block mb-2">+593 412 34567</a>
+                                    </div>
                                 </div>
 
                                 <!-- <div class="columna columna3">

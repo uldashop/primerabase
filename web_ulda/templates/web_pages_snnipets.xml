@@ -24,805 +24,538 @@
 
         <!--================== Web Page Home =============================-->
         <template id="mypage_home" name="My Page Home">
-            <section class="acerocenter">
-                <div id="" class="oe_structure oe_empty">
-                  <div id="myCarousel1623109961220" class="s_carousel carousel aos-init s_carousel_default" data-interval="10000" data-name="Full screen 3" data-aos="s_carousel_default">
-                    <ol class="carousel-indicators d-none">
-                      <li data-target="#myCarousel1623109961220" data-slide-to="0" class="active"/>
-                      <li data-target="#myCarousel1623109961220" data-slide-to="1"/>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item te_full_screen3 oe_img_bg oe_custom_bg active" style="background-image: url(&quot;/web_acerocenter/static/img/site/home/home_slider.png&quot;);">
-                      <img style="visibility:hidden;" class="img img-responsive img-fluid d-block mx-auto" alt="Clarico-Slider Style 3" src="/theme_clarico_vega/static/src/img/snippets/slider_styles/style_3/1920_800.jpg" data-original-title="" title="" aria-describedby="tooltip937629"/>
-                      </div>
-                      <div class="carousel-item te_full_screen3 oe_img_bg oe_custom_bg" style="background-image: url(&quot;/web_acerocenter/static/img/site/home/slider/banner_ideas.jpg&quot;);">
-                      
-                      </div>
-                      <div class="carousel-item te_full_screen3 oe_img_bg oe_custom_bg" style="background-image: url(&quot;/web_acerocenter/static/img/site/home/slider/banner_productos.jpg&quot;);">
-                      
-                      </div>
-                      <div class="carousel-control-prev" data-target="#myCarousel1623109961220" data-slide="prev" role="img" aria-label="Previous" title="Previous">
-                      <span class="carousel-control-prev-icon"/>
-                      <span class="sr-only o_default_snippet_text">Previous</span>
-                      </div>
-                      <div class="carousel-control-next" data-target="#myCarousel1623109961220" data-slide="next" role="img" aria-label="Next" title="Next">
-                      <span class="carousel-control-next-icon"/>
-                      <span class="sr-only o_default_snippet_text">Next</span>
-                      </div>
+          <section class="ulda">
+
+            <div id="myCarousel1625511573347" class="s_carousel s_carousel_default carousel slide te_s_slider_10" data-interval="10000" data-name="Full screen 6">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel1625511573347" data-slide-to="0" class="active"/>
+                <li data-target="#myCarousel1625511573347" data-slide-to="1"/>
+              </ol>
+              <div class="carousel-inner te_arrow_small te_ts_style_7_inner">
+                <div class="carousel-item oe_custom_bg oe_img_bg active" style="background-image: url('/web_ulda/static/img/site/home/slider/banner1.png'); background-position: top;" data-name="Slide">
+                <div class="container">
+                  <div class="row content">
+                  <div class="carousel-content col-lg-5 col-md-10 col-sm-8 col-12 te_slider_10">
+                    <div class="s_title" data-name="Title">
+                    <h3 class="te_slider_10_title mb-0 o_default_snippet_text">Nueva Colección</h3>
+                    </div>
+                    <br/>
+                    <div class="te_slider_10_content mt-2">
+                    <p class="o_default_snippet_text"> <span class="span1">INSPIRADA EN TU ESTILO</span> <span class="span2">SIN REGLAS</span> </p>
+                    </div>
+                    <div class="s_btn text-left pt16 pb16 mt16" data-name="Buttons">
+                    <a href="/contactus" class="btn btn-strech btn-outline-ulda te_theme_button o_default_snippet_text">Know more</a>
                     </div>
                   </div>
-        
-                  <div class="home-background">
-                                
-                                <section class="te_banner_s3" data-name="Banner Style 3">
-                                    <div class="container">
-                                    <div class="te_category_banner_block">
-                                        <div class="row">
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-inline-block">
-                                            <div class="te_banner_categ_block">
-                                            <section class="te_categ_content">
-                                                <a href="#">
-                                                <img class="img img-fluid" src="/web_acerocenter/static/img/site/home/poll.png"/>
-                                                <div class="te_banner_categ_name d-inline-block o_default_snippet_text">
-                                                    50 años en el mercado
-                                                </div>
-                                                </a>
-                                            </section>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-inline-block">
-                                            <div class="te_banner_categ_block">
-                                            <section class="te_categ_content">
-                                                <a href="#">
-                                                <img class="img img-fluid" src="/web_acerocenter/static/img/site/home/tools.png"/>
-                                                <div class="te_banner_categ_name d-inline-block o_default_snippet_text">
-                                                    Productos 
-                                                    para la 
-                                                    construcción
-                                                </div>
-                                                </a>
-                                            </section>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-inline-block">
-                                            <div class="te_banner_categ_block">
-                                            <section class="te_categ_content">
-                                                <a href="#">
-                                                <img class="img img-fluid" src="/web_acerocenter/static/img/site/home/map-pin.png"/>
-                                                <div class="te_banner_categ_name d-inline-block o_default_snippet_text">
-                                                    20 locales Costa Sierra Oriente
-                                                </div>
-                                                </a>
-                                            </section>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-inline-block">
-                                            <div class="te_banner_categ_block">
-                                            <section class="te_categ_content">
-                                                <a href="#">
-                                                <img class="img img-fluid" src="/web_acerocenter/static/img/site/home/wallet.png"/>
-                                                <div class="te_banner_categ_name d-inline-block o_default_snippet_text">
-                                                    Facilidades de pago y entrega
-                                                </div>
-                                                </a>
-                                            </section>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </section>
-            
-                                <section class="pb32 pt32" data-name="Style 3">
-                                    <div class="container">
-                                      <section data-name="Title style 2">
-                                        <div class="container">
-                                          <div class="row s_nb_column_fixed">
-                                            <div class="col-lg-12 te_title_2 pt32">
-                                              <div class="te_title_sub_div">
-                                                <h4 class="te_s_title_default te_title_style2 o_default_snippet_text">Categorias</h4>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </section>
-                                      <div class="row">
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/construccion.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum consectetur dolor sit amet, adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/laminas.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/tuberias.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/perfiles.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                      </div>
-            
-                                      <div class="row">
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/laminas.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum consectetur dolor sit amet, adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/cubiertas.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/hierrodecorativo.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/ferreteria.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                      </div>
-            
-            
-                                      <div class="row" style="justify-content: center;">
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/construcciones.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum consectetur dolor sit amet, adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/tuberiaspvc.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/web_acerocenter/static/img/site/home/grid/servicios.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <!-- <div class="col-lg-3 col-sm-6 te_col_5_main">
-                                          <section class="t_img_hover_1">
-                                            <a href="#">
-                                              <img class="img img-responsive img-fluid mx-auto d-block" alt="" src="/theme_clarico_vega/static/src/img/snippets/3_column/style_2/437_500.jpg"/>
-                                            </a>
-                                          </section>
-                                          <section class="te_4_col_content">
-                                            
-                                            <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <div class="te_extra_btn">
-                                              <i class="fa fa-plus"/>
-                                              <a href="#" class="o_default_snippet_text">Explore</a>
-                                            </div>
-                                          </section>
-                                        </div> -->
-                                      </div>
-                                    </div>
-                                </section>
                   </div>
-                    
-                    
-                    <section class="contact">
-                        <div class="container container-flex">
-                            
-                                <div class="contact_video">
-                                    <a href="https://www.youtube.com/watch?v=ZTsvfmaRBHA" class="btn btn-primary video-popup video-hero" data-original-title="" title="" style="background-color: transparent!important;">
-                                        <img src="/web_acerocenter/static/img/site/home/background_video.png" alt=""/>
-                                        <i class="fa fa-play te_play_icon"></i>
-                                      </a>
-                                </div>
-            
-                                <div class="contact_text">
-                                    <h2>Lorem ipsum of <span>Acero Lorem</span> </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat id augue sit amet congue. Proin quis mauris viverra.</p>
-        
-                                    <div class="buttons_container">
-                                        <a href="" class="btn btn-secondary">
-                                            WHATSAPP
-                                        </a>
-        
-                                        <a href="" class="ml-5 btn btn-secondary">
-                                            LLamanos
-                                        </a>
-                                    </div>
-                                </div>
-                        </div>
-                    </section>
-    
-                    <!--CAROUSEL MARCAS-->
-                    <section id="myCarousel1603143381148" class="container carousel carousel-showmanymoveone common_carousel_emp_ept aos-init slide" data-ride="carousel" data-interval="5000" data-name="Team Style 3" data-aos="slide">
-                        <div id="carousel-inner" class="carousel-inner row mx-auto ">
-                            
-                        </div>
-                    </section>
-    
-                    <section class="pb32 pt32 te_blog_style_2" data-name="Blog Style 2">
-                        <div class="container">
-                          <h3 class="te_blog_2_heading o_default_snippet_text">Latest Posts</h3>
-                          <div class="row js_get_posts te_blog_s2"/>
-                        </div>
-                    </section>
-
-                    <section class="formulario_contacto">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-12 col-md-6">
-                            <div class="formulario_text">
-                              <h3>Escríbenos</h3>
-                              <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia hic, tenetur rerum itaque corporis recusandae maxime a velit nemo tempora eius voluptatibus nulla dolorum iure ad mollitia totam aspernatur molestias ipsam ipsa repellendus beatae voluptatem!
-                              </p>
-            
-                              <div class="info_contact">
-                                <div class="row">
-                                  <i class="fas fa-map-marker-alt"/>
-                                  <div style="display:flex; flex-direction: column;">
-                                    <span>
-                                      San Francisco, CA 560 Bush St  20 th Ave.
-                                    </span>
-                                    <span>
-                                      Apt 5 SAn Francisco, 230909
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-          
-                              <div class="info_contact">
-                                <div class="row">
-                                  <i class="fas fa-phone"/>
-                                  <div style="display:flex; flex-direction: column;">
-                                    <span>
-                                      +01 2323 7328 322
-                                    </span>
-                                    <span>
-                                      +01 2323 7328 322
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-          
-                              <div class="info_contact">
-                                <div class="row">
-                                  <i class="fas fa-globe-americas"/>
-                                  <div style="display:flex; flex-direction: column;">
-                                    <span>
-                                      email@acerocenter.com
-                                    </span>
-                                    <span>
-                                      www.acerocenter.com
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-6">
-                            <form action="/website_form/" method="post" class="s_website_form container-fluid mt32 o_fake_not_editable" enctype="multipart/form-data" data-name="Form Builder" data-model_name="mail.mail" data-success_page="/contactus-thank-you">
-                              <div class="container">
-                                <!-- <h1 class="o_form_heading">Send an E-mail</h1> -->
-                                <div class="row form-group form-field d-none">
-                                <div class="col-lg-3 col-md-4">
-                                  <label class="col-form-label" for="email_to">
-                                    
-                                  </label>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                  <input type="text" class="form-control o_website_form_input" name="email_to" value="jgarcia@opa-consulting.com"/>
-                                </div>
-                                </div>
-                                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
-                                <div class="col-lg-12 col-md-12">
-                                  <input placeholder="Nombre" type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
-                                </div>
-                                </div>
-                              
-                                <div class="form-group row form-field o_website_form_custom">
-                                <div class="col-lg-6 col-md-12">
-                                  <input placeholder="Teléfono" type="text" class="form-control o_website_form_input" name="Número de teléfono"/>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                  <input placeholder="Email" type="email" class="form-control o_website_form_input" name="email_from" required=""/>
-                                  </div>
-                                </div>
-                  
-                                <div class="form-group row form-field o_website_form_custom">
-                                <div class="col-lg-6 col-md-12">
-                                  <input placeholder="Ciudad" type="text" class="form-control o_website_form_input" name="Su compañía"/>
-                                </div>
-                  
-                                <div class="col-lg-6 col-md-12">
-                                  <input type="file" class="form-control o_website_form_input" name="Custom Subir archivo"/>
-                                  </div>
-                                </div>
-                                
-                                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
-                                
-                                <div class="col-lg-12 col-md-12">
-                                  <textarea placeholder="Requerimiento" class="form-control o_website_form_input" name="Su pregunta" required=""/>
-                                </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                <div class=" col-md-8 col-lg-12">
-                                  <button class="w-100 btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Enviar</button>
-                                  <span id="o_website_form_result"/>
-                                </div>
-                                </div>
-                              </div>
-                              </form>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
                 </div>
-    
-
+                </div>
+                
+                <div class="carousel-control-prev" data-target="#myCarousel1625511573347" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                <span class="carousel-control-prev-icon"/>
+                <span class="sr-only o_default_snippet_text">Previous</span>
+                </div>
+                <div class="carousel-control-next" data-target="#myCarousel1625511573347" data-slide="next" role="img" aria-label="Next" title="Next">
+                <span class="carousel-control-next-icon"/>
+                <span class="sr-only o_default_snippet_text">Next</span>
+                </div>
+              </div>
+            </div>
+  
+            <section class="te_numbers oe_img_bg" style="background-image: url('/web_ulda/static/img/site/home/bg-counter.png'); background-position: center;" data-name="Number Count">
+              <div class="container">
+                <h2 class="">Esta semana</h2>
+                <div class="row">
+                  <div id="te_counter" class="col-xl-3 col-md-4">
+                  <span class="te_count_value o_default_snippet_text">226</span>
+                  <p class="o_default_snippet_text">órdenes recibidas</p>
+                  </div>
+                  <div id="te_counter" class="col-xl-3 col-md-4">
+                  <span class="te_count_value o_default_snippet_text">194</span>
+                  <p class="o_default_snippet_text">envíos realizados</p>
+                  </div>
+                  <div id="te_counter" class="col-xl-3 col-md-4">
+                  <span class="te_count_value o_default_snippet_text">357</span>
+                  <p class="o_default_snippet_text">productos vendidos</p>
+                  </div>
+                  <div id="te_counter" class="col-xl-3 col-md-4">
+                  <span class="te_count_value o_default_snippet_text">11</span>
+                  <p class="o_default_snippet_text">ciudades nos compraron</p>
+                  </div>
+                  
+                </div>
+              </div>
             </section>
-    
-            <template id="template_carousel-brand_item">
+  
+            <!--CAROUSEL MARCAS-->
+            <section data-name="Title style 2" class="title_ulda">
+              <div class="container">
+                <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 te_title_2 pt32">
+                  <div class="te_title_sub_div">
+                  <h4 class="te_s_title_default te_title_style2 o_default_snippet_text mb-0 pb-0">MARCAS POPULARES</h4>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+            <section id="myCarousel1603143381148" class="container carousel carousel-showmanymoveone common_carousel_emp_ept aos-init slide" data-ride="carousel" data-interval="5000" data-name="Team Style 3" data-aos="slide">
+                          <div id="carousel-inner" class="carousel-inner row mx-auto ">
+                              
+                          </div>
+  
+              <template id="template_carousel-brand_item">
                 <section class="carousel-item">
-                    <section class="col-12 col-sm-6 col-md-4 col-lg-3 s_col_no_resize s_col_no_bgcolor">
-                        <div class="te_team_img">
-                            <div>
-                            <div class="te_img_hover_overflow">
-                                <img alt="Clarico-Team-3" src="/data_derma/static/img/site/marcas/endocare.jpg" class="img-fluid d-block mx-auto" data-original-title="" title="" aria-describedby="tooltip831761"/>
-                            </div>
-                            </div>
-                        </div>
-                    </section>
+                  <section class="col-12 col-sm-6 col-md-4 col-lg-3 s_col_no_resize s_col_no_bgcolor">
+                    <div class="te_team_img">
+                      <div>
+                      <div class="te_img_hover_overflow">
+                        <img alt="Clarico-Team-3" src="" class="img-fluid d-block mx-auto" data-original-title="" title="" aria-describedby="tooltip831761"/>
+                      </div>
+                      </div>
+                    </div>
+                  </section>
                 </section>
-            </template>
-            
-            
-            <script>
+              </template>
+  
+              <script>
                 let $carousel_inner= document.querySelector('#carousel-inner')
-
-                if(!$carousel_inner.firstElementChild){
-                    const $template= document.querySelector('#template_carousel-brand_item').content
-                    const $fragment = document.createDocumentFragment()
-                    const carpeta_brands = '/web_acerocenter/static/img/site/home/marcas/'
-                    const logo_brands = [
-                    {
-                        nombre_archivo:'adelca.png',
-                    },
-    
-                    {
-                        nombre_archivo:'corplac.png',
-                    },
-    
-                    {
-                        nombre_archivo:'esab.png',
-                    },
-    
-                    {
-                        nombre_archivo:'eternit.png',
-                    },
-    
-                    {
         
-                        nombre_archivo:'ferrotorre.png',
-                    },
-    
-                    {
-                        nombre_archivo:'ideal-alambrec.png',
-                    },
-    
-                    {
-                        nombre_archivo:'imptek.png',
-                    },
-    
-                    {
-                        nombre_archivo:'intaco.png',
-                    },
-    
-                    {
-                        nombre_archivo:'kubiec.jpg',
-                    },
-    
-                    {
-                        nombre_archivo:'novacero.png',
-                    },
-    
-                    {
-                        nombre_archivo:'plastigama.png',
-                    },
-    
-                    {
-                        nombre_archivo:'stanley.png',
-                    },
-    
-                    {
-                        nombre_archivo:'ultraflex.png',
-                    },
-    
-                    {
-                        nombre_archivo:'unacem.png',
-                    },
-    
-                    {
-                        nombre_archivo:'unidas.png',
-                    }
+                if(!$carousel_inner.firstElementChild){
+                  const $template= document.querySelector('#template_carousel-brand_item').content
+                  const $fragment = document.createDocumentFragment()
+                  const carpeta_brands = '/web_ulda/static/img/site/home/marcas/'
+                  const logo_brands = [
+                  {
+                    nombre_archivo:'marca1.png',
+                  },
+          
+                  {
+                    nombre_archivo:'marca2.png',
+                  },
+          
+                  {
+                    nombre_archivo:'marca3.png',
+                  },
+          
+                  {
+                    nombre_archivo:'marca4.png',
+                  },
+          
+          
                 ]
                 
-                    logo_brands.map(el=>{
-                        let ruta_imagen=(`${carpeta_brands}${el.nombre_archivo}`)
-                        $template.querySelector('img').setAttribute('src', ruta_imagen)
-                        let $clone = document.importNode($template, true)
-                        $fragment.appendChild($clone)
-                    })
-                    
-                    $carousel_inner.insertBefore($fragment, $carousel_inner.firstElementChild)
-                    $carousel_inner.querySelector('.carousel-item').classList.add('active');
+                  logo_brands.map(el=>{
+                    let ruta_imagen=(`${carpeta_brands}${el.nombre_archivo}`)
+                    $template.querySelector('img').setAttribute('src', ruta_imagen)
+                    let $clone = document.importNode($template, true)
+                    $fragment.appendChild($clone)
+                  })
+                  
+                  $carousel_inner.insertBefore($fragment, $carousel_inner.firstElementChild)
+                  $carousel_inner.querySelector('.carousel-item').classList.add('active');
                 }
-            </script>
+              </script>
+            </section>
+  
+            
+            
+            
+            <div class="oe_structure" data-name="Style 2">
+              <section class="container te_offer_div" data-name="Offer Timer Style 2">
+                <div class="row py-5">
+                <div class="col-lg-6 align-self-center text-center">
+                  <div class="te_offer_s2_img">
+                  <section class="te_offer_s2_img_before"/>
+                  <img class="img img-fluid d-block mx-auto" src="/web_ulda/static/img/site/home/oferta.png"/>
+                  </div>
+                </div>
+                <div class="col-lg-6 align-self-center te_offer_s2_section">
+                  <section>
+                  <h2 class="o_default_snippet_text text-center">Oferta Relámpago</h2>
+                  <div class="s_hr text-left">
+                    <hr class="border-600 s_hr_2px s_hr_solid border-primary"/>
+                  </div>
+                  </section>
+                  <section>
+                  <p class="py-3 o_default_snippet_text">
+                        Lorem ipsum dolor sit amet, eam viris essent dissentiet at, nec falli percipit petentium
+                        ut. Delenit molestie sententiae ea his....
+                      </p>
+                  </section>
+                  <section>
+                  <div class="js_timer_div">
+                    <div class="js_timer" data-date="Dec 30 2021 13:00:00" data-name="Timer"/>
+                  </div>
+                  </section>
+                  <section>
+                  <div class="s_btn pt16 pb16 mt16 te_inline_but text-center" data-name="Buttons">
+                    <a href="#" class="btn btn-outline-ulda btn-strech te_theme_button o_default_snippet_text">Know
+                          more
+                        </a>
+                  </div>
+                  </section>
+                </div>
+                </div>
+              </section>
+            </div>
+  
+            
+            <section class="s_three_columns pb32" data-name="Style 2">
+              <section data-name="Title style 2" class="title_ulda">
+                <div class="container">
+                  <div class="row s_nb_column_fixed">
+                  <div class="col-lg-12 te_title_2 pt32">
+                    <div class="te_title_sub_div">
+                    <h4 class="te_s_title_default te_title_style2 o_default_snippet_text mb-0 pb-0">LINEA DELUXE LIMITADA</h4>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </section>
+              <h2 style="text-align: center; font-weight: 700; font-size: 64px; margin-bottom: -5px;">MUJERES</h2>
+              <h3 style="text-align: center; letter-spacing: 10px;">PARA LAS MAS EXIGENTES</h3>
+              <div class="container">
+                <div class="row d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-4 s_col_no_bgcolor te_ts_img_hvr">
+                  <div class="te_3_column_left_heading card">
+                  <section class="te_img_hover_overflow">
+                    <img class="card-img-top img img-responsive te_feature_image" src="/web_ulda/static/img/site/home/3columns1.png" alt="Clarico-3 Columns Style 2"/>
+                  </section>
+                  <div class="card-body bg-100 oe_custom_bg">
+                    <p class="card-title te_three_columns_heading o_default_snippet_text">Lorem ipsum</p>
+                    <p class="card-text te_three_columns_para o_default_snippet_text">
+                            Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius. Duis
+                            meis quas vim ex, ius no oblique. Ornatus
+          
+                            <em class="o_default_snippet_text"/>
+                            cu.
+          
+                          </p>
+                    <div class="s_btn text-left pb0 pt16 text-left" data-name="Button">
+                    <a href="#" class="btn btn-strech btn-primary te_theme_button o_default_snippet_text">Know
+                              more
+                            </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 s_col_no_bgcolor te_ts_img_hvr">
+                  <div class="te_3_column_left_heading card">
+                  <section class="te_img_hover_overflow">
+                    <img class="card-img-top img img-responsive te_feature_image" src="/web_ulda/static/img/site/home/3columns2.png" alt="Clarico-3 Columns Style 2"/>
+                  </section>
+                  <div class="card-body bg-100 oe_custom_bg">
+                    <p class="card-title te_three_columns_heading o_default_snippet_text">Lorem ipsum
+                          </p>
+                    <p class="card-text te_three_columns_para o_default_snippet_text">
+                            Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius. Duis
+                            meis quas vim ex, ius no oblique. Ornatus
+          
+                            <em class="o_default_snippet_text"/>
+                            cu.
+          
+                          </p>
+                    <div class="s_btn text-left pb0 pt16 text-left" data-name="Button">
+                    <a href="#" class="btn btn-strech btn-primary te_theme_button o_default_snippet_text">Know
+                              more
+                            </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 s_col_no_bgcolor te_ts_img_hvr">
+                  <div class="te_3_column_left_heading card">
+                  <section class="te_img_hover_overflow">
+                    <img class="card-img-top img img-responsive te_feature_image" src="/web_ulda/static/img/site/home/3columns3.png" alt="Clarico-3 Columns Style 2"/>
+                  </section>
+                  <div class="card-body bg-100 oe_custom_bg">
+                    <p class="card-title te_three_columns_heading o_default_snippet_text">Lorem ipsum
+                          </p>
+                    <p class="card-text te_three_columns_para o_default_snippet_text">
+                            Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius. Duis
+                            meis quas vim ex, ius no oblique. Ornatus
+          
+                            <em class="o_default_snippet_text"/>
+                            cu.
+          
+                          </p>
+                    <div class="s_btn text-left pb0 pt16 text-left" data-name="Button">
+                    <a href="#" class="btn btn-strech btn-primary te_theme_button o_default_snippet_text">Know
+                              more
+                            </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+  
+              <section class="container te_max_width_4_column pt32 pb32" data-name="Style 1">
+              <div class="row">
+                <div class="col-lg-4">
+                <section class="te_ts_img_hvr mb16 t_img_hover_1 te_offer_s1_1img">
+                  <a class="te_img_hover_overflow" href="#" style="display: block;">
+                  <img alt="Clarico-Offer style 1" class="img img-responsive img-fluid mx-auto d-block te_img_hover_light" src="/web_ulda/static/img/site/home/grid/grid1.png"/>
+                  </a>
+                </section>
+                <section class="te_ts_img_hvr t_img_hover_1 te_offer_s1_3img">
+                  <a class="te_img_hover_overflow" href="#" style="display: block;">
+                  <img alt="Clarico-Offer style 1" class="img img-responsive img-fluid mx-auto d-block te_img_hover_light" src="/web_ulda/static/img/site/home/grid/grid2.png"/>
+                  </a>
+                </section>
+                </div>
+                <div class="col-lg-4 p-0">
+                <div class="text-center px-5 py-3">
+                  <h2 class="mb16 o_default_snippet_text">
+                        My Heading 2
+                      </h2>
+                  <p class="mb-4 o_default_snippet_text">
+                        Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius. Duis meis quas
+                        vim ex, ius no oblique phaedrum pertinacia.
+                      </p>
+                  <section class="s_btn" data-name="Button">
+                  <a href="#" class="btn btn-strech btn-outline-ulda te_theme_button o_default_snippet_text">
+                          Know more
+                        </a>
+                  </section>
+                </div>
+                <section class="te_ts_img_hvr te_offer_middle_img t_img_hover_1 te_offer_s1_1img">
+                  <a class="te_img_hover_overflow" href="#" style="display: block;">
+                  <img alt="Clarico-Offer style 1" class="img img-responsive img-fluid mx-auto d-block te_img_hover_light" src="/web_ulda/static/img/site/home/grid/grid3.png"/>
+                  </a>
+                </section>
+                </div>
+                <div class="col-lg-4">
+                <section class="mb16 te_ts_img_hvr t_img_hover_1 te_offer_s1_2img">
+                  <a class="te_img_hover_overflow" href="#" style="display: block;">
+                  <img alt="Clarico-Offer style 1" class="img img-responsive img-fluid mx-auto d-block te_img_hover_light" src="/web_ulda/static/img/site/home/grid/grid4.png"/>
+                  </a>
+                </section>
+                <section class="te_ts_img_hvr t_img_hover_1 te_offer_s1_2img">
+                  <a class="te_img_hover_overflow" href="#" style="display: block;">
+                  <img alt="Clarico-Offer style 1" class="img img-responsive img-fluid mx-auto d-block te_img_hover_light" src="/web_ulda/static/img/site/home/grid/grid5.png"/>
+                  </a>
+                </section>
+                </div>
+              </div>
+              </section>
+  
+  
+            <section data-name="Title style 2" class="title_ulda">
+              <div class="container">
+                <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 te_title_2 pt32">
+                  <div class="te_title_sub_div">
+                  <h4 class="te_s_title_default te_title_style2 o_default_snippet_text mb-0 pb-0">LINEA DELUXE LIMITADA</h4>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+            <h2 style="text-align: center; font-weight: 700; font-size: 64px; margin-bottom: -5px;">Hombres</h2>
+            <h3 style="text-align: center; display: none;">PARA LAS MAS EXIGENTES</h3>
+  
+  
+            <section class="s_newsletter_block pt64 pb64 oe_img_bg oe_custom_bg" style="background-image: url('/web_ulda/static/img/site/home/newsletter.png'); background-position: center;" data-name="Newsletter block">
+              <div class="container">
+                <div class="row">
+                <div class="col-lg-12 pt32 pb32">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <h1 class="text-uppercase font-weight-bold o_default_snippet_text">Siempre primero.</h1>
+                      <p class="o_default_snippet_text">Sé el primero en enterarte de las noticias, tendencias y productos más recientes, </p>
+                    </div>
+                  <div class="col-lg-6 input-group js_subscribe" data-list-id="1">
+                    <div class="content-input-email">
+                      <input type="email" name="email" class="js_subscribe_email form-control" placeholder="su correo electrónico..."/>
+                      <span class="input-group-append">
+                      <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_default_snippet_text te_theme_button">Suscribir</a>
+                      <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_default_snippet_text" disabled="disabled">Agradecimientos</a>
+                      </span>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+  
+          </section>
         </template>
 
         <!--================== Web Page Corporativo =============================-->
-        <template id="mypage_corporativo" name="My Page Corporativo">
-            <section class="acerocenter">
-                <div class="oe_structure oe_empty">
-                    <section class="container te_offer_div" data-name="Offer Timer Style 2">
-                        <div class="row py-5">
-                        <div class="col-lg-7 align-self-center text-center">
-                            <div class="te_offer_s2_img">
-                            <section class="te_offer_s2_img_before"/>
-                            <img class="img img-fluid d-block mx-auto" src="/web_acerocenter/static/img/site/corporativo/corporativo_1.png"/>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 align-self-center te_offer_s2_section">
-                            <section>
-                            <h2 class="o_default_snippet_text">Acerocenter</h2>
-                            <div class="s_hr text-left">
-                                <hr class="border-600 s_hr_2px s_hr_solid w-25 border-primary"/>
-                            </div>
-                            </section>
-                            <section>
-                            <p class="py-3 o_default_snippet_text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia, nisl eget auctor tempor, elit erat tristique odio, quis interdum eros felis ut nisl. Vestibulum quam ipsum, fringilla sit amet dictum ac, fringilla sit amet augue. Vestibulum molestie sem vel enim euismod blandit. Quisque in massa sed magna ultrices vulputate. Cras volutpat sem et mi convallis, a hendrerit diam fermentum. 
-                                        </p>
-                            </section>
-                            <section>
-                            <div class="js_timer_div"/>
-                            </section>
-                            <section>
-                            <div class="s_btn pt16 pb16 mt16 te_inline_but" data-name="Buttons">
-                                <a href="#" class="btn btn-primary te_theme_button o_default_snippet_text">Know
-                                                more
-                                            </a>
-                            </div>
-                            </section>
-                        </div>
-                        </div>
-                    </section>
-
-                    <section class="te_3_column_style_8 pt32 pb32" data-name="Style 8">
-                        <div class="container">
-                        <div class="row d-flex align-items-stretch">
-                            <section class="col-lg-4 col-md-4 te_3_col_section">
-                            <div class="te_3_col_img mb-2 t_img_hover_1 te_img_effect2">
-                                <a href="#">
-                                <img class="card-img-top img img-responsive te_feature_image" src="/web_acerocenter/static/img/site/corporativo/corporativo_2.png"/>
-                                </a>
-                            </div>
-                            <div class="te_3_col_block">
-                                <section class="text-center pb16 pt16 te_3_col_content">
-                                <h5 class="mb0">
-                                    <a href="#" class="te_fix_content_h3 o_default_snippet_text">My Heading 5</a>
-                                </h5>
-                                <span class="o_default_snippet_text">Lorem ipsum dolor sit amet, eam et req</span>
-                                </section>
-                            </div>
-                            </section>
-                            <section class="col-lg-4 col-md-4 te_3_col_section">
-                            <div class="te_3_col_block mb-2">
-                                <section class="text-center pb16 pt16 te_3_col_content">
-                                <h5 class="mb0">
-                                    <a href="#" class="te_fix_content_h3 o_default_snippet_text">My Heading 5</a>
-                                </h5>
-                                <span class="o_default_snippet_text">Lorem ipsum dolor sit amet, eam et req</span>
-                                </section>
-                            </div>
-                            <div class="te_3_col_img t_img_hover_1 te_img_effect2">
-                                <a href="#">
-                                <img class="card-img-top img img-responsive te_feature_image" src="/web_acerocenter/static/img/site/corporativo/corporativo_3.png"/>
-                                </a>
-                            </div>
-                            </section>
-                            <section class="col-lg-4 col-md-4 te_3_col_section">
-                            <div class="te_3_col_img mb-2 t_img_hover_1 te_img_effect2">
-                                <a href="#">
-                                <img class="card-img-top img img-responsive te_feature_image" src="/web_acerocenter/static/img/site/corporativo/corporativo_4.png"/>
-                                </a>
-                            </div>
-                            <div class="te_3_col_block">
-                                <section class="text-center pb16 pt16 te_3_col_content">
-                                <h5 class="mb0">
-                                    <a href="#" class="te_fix_content_h3 o_default_snippet_text">My Heading 5</a>
-                                </h5>
-                                <span class="o_default_snippet_text">Lorem ipsum dolor sit amet, eam et req</span>
-                                </section>
-                            </div>
-                            </section>
-                        </div>
-                        </div>
-                    </section>
-
-                    <section class="pb32 pt32" data-name="Style 1">
-                        <div class="container te_max_width_3_blocks">
-                        <div class="row">
-                            <section class="col-md-4 px-lg-4 te_menu_flip_box">
-                            <div class="card">
-                                <section class="te_service_icon te_menu_flip_box_inner pb48">
-                                <span class="te_three_blocks_icon bg-white rounded-circle text-center te_span_icon_block">
-                                    <span class="fa fa-bicycle align-middle fa-2x te_icon_styling"/>
-                                </span>
-                                </section>
-                                <section class="text-center pt-4 card-body" style="background-color:#F7F7F7 !important">
-                                <section>
-                                    <h4 class="te_three_blocks_heading m-4 o_default_snippet_text">
-                                                        My Heading 4
-                                                    </h4>
-                                </section>
-                                <section>
-                                    <p class="p-4 pt0 te_three_blocks_content o_default_snippet_text">
-                                                        Lorem ipsum dolor sit amet, eam et
-                                                        reque justo quidam, te est audire
-                                                        persius Duis meis quas vim ex, ius no
-                                                        oblique phaedrum
-                                                    </p>
-                                </section>
-                                </section>
-                            </div>
-                            </section>
-                            <section class="col-md-4 px-lg-4 te_menu_flip_box">
-                            <div class="card">
-                                <section class="te_service_icon te_menu_flip_box_inner pb48">
-                                <span class="te_three_blocks_icon bg-white rounded-circle text-center te_span_icon_block">
-                                    <span class="fa fa-clone align-middle fa-2x te_icon_styling"/>
-                                </span>
-                                </section>
-                                <section class="text-center pt-4 card-body" style="background-color:#F7F7F7 !important">
-                                <section>
-                                    <h4 class="te_three_blocks_heading m-4 o_default_snippet_text">
-                                                        My Heading 4
-                                                    </h4>
-                                </section>
-                                <section>
-                                    <p class="p-4 pt0 te_three_blocks_content o_default_snippet_text">
-                                                        Lorem ipsum dolor sit amet, eam et
-                                                        reque justo quidam, te est audire
-                                                        persius Duis meis quas vim ex, ius no
-                                                        oblique phaedrum
-                                                    </p>
-                                </section>
-                                </section>
-                            </div>
-                            </section>
-                            <section class="col-md-4 px-lg-4 te_menu_flip_box">
-                            <div class="card">
-                                <section class="te_service_icon te_menu_flip_box_inner pb48">
-                                <span class="te_three_blocks_icon bg-white rounded-circle text-center te_span_icon_block">
-                                    <span class="fa fa-sort-amount-asc align-middle fa-2x te_icon_styling"/>
-                                </span>
-                                </section>
-                                <section class="text-center pt-4 card-body" style="background-color:#F7F7F7 !important">
-                                <section>
-                                    <h4 class="te_three_blocks_heading m-4 o_default_snippet_text">
-                                                        My Heading 4
-                                                    </h4>
-                                </section>
-                                <section>
-                                    <p class="p-4 pt0 te_three_blocks_content o_default_snippet_text">
-                                                        Lorem ipsum dolor sit amet, eam et
-                                                        reque justo quidam, te est audire
-                                                        persius Duis meis quas vim ex, ius no
-                                                        oblique phaedrum
-                                                    </p>
-                                </section>
-                                </section>
-                            </div>
-                            </section>
-                        </div>
-                        </div>
-                    </section>
-
-                    <section class="te_s_text_image pt32 pb32" data-name="Text - Image - 3">
-                        <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                            <p class="te_title_text_2 o_default_snippet_text">Lorem ipsum dolor</p>
-                            <h3 class="te_sub_title_text_2 mb16 o_default_snippet_text">My Heading 3</h3>
-                            <p class="te_conteant_text_2 o_default_snippet_text">
-                                            Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius.
-                
-                                            <br/>
-                                            Duis meis quas vim ex, ius no oblique phaedrum pertinacia. Ornatus referrentur nec,
-                
-                                        </p>
-                            <p class="te_conteant_text_2 mb32 o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam,
-                                        </p>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                <ul class="te_left_arrow_2">
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">phaedrum pertinacia</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">Mel in iudico</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">consequat constituam</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">phaedrum pertinacia</a>
-                                    </li>
-                                    </section>
-                                </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                <ul class="te_left_arrow_2">
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">phaedrum pertinacia</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">Mel in iudico</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">consequat constituam</a>
-                                    </li>
-                                    </section>
-                                    <section>
-                                    <li>
-                                        <a href="#" class="o_default_snippet_text">phaedrum pertinacia</a>
-                                    </li>
-                                    </section>
-                                </ul>
-                                </div>
-                            </div>
-                            <div class="s_btn text-left pt16 pb16 mt16" data-name="Buttons">
-                                <a href="#" class="btn btn-secondary te_theme_button o_default_snippet_text">Know more</a>
-                            </div>
-                            </div>
-                            <div class="col-lg-6 te_img_size1">
-                            <div class="t_img_hover_1">
-                                <img src="/web_acerocenter/static/img/site/corporativo/corporativo_5.png" class="img img-fluid mx-auto" alt="Clarico-Text-Image-2"/>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </section>
+        <template id="mypage_faq" name="My Page FAQ">
+          <section class="ulda">
+            <section class="s_faq_collapse" data-name="Accordion">
+              <div class="container te_section_accordion">
+                <div class="row s_nb_column_fixed">
+                    </div>
+                <div class="row s_col_no_bgcolor">
+                <div class="col-lg-12 pt16 pb16">
+                  <div id="myCollapse" class="accordion" role="tablist">
+                  <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098859">
+                            ¿Dónde estamo ubicados?
+                  </a>
+                    <div class="collapse show" role="tabpanel" id="myCollapseTab1626057098859">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                                bonorum inermis efficiantur ad, nec at detracto repudiandae, erat denique
+                                percipit at est.
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098860">Pregunta diferente 2
+                          </a>
+                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098860">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                                bonorum inermis efficiantur
+                              </p>
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                                bonorum inermis efficiantur
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098861">Lorem ipsum dolor
+                          </a>
+                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098861">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                   <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098862">Lorem ipsum dolor
+                          </a>
+                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098862">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                  
+                   <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098863">Lorem ipsum dolor
+                          </a>
+                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098863">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                  
+                   <div class="card bg-white">
+                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098864">Lorem ipsum dolor
+                          </a>
+                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098864">
+                    <div class="card-body">
+                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                              </p>
+                    </div>
+                    </div>
+                  </div>
+                  </div>
                 </div>
+                </div>
+              </div>
             </section>
+  
+  
+            <form action="/website_form/" method="post" class="s_website_form container-fluid mt32 o_fake_not_editable" enctype="multipart/form-data" data-name="Form Builder" data-model_name="mail.mail" data-success_page="/contactus-thank-you">
+              <div class="container">
+                <h1 class="o_form_heading">Send an E-mail</h1>
+                <div class="row form-group form-field d-none">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="email_to">
+                    
+                  </label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="text" class="form-control o_website_form_input" name="email_to" value="prueba@correo.com"/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
+                <div class="col-lg-6 col-md-4">
+                  <label class="col-form-label" for="Su nombre">Nombres</label>
+                  <input type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_custom">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="Número de teléfono">Número de teléfono</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="text" class="form-control o_website_form_input" name="Número de teléfono"/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="email_from">Email</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="email" class="form-control o_website_form_input" name="email_from" required=""/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_custom">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="Su compañía">Su compañía</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="text" class="form-control o_website_form_input" name="Su compañía"/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="subject">Asunto</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <input type="text" class="form-control o_website_form_input" name="subject" required=""/>
+                </div>
+                </div>
+                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4">
+                  <label class="col-form-label" for="Su pregunta">Su pregunta</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                  <textarea class="form-control o_website_form_input" name="Su pregunta" required=""/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
+                  <button class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Enviar</button>
+                  <span id="o_website_form_result"/>
+                </div>
+                </div>
+              </div>
+              </form>
+          </section>
         </template>
 
         <!--================== Acerocenter Page Sucursales =============================-->

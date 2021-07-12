@@ -26,6 +26,7 @@
         'templates/header.xml',
         'templates/footer.xml',
         'templates/dev.xml',
+        'templates/shop.xml',
         # 'templates/web_pages_snnipets.xml',
     ],
     # only loaded in demonstration mode

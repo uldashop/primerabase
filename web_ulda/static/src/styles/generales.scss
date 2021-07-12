@@ -43,8 +43,10 @@ CLASES Y VARIABLES GENERALES
 
 
     // --fuente-titulos:'Montserrat', sans-serif;
+    // --fuente-general:'Nunito', sans-serif;
     --fuente-titulos:'Open Sans', sans-serif;; 
-    --fuente-general:'Nunito', sans-serif;
+    --fuente-general:'Open Sans', sans-serif;; 
+
     
     --t1:68px;
     --t2:45px;
@@ -73,6 +75,7 @@ CLASES Y VARIABLES GENERALES
 body{
     font-family: var(--fuente-general)!important;
     font-size: var(--texto);
+    color: var(--web__color4);
 }
 
 p{
@@ -110,7 +113,6 @@ hr.border-primary{
 
 
 //botones
-
 #wrapwrap{
 
     .btn{

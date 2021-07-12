@@ -38,6 +38,7 @@
             border-radius: 0 40% 40% 0;
             top: 0px;
             bottom: 0px;
+            background-color: var(--web__color4)!important;
         }
     }
 
@@ -74,15 +75,29 @@
 }
 
 
-.te_header_top{
-}
 
 
+//header y header fixed
 header, header.affixed{
 
     .te_header_navbar{
         background-color: var(--aqua-color-1-40)!important; 
         padding: 10px 0!important;
+
+        #top_menu_collapse{
+            ul#top_menu{
+                .nav-item{
+                    border-left: none;
+
+                    .nav-link{
+                        span{
+                            font-size:14px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
 
         @media (max-width:991px){
             .navbar-brand{
@@ -90,12 +105,13 @@ header, header.affixed{
             }
         }
         
-        .container{
-
-        }
+        
     }   
 }
 
+
+
+//solo header fixed
 header.affixed{
     .te_header_navbar{
         
