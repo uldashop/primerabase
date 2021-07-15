@@ -270,11 +270,6 @@
         </template>
 
 
-        <!-- <template id="myweb_header_icons" inherit_id="theme_clarico_vega.header_wishlist">
-            <xpath expr="//a[hasclass('te_wish_icon_head')]" position="inside">
-                <img src="/web_ulda/static/img/site/header/phone.png" alt=""/>
-            </xpath>
-        </template> -->
 
     </data>
 </odoo>

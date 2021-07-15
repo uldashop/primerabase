@@ -9,14 +9,11 @@
                 </div>
                 <div class="o_panel_body">
                     <!--Web page corporativo -->
-                    <t t-snippet="web_acerocenter.mypage_home"
-                        t-thumbnail="/web_acerocenter/static/img/site/customize/aqua-corporativo.jpg"/>
-
-                    <t t-snippet="web_acerocenter.mypage_corporativo"
-                       t-thumbnail="/web_acerocenter/static/img/site/customize/aqua-corporativo.jpg"/>
+                    <t t-snippet="web_ulda.mypage_home"
+                        t-thumbnail="/web_ulda/static/img/site/customize/aqua-corporativo.jpg"/>
                     
-                    <t t-snippet="web_acerocenter.mypage_legal"
-                        t-thumbnail="/web_acerocenter/static/img/site/customize/aqua-corporativo.jpg"/>
+                    <t t-snippet="web_ulda.mypage_faq"
+                        t-thumbnail="/web_ulda/static/img/site/customize/aqua-corporativo.jpg"/>
                 </div>
             </xpath>
         </template>
@@ -427,363 +424,160 @@
 
         <!--================== Web Page Corporativo =============================-->
         <template id="mypage_faq" name="My Page FAQ">
-          <section class="ulda">
+          <section class="ulda faqs">
+
+            <section class="container mt-4">
+              <h2 class="o_default_snippet_text">Preguntas frecuentes</h2>
+              <div class="s_hr text-left">
+              <hr class="border-600 s_hr_2px s_hr_solid border-primary"/>
+              </div>
+            </section>
             <section class="s_faq_collapse" data-name="Accordion">
               <div class="container te_section_accordion">
-                <div class="row s_nb_column_fixed">
-                    </div>
-                <div class="row s_col_no_bgcolor">
-                <div class="col-lg-12 pt16 pb16">
-                  <div id="myCollapse" class="accordion" role="tablist">
-                  <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098859">
-                            ¿Dónde estamo ubicados?
+              <div class="row s_nb_column_fixed">
+                </div>
+              <div class="row s_col_no_bgcolor">
+              <div class="col-lg-12 pt16 pb16">
+                <div id="myCollapse" class="accordion" role="tablist">
+                <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098859">
+                    ¿Dónde estamos ubicados?
+                </a>
+                <div class="collapse show" role="tabpanel" id="myCollapseTab1626057098859">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                      bonorum inermis efficiantur ad, nec at detracto repudiandae, erat denique
+                      percipit at est.
+                      </p>
+                </div>
+                </div>
+                </div>
+                <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098860">Pregunta diferente 2
                     </a>
-                    <div class="collapse show" role="tabpanel" id="myCollapseTab1626057098859">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
-                                bonorum inermis efficiantur ad, nec at detracto repudiandae, erat denique
-                                percipit at est.
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098860">Pregunta diferente 2
-                          </a>
-                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098860">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
-                                bonorum inermis efficiantur
-                              </p>
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
-                                bonorum inermis efficiantur
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098861">Lorem ipsum dolor
-                          </a>
-                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098861">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                   <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098862">Lorem ipsum dolor
-                          </a>
-                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098862">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                  
-                   <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098863">Lorem ipsum dolor
-                          </a>
-                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098863">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                  
-                   <div class="card bg-white">
-                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098864">Lorem ipsum dolor
-                          </a>
-                    <div class="collapse" role="tabpanel" id="myCollapseTab1626057098864">
-                    <div class="card-body">
-                      <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
-                                est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
-                                pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
-                              </p>
-                    </div>
-                    </div>
-                  </div>
-                  </div>
+                <div class="collapse" role="tabpanel" id="myCollapseTab1626057098860">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                      bonorum inermis efficiantur
+                      </p>
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea. Usu
+                      bonorum inermis efficiantur
+                      </p>
+                </div>
+                </div>
+                </div>
+                <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098861">Lorem ipsum dolor
+                    </a>
+                <div class="collapse" role="tabpanel" id="myCollapseTab1626057098861">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                      </p>
+                </div>
+                </div>
+                </div>
+                 <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098862">Lorem ipsum dolor
+                    </a>
+                <div class="collapse" role="tabpanel" id="myCollapseTab1626057098862">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                      </p>
+                </div>
+                </div>
+                </div>
+                
+                 <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098863">Lorem ipsum dolor
+                    </a>
+                <div class="collapse" role="tabpanel" id="myCollapseTab1626057098863">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                      </p>
+                </div>
+                </div>
+                </div>
+                
+                 <div class="card bg-white">
+                <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1626057098864">Lorem ipsum dolor
+                    </a>
+                <div class="collapse" role="tabpanel" id="myCollapseTab1626057098864">
+                <div class="card-body">
+                  <p class="card-text o_default_snippet_text">Lorem ipsum dolor sit amet, eam et reque justo quidam, te
+                      est audire persius. Duis meis quas vim ex, ius no oblique phaedrum
+                      pertinacia. Ornatus referrentur nec cu, dicam dolore vivendum ne mea.
+                      </p>
+                </div>
+                </div>
                 </div>
                 </div>
               </div>
+              </div>
+              </div>
             </section>
-  
-  
+        
+        
             <form action="/website_form/" method="post" class="s_website_form container-fluid mt32 o_fake_not_editable" enctype="multipart/form-data" data-name="Form Builder" data-model_name="mail.mail" data-success_page="/contactus-thank-you">
               <div class="container">
-                <h1 class="o_form_heading">Send an E-mail</h1>
-                <div class="row form-group form-field d-none">
-                <div class="col-lg-3 col-md-4">
-                  <label class="col-form-label" for="email_to">
-                    
-                  </label>
+              <h1 class="o_form_heading">¿QUIERES SER UN PROVEEDOR? <span>dejanos un mensaje</span></h1>
+              <div class="row form-group form-field d-none">
+              <div class="col-lg-3 col-md-4">
+                <label class="col-form-label" for="email_to">
+                
+                </label>
+              </div>
+              <div class="col-lg-7 col-md-8">
+                <input type="text" class="form-control o_website_form_input" name="email_to" value="prueba@correo.com"/>
+              </div>
+              </div>
+              <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
+                <div class="col-lg-12 col-md-4">
+                <label class="col-form-label" for="Su nombre">Nombres</label>
+                  <input type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
                 </div>
-                <div class="col-lg-7 col-md-8">
-                  <input type="text" class="form-control o_website_form_input" name="email_to" value="prueba@correo.com"/>
-                </div>
-                </div>
-                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
+                
+              </div>
+              <div class="form-group row form-field o_website_form_custom">
                 <div class="col-lg-6 col-md-4">
-                  <label class="col-form-label" for="Su nombre">Nombres</label>
-                  <input type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
-                </div>
-                <div class="col-lg-7 col-md-8">
-                  <input type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
-                </div>
-                </div>
-                <div class="form-group row form-field o_website_form_custom">
-                <div class="col-lg-3 col-md-4">
-                  <label class="col-form-label" for="Número de teléfono">Número de teléfono</label>
-                </div>
-                <div class="col-lg-7 col-md-8">
+                  <label class="col-form-label" for="Número de teléfono">Teléfono</label>
                   <input type="text" class="form-control o_website_form_input" name="Número de teléfono"/>
                 </div>
-                </div>
-                <div class="form-group row form-field o_website_form_required_custom">
-                <div class="col-lg-3 col-md-4">
+                
+                <div class="col-lg-6 col-md-4">
                   <label class="col-form-label" for="email_from">Email</label>
-                </div>
-                <div class="col-lg-7 col-md-8">
                   <input type="email" class="form-control o_website_form_input" name="email_from" required=""/>
                 </div>
+              </div>
+              
+              
+              <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
+                <div class="col-lg-12 col-md-4">
+                <label class="col-form-label" for="pregunta">Pregunta</label>
+                <textarea class="form-control o_website_form_input" name="Su pregunta" required="" rows="6"/>
                 </div>
-                <div class="form-group row form-field o_website_form_custom">
-                <div class="col-lg-3 col-md-4">
-                  <label class="col-form-label" for="Su compañía">Su compañía</label>
-                </div>
-                <div class="col-lg-7 col-md-8">
-                  <input type="text" class="form-control o_website_form_input" name="Su compañía"/>
-                </div>
-                </div>
-                <div class="form-group row form-field o_website_form_required_custom">
-                <div class="col-lg-3 col-md-4">
-                  <label class="col-form-label" for="subject">Asunto</label>
-                </div>
-                <div class="col-lg-7 col-md-8">
-                  <input type="text" class="form-control o_website_form_input" name="subject" required=""/>
-                </div>
-                </div>
-                <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
-                <div class="col-lg-3 col-md-4">
-                  <label class="col-form-label" for="Su pregunta">Su pregunta</label>
-                </div>
-                <div class="col-lg-7 col-md-8">
-                  <textarea class="form-control o_website_form_input" name="Su pregunta" required=""/>
-                </div>
-                </div>
-                <div class="form-group row">
-                <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
-                  <button class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Enviar</button>
-                  <span id="o_website_form_result"/>
-                </div>
-                </div>
+              </div>
+              <div class="form-group row">
+              <div class="col-md-8 col-lg-7">
+                <button class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Enviar</button>
+                <span id="o_website_form_result"/>
+              </div>
+              </div>
               </div>
               </form>
           </section>
         </template>
-
-        <!--================== Acerocenter Page Sucursales =============================-->
-        <template id="acerocenter_sucursales" name="Acerocenter Page Sucursales">
-          <section class="acerocenter">
-              <div id="" class="oe_structure oe_empty">
-
-                <div>
-                  <iframe src="" frameborder="0"></iframe>
-                </div>
-
-                <section class="formulario_contacto">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <div class="formulario_text">
-                          <h3>Escríbenos</h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia hic, tenetur rerum itaque corporis recusandae maxime a velit nemo tempora eius voluptatibus nulla dolorum iure ad mollitia totam aspernatur molestias ipsam ipsa repellendus beatae voluptatem!
-                          </p>
-        
-                          <div class="info_contact">
-                            <div class="row">
-                              <i class="fas fa-map-marker-alt"/>
-                              <div style="display:flex; flex-direction: column;">
-                                <span>
-                                  San Francisco, CA 560 Bush St  20 th Ave.
-                                </span>
-                                <span>
-                                  Apt 5 SAn Francisco, 230909
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-      
-                          <div class="info_contact">
-                            <div class="row">
-                              <i class="fas fa-phone"/>
-                              <div style="display:flex; flex-direction: column;">
-                                <span>
-                                  +01 2323 7328 322
-                                </span>
-                                <span>
-                                  +01 2323 7328 322
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-      
-                          <div class="info_contact">
-                            <div class="row">
-                              <i class="fas fa-globe-americas"/>
-                              <div style="display:flex; flex-direction: column;">
-                                <span>
-                                  email@acerocenter.com
-                                </span>
-                                <span>
-                                  www.acerocenter.com
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <form action="/website_form/" method="post" class="s_website_form container-fluid mt32 o_fake_not_editable" enctype="multipart/form-data" data-name="Form Builder" data-model_name="mail.mail" data-success_page="/contactus-thank-you">
-                          <div class="container">
-                            <!-- <h1 class="o_form_heading">Send an E-mail</h1> -->
-                            <div class="row form-group form-field d-none">
-                            <div class="col-lg-3 col-md-4">
-                              <label class="col-form-label" for="email_to">
-                                
-                              </label>
-                            </div>
-                            <div class="col-lg-7 col-md-12">
-                              <input type="text" class="form-control o_website_form_input" name="email_to" value="jgarcia@opa-consulting.com"/>
-                            </div>
-                            </div>
-                            <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
-                            <div class="col-lg-12 col-md-12">
-                              <input placeholder="Nombre" type="text" class="form-control o_website_form_input" name="Su nombre" required=""/>
-                            </div>
-                            </div>
-                          
-                            <div class="form-group row form-field o_website_form_custom">
-                            <div class="col-lg-6 col-md-12">
-                              <input placeholder="Teléfono" type="text" class="form-control o_website_form_input" name="Número de teléfono"/>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                              <input placeholder="Email" type="email" class="form-control o_website_form_input" name="email_from" required=""/>
-                              </div>
-                            </div>
-              
-                            <div class="form-group row form-field o_website_form_custom">
-                            <div class="col-lg-6 col-md-12">
-                              <input placeholder="Ciudad" type="text" class="form-control o_website_form_input" name="Su compañía"/>
-                            </div>
-              
-                            <div class="col-lg-6 col-md-12">
-                              <input type="file" class="form-control o_website_form_input" name="Custom Subir archivo"/>
-                              </div>
-                            </div>
-                            
-                            <div class="form-group row form-field o_website_form_custom o_website_form_required_custom">
-                            
-                            <div class="col-lg-12 col-md-12">
-                              <textarea placeholder="Requerimiento" class="form-control o_website_form_input" name="Su pregunta" required=""/>
-                            </div>
-                            </div>
-                            
-                            <div class="form-group row">
-                            <div class=" col-md-8 col-lg-12">
-                              <button class="w-100 btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Enviar</button>
-                              <span id="o_website_form_result"/>
-                            </div>
-                            </div>
-                          </div>
-                          </form>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-          </section>
-  
-         
-          
-      </template>
-    
-        <!--================== Page Legal =============================-->
-        <template id="mypage_legal" name="My Page Legal">
-            <section class="acerocenter">
-                <div id="wrap" class="oe_structure oe_empty"/>
-                <!-- <section class="aqua_standar_hero">
-                    <img src="/web_acerocenter/static/img/site/page_extras/aqua_legal_hero.png" alt=""/>
-                </section> -->
-
-                <div id="wrap" class="oe_structure oe_empty"/>
-                <section class="myweb_legal_texto">
-                    <div class="container">
-                        <h1>Información Legal</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ipsa dolorem possimus eos obcaecati eum laudantium provident alias dignissimos sint sed a ea odit temporibus suscipit aliquid hic. Iste ratione blanditiis dolorum cumque nesciunt commodi iure voluptate vero assumenda ipsum, recusandae, amet deleniti perferendis non? Magnam minima dolorem cum ipsam!
-                        </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nesciunt ad ea quaerat ut laborum, temporibus illum! Odit esse dolores provident. Nesciunt magni, eligendi in inventore ex corrupti eos! Eius voluptates dignissimos ad temporibus, odio deleniti dolore quaerat eos, eligendi sapiente quibusdam ducimus excepturi molestiae id, facilis animi soluta distinctio! 
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti cumque repudiandae quibusdam nulla est aut nostrum odit molestias, iure inventore perferendis a, praesentium adipisci rerum deserunt sunt accusantium ab ut maxime mollitia soluta! Consectetur molestiae impedit fugit vel animi? Voluptatum quia illum dolorem quae voluptas natus veniam voluptate totam expedita.</p>
-
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolores aut, odit vel qui quam mollitia! Error nisi distinctio provident, eaque nobis quae officia praesentium. Dolorum, incidunt quaerat! Iure pariatur dolores magni rerum hic architecto veniam fuga magnam iste tenetur, ea nam, cumque sed odio veritatis neque error earum temporibus?
-                        </p>
-
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi aliquam quisquam accusantium corrupti facere sed praesentium! Dicta eaque fugit, blanditiis fugiat eveniet ipsa accusamus qui molestiae consequuntur molestias, omnis perferendis porro mollitia architecto earum rem adipisci! Officiis, quis? Natus illum sit nihil unde dolorum aut libero! Obcaecati soluta a enim.
-                        </p>
-                    </div>
-                    
-                </section>
-            </section>
-        </template>
-
-        <!--================== web Shop Hero =============================-->
-        <template id="myweb_shop_hero" name="myweb shop hero" inherit_id="website_sale.products">
-            <xpath expr="//div[@id='wrap']" position="before">
-                <div class="aqua" >
-                    <section class="banner_standar">
-                        <img src="/web_acerocenter/static/img/site/pages_extras/shop_hero.png" alt=""/>
-                    </section>
-                </div>
-            </xpath>
-        </template>
-        
-
-        <!-- <template id="aqua_product" name="Aqua product" inherit_id="website_sale.product">
-            <xpath expr="//div[@id='wrap']" position="before">
-                
-                <section class="aqua_product_bg">
-                    <img src="/web_acerocenter/static/img/site/general/product_bg.png" alt=""/>
-                </section>
-                
-            </xpath>
-        </template> -->
-
-    <!-- <template id="aqua_page_legal" name="Aqua Page Legal">
-        <div id="wrap" class="oe_structure oe_empty"/>
-        <section class="aqua">
-            
-        </section>
-    </template> -->
 
         
     </data>

@@ -19,7 +19,7 @@ CLASES Y VARIABLES GENERALES
   --web__color2:#AAABD3;
   --web__color3:#353866;
   --web__color4:#424242;
-  --alpha:#353866!important;
+  --alpha:#424242!important;
   --primary:#353866!important;
   --fuente-titulos:"Open Sans", sans-serif;
   --fuente-general:"Open Sans", sans-serif;
@@ -684,8 +684,11 @@ header .te_header_navbar #top_menu_collapse ul#top_menu .nav-item .nav-link span
   font-size: 14px;
 }
 
+#product_details .te_prod_label {
+  margin-bottom: 10px;
+}
 #product_details .variant_attribute {
-  border-bottom: 0.5px solid #424242 !important;
+  border-bottom: 0.5px solid #8c8c8c !important;
 }
 #product_details .js_add_cart_variants > li:first-child {
   margin-bottom: 20px;
@@ -779,7 +782,7 @@ header .te_header_navbar #top_menu_collapse ul#top_menu .nav-item .nav-link span
   justify-content: center;
 }
 #product_details .product_price {
-  border-bottom: 0.5px solid black;
+  border-bottom: 0.5px solid #8c8c8c;
 }
 #product_details .product_price .oe_price {
   font-weight: 400;

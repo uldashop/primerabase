@@ -41,10 +41,12 @@
 
 #product_details{
 
-   
+    .te_prod_label{
+        margin-bottom: 10px;
+    }
 
     .variant_attribute{
-        border-bottom: 0.5px solid #424242!important;
+        border-bottom: 0.5px solid #8c8c8c!important;
     } 
 
     .js_add_cart_variants {
@@ -163,7 +165,7 @@
     }
 
     .product_price{
-        border-bottom: 0.5px solid black;
+        border-bottom: 0.5px solid #8c8c8c;
         
         .oe_price{
             font-weight: 400;

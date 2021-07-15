@@ -25,9 +25,9 @@
         'templates/assets.xml',
         'templates/header.xml',
         'templates/footer.xml',
-        'templates/dev.xml',
         'templates/shop.xml',
-        # 'templates/web_pages_snnipets.xml',
+        'templates/web_pages_snnipets.xml',
+        # 'templates/dev.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

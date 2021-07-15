@@ -46,9 +46,26 @@
 
                                 <div class="columna columna_center columna2">
                                     <div class="columna_content">
-                                        <h5>Matriz</h5>
-                                        <span>Av. Mariscal Sucre 527-252 y Diego Céspedes</span>
-                                        <span class="d-block">Quito-Ecuador</span>
+                                        <h5>Enlaces rapidos</h5>
+                                        <a href="#" class="d-block mb-2">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span>Enlace rápido</span>
+                                        </a>
+
+                                        <a href="#" class="d-block mb-2">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span>Enlace rápido</span>
+                                        </a>
+
+                                        <a href="#" class="d-block mb-2">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span>Enlace rápido</span>
+                                        </a>
+
+                                        <a href="#" class="d-block mb-2">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span>Enlace rápido</span>
+                                        </a>
                                     </div>
                                 </div>
 
