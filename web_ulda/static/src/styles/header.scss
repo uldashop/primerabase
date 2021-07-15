@@ -43,6 +43,13 @@
     }
 
     .te_header_style_2_right{
+
+        .te_wish_icon_head, .o_wsale_my_cart{
+            sup{
+                background: var(--web__color2)!important;
+            }
+        }
+
         .ulda_user_account{
             display: inline-block;
         }

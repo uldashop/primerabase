@@ -72,6 +72,16 @@
                 text-decoration: underline;
             }
         }
+
+        .columna3{
+            .location{
+                margin-bottom: 20px;
+                .location_info{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
     }
 
     @media(max-width:999px){

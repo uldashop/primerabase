@@ -54,26 +54,49 @@
 
                                 <div class="columna columna_center columna3">
                                     <div class="columna_content">
-                                        <h5>Contacto</h5>
-                                        <a href="#" class="d-block mb-2">info@acerocenter.com</a>
-                                        <a href="#" class="d-block mb-2">+593 412 34567</a>
+                                        <h5>Contáctanos</h5>
+
+                                        
+                                            <div class="location">
+                                                <h6>Matriz</h6>
+                                                <div class="location_info">
+                                                    <a href="#">
+                                                        <i class="fas fa-phone"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <i class="fas fa-map"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <i class="fas fa-envelope"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="location">
+                                                <h6>Sucursal</h6>
+                                                <div class="location_info">
+                                                    <a href="#">
+                                                        <i class="fas fa-phone"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <i class="fas fa-map"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <i class="fas fa-envelope"></i>
+                                                        <span>9999999</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        
                                     </div>
                                 </div>
 
-                                <!-- <div class="columna columna3">
-                                    <h5>Conéctate</h5>
-                                    <a href="#" class="d-block mb-2">Contacto</a>
-                                    <a href="#" class="d-block mb-2">Blog</a>
-                                    <a href="#" class="d-block mb-2">Corporativo</a>
-                                </div>
-
-                                <div class="columna columna4">
-                                    <h5>Conéctate</h5>
-                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-linkedin"></i>Linkedin</a>
-                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-youtube"></i>Youtube</a>
-                                    <a href="#" class="d-block mb-2"><i class="mr-2 fab fa-facebook"></i>Facebook</a>
-                                    
-                                </div> -->
+                            
                             </div>
                         </div>
                     </section>

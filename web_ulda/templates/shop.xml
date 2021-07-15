@@ -21,6 +21,11 @@
                   <t t-set="rating_count" t-value="product.rating_count"/>
                 </t>
             </xpath>
+
+            <xpath expr="." position="inside">
+                <script src="http://127.0.0.1:5500/addons/web_ulda/static/src/js/prueba.js">
+                </script>
+            </xpath>
         </template>
     </data>
 </odoo>
