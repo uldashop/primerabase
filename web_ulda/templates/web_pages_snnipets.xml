@@ -5,7 +5,7 @@
             <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_header')]" position="before">
                 <!-- Web Extra pages -->
                 <div class="o_panel_header">
-                    Acerocenter Pages
+                    Ulda Pages
                 </div>
                 <div class="o_panel_body">
                     <!--Web page corporativo -->
