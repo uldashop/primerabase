@@ -18,7 +18,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly pepe
+    # any module necessary for this one to work correctly
     'depends': ['website', 'website_sale', 'website_sale_require_login'],
 
     # always loaded
@@ -26,6 +26,7 @@
         'security/ir.model.access.csv',
         'data/res.country.state.csv',
         'data/shipping.city.csv',
+        'templates/product_detail.xml',
         'templates/assets.xml',
         'templates/payment.xml',
         'templates/register.xml',
