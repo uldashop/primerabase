@@ -24,7 +24,7 @@ import math
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.portal.controllers.portal import CustomerPortal
 from odoo.addons.auth_signup.controllers.main import AuthSignupHome
-from odoo.addons.l10n_ec.models.utils import validar_identifier
+from ...l10n_ec.models.utils import validar_identifier
 _logger = logging.getLogger(__name__)
 
 def randomString(stringLength=8):
