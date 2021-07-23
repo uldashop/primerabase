@@ -22,10 +22,10 @@
                 </t>
             </xpath>
 
-            <xpath expr="." position="inside">
+            <!-- <xpath expr="." position="inside">
                 <script src="/web_ulda/static/src/js/product.js">
                 </script>
-            </xpath>
+            </xpath> -->
         </template>
     </data>
 </odoo>
