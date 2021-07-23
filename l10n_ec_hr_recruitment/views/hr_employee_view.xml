@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Job Challenge -->
+    <record id="hr_job_challenge_tree" model="ir.ui.view">
+    <field name="name">Job Challenge</field>
+    <field name="model">hr.job.challenge</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_job_challenge_action"
+    name="Job Challenge"
+    res_model="hr.job.challenge"
+    view_mode="tree"
+    />
+
+    <!-- Job Decision -->
+    <record id="hr_job_decision_tree" model="ir.ui.view">
+    <field name="name">Job Decision</field>
+    <field name="model">hr.job.decision</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_job_decision_action"
+    name="Job Decisions"
+    res_model="hr.job.decision"
+    view_mode="tree"
+    />
+
+    <!-- Equipment -->
+    <record id="hr_job_equipment_tree" model="ir.ui.view">
+    <field name="name">Equipment</field>
+    <field name="model">hr.job.equipment</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="type_equipment"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_job_equipment_action"
+    name="Equipment"
+    res_model="hr.job.equipment"
+    view_mode="tree"
+    />
+
+    <!-- Job Function -->
+    <record id="hr_job_function_tree" model="ir.ui.view">
+    <field name="name">Job Function</field>
+    <field name="model">hr.job.function</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_job_function_action"
+    name="Job Function"
+    res_model="hr.job.function"
+    view_mode="tree"
+    />
+
+    <!-- Studies -->
+    <record id="hr_study_tree" model="ir.ui.view">
+    <field name="name">Studies</field>
+    <field name="model">hr.study</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="type_study"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <record id="hr_study_form" model="ir.ui.view">
+    <field name="name">hr.study.form</field>
+    <field name="model">hr.study</field>
+    <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="name" required="1"/>
+                <field name="type_study" required="1"/>
+                <field name="description" />
+            </group>
+        </form>
+    </field>
+    </record>
+
+    <act_window id="hr_study_action"
+    name="Studies"
+    res_model="hr.study"
+    view_mode="tree,form"
+    />
+
+    <!-- Physical Condition -->
+    <record id="hr_physical_condition_tree" model="ir.ui.view">
+    <field name="name">Physical Condition</field>
+    <field name="model">hr.physical.condition</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_physical_condition_action"
+    name="Physical Condition"
+    res_model="hr.physical.condition"
+    view_mode="tree"
+    />
+
+    <!-- Rick Factor's -->
+    <record id="hr_rick_factor_tree" model="ir.ui.view">
+    <field name="name">Rick Factor's</field>
+    <field name="model">hr.rick.factor</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="active"/>
+        </tree>
+    </field>
+    </record>
+
+    <act_window id="hr_rick_factor_action"
+    name="Rick Factor's"
+    res_model="hr.rick.factor"
+    view_mode="tree"
+    />
+</odoo>

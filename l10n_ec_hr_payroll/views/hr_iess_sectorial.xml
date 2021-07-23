@@ -1,0 +1,132 @@
+<odoo>
+    <data>
+        <record id="view_iess_sectorial_commission" model="ir.ui.view">
+        <field name="name">view_iess_sectorial_commission</field>
+        <field name="model">iess.sectorial.commission</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group colspan="2" col="4">
+                    <field name="code" />
+                    <field name="name" />
+                </group>
+                <group>
+                    <field name="branch_ids" widget="many2many_tags"/>
+                </group>
+            </sheet>
+        </form>
+        </field>
+        </record>
+
+        <record id="tree_iess_sectorial_commission" model="ir.ui.view">
+        <field name="name">tree_iess_sectorial_commission</field>
+        <field name="model">iess.sectorial.commission</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="view_iess_sectorial_job" model="ir.ui.view">
+        <field name="name">view_iess_sectorial_job</field>
+        <field name="model">iess.sectorial.job</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="4" col="2">
+                        <field name="code" />
+                        <field name="branch_id"/>
+                        <field name="name" />
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+        </record>
+
+        <record id="tree_iess_sectorial_job" model="ir.ui.view">
+        <field name="name">tree_iess_sectorial_job</field>
+        <field name="model">iess.sectorial.job</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="view_iess_sectorial_branch" model="ir.ui.view">
+        <field name="name">view_iess_sectorial_branch</field>
+        <field name="model">iess.sectorial.branch</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="2" col="4">
+                        <field name="code" />
+                        <field name="commission_id"/>
+                        <field name="name" />
+                    </group>
+                    <group>
+                        <field name="job_ids"  widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+        </record>
+
+        <record id="tree_iess_sectorial_branch" model="ir.ui.view">
+        <field name="name">tree_iess_sectorial_branch</field>
+        <field name="model">iess.sectorial.branch</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+        </record>
+
+        <act_window  id="action_iess_sectorial_commission"
+            name="Commission"
+            res_model="iess.sectorial.commission"
+            view_mode="tree,form"/>
+
+        <act_window  id="action_iess_sectorial_branch"
+            name="Branch"
+            res_model="iess.sectorial.branch"
+            view_mode="tree,form"/>
+
+        <act_window  id="action_iess_sectorial_job"
+            name="Job"
+            res_model="iess.sectorial.job"
+            view_mode="tree,form"/>
+
+        <menuitem  id="menu_iess_sectorial"
+            name="Sectorial Codes"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            groups="hr_payroll.group_hr_payroll_manager"
+            sequence="97"/>
+        
+        <menuitem  id="menu_iess_sectorial_commission"
+            name="Commision"
+            action="action_iess_sectorial_commission"
+            groups="hr_payroll.group_hr_payroll_manager"
+            parent="menu_iess_sectorial"
+            sequence="1" />
+
+        <menuitem  id="menu_iess_sectorial_job"
+            name="Job"
+            action="action_iess_sectorial_job"
+            groups="hr_payroll.group_hr_payroll_manager"
+            parent="menu_iess_sectorial"
+            sequence="3"/>
+
+        <menuitem  id="menu_iess_sectorial_branch"
+            name="Branch"
+            action="action_iess_sectorial_branch"
+            groups="hr_payroll.group_hr_payroll_manager"
+            parent="menu_iess_sectorial"
+            sequence="2"/>
+    </data>
+</odoo>

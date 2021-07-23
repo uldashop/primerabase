@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="slide_channel_form_inherit" model="ir.ui.view">
+    <field name="name">Slide Channel Form Inherit</field>
+    <field name="model">slide.channel</field>
+    <field name="inherit_id" ref="website_slides.view_slide_channel_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//group[@name='course']" position="inside">
+            <label for="date_start" string="Fecha"/>
+            <div>
+                <field name="date_start" class="oe_inline"/> - <field name="date_end" class="oe_inline"/>
+            </div>
+        </xpath>
+    </field>
+    </record>
+</odoo>

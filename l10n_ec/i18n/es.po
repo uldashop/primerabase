@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ec
+# 
+# Translators:
+# Kenneth Melgar Freire <kenneth.melgarf@ug.edu.ec>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-07 07:11+0000\n"
+"PO-Revision-Date: 2019-08-26 09:06+0000\n"
+"Last-Translator: Martin Trigaux, 2019\n"
+"Language-Team: Spanish (https://www.transifex.com/odoo/teams/41243/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_ec
+#: model:ir.model.fields,field_description:l10n_ec.field_res_partner_bank__account_type
+msgid "Account Type"
+msgstr "Tipo de Cuenta"
+
+#. module: l10n_ec
+#: model:ir.model.fields.selection,name:l10n_ec.selection__res_partner_bank__account_type__checking
+msgid "Checking Account"
+msgstr "Cuenta Corriente"
+
+#. module: l10n_ec
+#: model:ir.model.fields.selection,name:l10n_ec.selection__res_partner_bank__account_type__savings
+msgid "Savings Account"
+msgstr "Cuenta de Ahorros"
+
+#. module: l10n_ec
+#: model:ir.model,name:l10n_ec.model_res_company
+msgid "Withholding Agent"
+msgstr "Agente de Retención"
+
+#. module: l10n_ec
+#: model:ir.model,name:l10n_ec.model_res_company
+msgid "Resolution Number"
+msgstr "Resolución"

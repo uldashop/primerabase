@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="view_generate_pay_fortnight" model="ir.ui.view">
+        <field name="name">view_fortnight</field>
+        <field name="model">wizard.hr.fortnight</field>
+        <field name="arch" type="xml">
+        <form string="Anticipos a Empleados">
+            <sheet>
+                <field name="state" invisible="1"/>
+                <group>
+                    <group states="init" col="4" colspan="2">
+                        <field name="date_from" required="1"/> 
+                        <field name="date_to" required="1"/>
+                        <field name="payment_type" required="1" />
+                        <field name="company_id" required="1" groups="base.group_multi_company"/>
+                    </group> 
+                    <group col="2" colspan="2" states="init">
+                        <field name="input_ids" widget="many2many_tags" options="{'no_create':True}" domain="[('date','&lt;=',date_from),('date','&gt;=',date_to)]"/>
+                        <field name="line_ids" invisible="1"/>
+                    </group>
+                </group>
+                <group states="success">
+                    <h1>PAGOS REALIZADOS CON ÉXITO</h1>
+                </group> 
+                        
+            </sheet>
+            <footer class="oe_right">
+                <button  class="btn btn-danger" special="cancel"  string="Cancelar"/>
+                <button states="init" name="gen_pay" class="btn btn-success"  string="Generar Pagos" type="object"/>
+                
+            </footer>
+        </form>
+        </field>
+        </record>
+    </data>
+</odoo>

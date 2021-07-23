@@ -1,0 +1,69 @@
+<odoo>
+    <data noupdate="1">
+        <record id="input_alimentacion" model="hr.payslip.input.type">
+            <field name="name">Alimentación</field>
+            <field name="code">DALI</field>
+            <field name="type">expense</field>
+        </record>
+
+        <record id="input_comisiones" model="hr.payslip.input.type">
+            <field name="name">Comisiones</field>
+            <field name="code">COMI</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_indemnizacion" model="hr.payslip.input.type">
+            <field name="name">Indemnizacion</field>
+            <field name="code">INDE</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_bonificacion" model="hr.payslip.input.type">
+            <field name="name">Bonificaciones</field>
+            <field name="code">BONIF</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_multa" model="hr.payslip.input.type">
+            <field name="name">Multa</field>
+            <field name="code">FAL</field>
+            <field name="type">expense</field>
+        </record>
+
+        <record id="input_ph" model="hr.payslip.input.type">
+            <field name="name">Préstamos Hipotecarios</field>
+            <field name="code">PHIP</field>
+            <field name="type">expense</field>
+        </record>
+
+        <record id="input_horas_extra" model="hr.payslip.input.type">
+            <field name="name">Horas Extras</field>
+            <field name="code">HEXT</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_pq" model="hr.payslip.input.type">
+            <field name="name">Préstamos Quirografarios</field>
+            <field name="code">PQUIR</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_horas_suplementarias" model="hr.payslip.input.type">
+            <field name="name">Horas Suplementarias</field>
+            <field name="code">HSUP</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_movilizacion" model="hr.payslip.input.type">
+            <field name="name">Movilización</field>
+            <field name="code">MOVI</field>
+            <field name="type">income</field>
+        </record>
+
+        <record id="input_pension_alimenticia" model="hr.payslip.input.type">
+            <field name="name">Pensión Alimenticia</field>
+            <field name="code">PEN</field>
+            <field name="type">expense</field>
+        </record>
+    </data>
+</odoo>

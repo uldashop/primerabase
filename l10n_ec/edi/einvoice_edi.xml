@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+    <record id="email_template_einvoice" model="mail.template">
+      <field name="name">Send eInvoice</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="subject">FACTURA ELECTRONICA ${object.company_id.name}</field>
+      <field name="partner_to">${object.partner_id.id}</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="account.account_invoices"/>
+      <field name="report_name">FACTURA_${(object.invoice_number or '').replace('/','_')}</field>
+      <field name="lang">${object.partner_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimad@ ${ object.partner_id.name },
+
+      adjunto encontrará su factura electrónica número ${ object.invoice_number }, con fecha
+      de emisión ${ object.invoice_date } por un total de ${ object.amount_total }.
+
+      ]]>
+      </field>
+    </record>
+
+    <record id="email_template_eretention" model="mail.template">
+      <field name="name">Send eInvoice</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="subject">RETENCION ELECTRONICA ${object.company_id.name}</field>
+      <field name="partner_to">${object.partner_id.id}</field>
+      <field name="model_id" ref="model_account_retention"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="account_retenciones"/>
+      <field name="report_name">RETENCION_${(object.name or '').replace('/','_')}</field>
+      <field name="lang">${object.partner_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimad@ ${ object.partner_id.name },
+
+      adjunto encontrará su retencion electrónica número ${ object.name }.
+
+      ]]>
+      </field>
+    </record>
+
+    <record id="email_template_ecredit_note" model="mail.template">
+      <field name="name">Send eCredit Note</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="subject">NOTA DE CREDITO ELECTRONICA ${object.company_id.name}</field>
+      <field name="partner_to">${object.partner_id.id}</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="l10n_ec.account_invoices_credit"/>
+      <field name="report_name">NOTA_DE_CREDITO_${(object.invoice_number or '').replace('/','_')}</field>
+      <field name="lang">${object.partner_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimad@ ${ object.partner_id.name },
+
+      adjunto encontrará su nota de crédito electrónica número ${ object.invoice_number }, con fecha
+      de emisión ${ object.invoice_date } por un total de ${ object.amount_total }.
+
+      ]]>
+      </field>
+    </record>
+
+    <record id="email_template_edebit_note" model="mail.template">
+      <field name="name">Send edebit Note</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="subject">NOTA DE DEBITO ELECTRONICA ${object.company_id.name}</field>
+      <field name="partner_to">${object.partner_id.id}</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="l10n_ec.account_invoices_debit"/>
+      <field name="report_name">NOTA_DE_DEBITO_${(object.invoice_number or '').replace('/','_')}</field>
+      <field name="lang">${object.partner_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimad@ ${ object.partner_id.name },
+
+      adjunto encontrará su nota de debito electrónica número ${ object.invoice_number }, con fecha
+      de emisión ${ object.invoice_date } por un total de ${ object.amount_total }.
+
+      ]]>
+      </field>
+    </record>
+
+    <record id="email_template_eliq_purchase" model="mail.template">
+      <field name="name">Send esettlement purchase</field>
+      <field name="email_from">${('noresponder@sample.com')|safe}</field>
+      <field name="subject">LIQUIDACION DE COMPRA ELECTRONICA ${object.company_id.name}</field>
+      <field name="partner_to">${object.partner_id.id}</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="auto_delete" eval="True"/>
+      <field name="report_template" ref="l10n_ec.account_invoices_settlement"/>
+      <field name="report_name">LIQUIDACION_COMPRA${(object.number or '').replace('/','_')}</field>
+      <field name="lang">${object.partner_id.lang}</field>
+      <field name="body_html"><![CDATA[
+      Estimad@ ${ object.partner_id.name },
+
+      adjunto encontrará su liquidacion de compra electrónica número ${ object.invoice_number }, con fecha
+      de emisión ${ object.invoice_date } por un total de ${ object.amount_total }.
+
+      ]]>
+      </field>
+    </record>
+  </data>
+</openerp>

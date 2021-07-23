@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+          id="account_invoices_debit"
+          model="account.move"
+          string="Nota de Débito Electronica"
+          report_type="qweb-pdf"
+          name="l10n_ec.report_edebitnote"
+          file="l10n_ec.report_edebitnote"
+          menu="False"
+          attachment_use="0"
+          attachment="('NOTA_DE_DÉBITO_'+(object.invoice_number or '').replace('/','')+'.pdf')"
+          />
+
+        <template id="report_edebitnote">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="font-size: 14px">
+                            <div class="row" style="padding-right: 15px">
+                                <div class="col-5">
+                                    <div class="logo" style="width: 330px; height: 180px;">
+                                        <img t-if="o.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()"/>
+                                    </div>
+                                    <div style="border: 1px solid; border-radius: 25px; padding-left: 20px">
+                                        <h4><span t-esc="o.company_id.name"/></h4>
+                                        <span><strong>Dirección: </strong></span><strong></strong><span t-esc="o.company_id.street"/><br/>
+                                        <span><strong>Dirección Sucursal: </strong></span><strong></strong><span t-esc="o.company_id.street"/><br/>
+                                        <span><strong>Contribuyente Especial Nro.: </strong></span>
+                                        <span t-esc="o.company_id.company_registry or '000' "/><br/>
+                                        <span><strong>Obligado a Llevar contabilidad: </strong> SI</span>
+                                    </div>
+                                </div>
+                                <div class="col-7" style="border: 1px solid; border-radius: 25px; padding-left: 10px;">
+                                    <span style="font-size: 18px"><strong>RUC </strong></span> <span style="font-size: 18px" t-esc="o.company_id.partner_id.identifier"/><br/>
+                                    <span><h4 style="text-align: center;">NOTA DE DÉBITO</h4></span><br/>
+                                    <span><strong>NUMERO</strong> </span><span t-esc="o.invoice_number"/><br/>
+                                    <span><strong>NUMERO DE AUTORIZACIÓN:</strong></span><br/>
+                                    <span t-esc="o.numero_autorizacion"/><br/>
+                                    <span><strong>FECHA Y HORA DE AUTORIZACIÓN: </strong></span><span t-esc="o.fecha_autorizacion"/><br/>
+                                    <span><strong>AMBIENTE: </strong></span><span t-esc="o.company_id.env_service == '1' and 'PRUEBAS' or 'PRODUCCION'"/><br/>
+                                    <span><strong>EMISIÓN: </strong><span t-esc="o.company_id.emission_code == '1' and 'NORMAL' or 'INDISPONIBILIDAD'"/></span><br/>
+                                    <span><strong>CLAVE DE ACCESO</strong></span><br/>
+                                    <div class="text-align: left;">
+                                        <img style="text-align: left;" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1' % ('Code128', o.clave_acceso, 450, 60)"/>
+                                    </div><br/>
+                                </div>
+                            </div>
+                            <div style="border: 1px solid; padding-left: 20px; padding-right: 20px; margin-top: 10px; margin-bottom: 10px">
+                                <div class="row" style=" ">
+                                    <div class="col-3" style="padding-left: 0px;">
+                                        <span><strong>RAZÓN SOCIAL:</strong></span>
+                                    </div>
+                                    <div class="col-4" style="padding-left: 0px;">
+                                        <span t-esc="o.partner_id.name.upper()"/>
+                                    </div>
+                                    <div class="col-3" style="padding-left: 0px; padding-right: 0px;">
+                                        <span><strong>IDENTIFICACIÓN:</strong></span>
+                                    </div>
+                                    <div class="col-2" style="padding-left: 0px;">
+                                        <span t-esc="o.partner_id.identifier"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3" style="padding-left: 0px;">
+                                        <span><strong>FECHA DE EMISIÓN:</strong></span>
+                                    </div>
+                                    <div class="col-4" style="padding-left: 0px;">
+                                        <span t-esc="o.invoice_date"/>
+                                    </div>
+                                </div>
+                                <div class="row" style=" border-top: 1px solid">
+                                    <div class="col-5" style="padding-left: 0px;">
+                                        <span><strong>COMPROBANTE QUE SE MODIFICA</strong></span>
+                                    </div>
+                                    <div class="col-3" style="padding-left: 0px;">
+                                        <t t-if="o.reversed_entry_id">
+                                            <span t-if="o.reversed_entry_id.auth_inv_id.type_id.code in ['01','18']"><strong>FACTURA:</strong></span>
+                                            <span t-if="o.reversed_entry_id.auth_inv_id.type_id.code in ['03']"><strong>LIQ. DE COMPRA:</strong></span>
+                                        </t>
+                                    </div>
+                                    <div class="col-4">
+                                    <t t-if="o.reversed_entry_id">
+                                        <span t-esc="o.reversed_entry_id.invoice_number "/>
+                                    </t>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="padding-left: 0px;">
+                                        <span><strong>FECHA DE EMISIÓN:</strong></span>
+                                    </div>
+                                    <div class="col-7">
+                                    <t t-if="o.reversed_entry_id">
+                                        <span t-esc="o.reversed_entry_id.invoice_date"/>
+                                    </t>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-left: 15px; padding-right: 15px; margin-bottom: 10px">
+                                <div class="row">
+                                    <div class="col-5" style="border: 1px solid; padding-left: 5px;">
+                                        <span><strong>RAZÓN DE MODIFICACIÓN</strong></span>
+                                    </div>
+                                    <div class="col-7" style="border: 1px solid;">
+                                        <span><strong>VALOR DE  LA MODIFICACIÓN</strong></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="border: 1px solid; border-top: 1px solid; padding-left: 5px;">
+                                        <span t-esc="o.ref"/>
+                                    </div>
+                                    <div class="col-7" style="border: 1px solid; text-align: right">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left: 15px; padding-right: 15px">
+                                <div class="col-6" style="border: 1px solid;">
+                                    <span><strong>Información Adicional</strong></span><br/><br/>
+                                    <span><strong>Observaciones: </strong></span><span t-esc="o.narration or '**'"/><br/>
+                                    <span><strong>Dirección: </strong></span><span t-esc="o.partner_id.street or '**'"/><br/>
+                                    <span><strong>Teléfono: </strong></span><span t-esc="o.partner_id.phone or '**'"/><br/>
+                                    <span><strong>Email: </strong></span><span t-esc="o.partner_id.email"/><br/>
+                                    <div style="border: 1px solid"><center><span>Información Adicional</span></center></div>
+                                    <div style="border: 1px solid">
+                                    <tr t-foreach="o.company_id.agent_ids" t-as="agent">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span t-field="agent.name"/>
+                                            </div>
+                                            <div class="col-6">
+                                                <span t-field="agent.description"/>
+                                            </div>
+                                        </div>
+                                    </tr></div><br/>
+                                </div>
+                                <div class="col-1"><span/></div>
+                                <div class="col-5">
+                                    <table class="table table-sm;page-break-inside: avoid;">
+                                        <tr class="border-black o_subtotal" style="">
+                                            <td><strong>Subtotal</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_untaxed"/>
+                                            </td>
+                                        </tr>
+                                        <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                            <tr style="">
+                                                <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                                    <td><span t-esc="amount_by_group[0]"/></td>
+                                                    <td class="text-right o_price_total">
+                                                        <span t-esc="amount_by_group[3]" />
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td>
+                                                        <span t-esc="amount_by_group[0]"/>
+                                                        <span>&amp;nbsp;<span>on</span>
+                                                            <t t-esc="amount_by_group[4]"/>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-right o_price_total">
+                                                        <span t-esc="amount_by_group[3]"/>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                        <tr class="border-black o_total">
+                                            <td><strong>Total</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_total"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div><br/>
+                            <div class="row" style="padding-left: 15px">
+                                <div class="col-6">
+                                    <div class="row" style="border: 1px solid">
+                                        <div class="col-8" style=" border-right: 1px solid">
+                                            <strong><span>Forma de Pago</span></strong>
+                                        </div>
+                                        <div class="col-4">
+                                            <strong><span>Valor</span></strong>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="border: 1px solid">
+                                        <div class="col-8" style=" border-right: 1px solid">
+                                            <span t-esc="o.epayment_id.name"/>
+                                        </div>
+                                        <div class="col-4" >
+                                            <span t-field="o.amount_total"
+                                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

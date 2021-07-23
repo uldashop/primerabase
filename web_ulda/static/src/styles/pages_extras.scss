@@ -1,0 +1,29 @@
+//blog
+#o_wblog_blog_top{
+
+    .o_record_cover_image{
+        background-image: url('/web_acerocenter/static/img/site/pages_extras/blog_hero.png')!important;
+    }
+
+    .oe_black{
+        background-color: var(--web__color2__90)!important;
+    }
+}
+
+//sesion form
+.oe_website_login_container{
+
+    form{
+        box-shadow: none;
+        background-color: rgba(196,196,196,.25);
+
+        input.form-control{
+            background-color: transparent;
+        }
+
+        label{
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+}

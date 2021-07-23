@@ -1,0 +1,2 @@
+id,name,housing_expense,education_expense,health_expense,clothing_expense,food_expense,projected_expense,catastrophic_diseases,housing_expense_extra,education_expense_extra,health_expense_extra,clothing_expense_extra,food_expense_extra,projected_expense_extra,catastrophic_diseases_extra
+limit_2020,2020,3677.38,3677.38,14709.50,3677.38,3677.38,14709.50,22630,6630.59,6630.59,26522.36,6630.59,6630.59,26522.36,40801.89

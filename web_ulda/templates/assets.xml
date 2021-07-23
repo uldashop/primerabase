@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--======================== Inclusion of Scss Files ======================-->
+    <template id="assets_frontent_ept" inherit_id="website.assets_frontend" priority="1">
+        <xpath expr="link[last()]" position="after">
+
+            <link rel="stylesheet" type="text/css" href="/web_ulda/static/src/styles/generales.scss"/>
+            <link rel="stylesheet" type="text/css" href="/web_ulda/static/src/styles/home.scss"/>
+            <link rel="stylesheet" type="text/css" href="/web_ulda/static/src/styles/shop.scss"/>
+            <link rel="stylesheet" type="text/css" href="/web_ulda/static/src/styles/faqs.scss"/>
+
+
+
+            <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:5500/addons/web_ulda/static/src/dev/dev.css"/> -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"/>
+        </xpath>
+    </template>
+</odoo>

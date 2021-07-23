@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="send_appraisal_template_2" model="mail.template">
+            <field name="inherit_id" ref="send_appraisal_template" />
+            <field name="body_html" position="replace">
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hello ${ctx.get('employee').name}<br /><br />
+        % if ctx.get('employee').id == object.employee_id.id:
+            Please fill out the following survey related to your appraisal.
+        % else:
+            Please fill out the following survey related to ${object.employee_id.name}'s appraisal.
+        % endif
+        <div style="margin: 16px 0px 16px 0px;">
+            <a href="__URL__"
+                style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                Start Survey
+            </a>
+        </div>
+        Please answer the appraisal for ${format_date(object.date_close)}.<br />
+        Thank you for your participation.
+    </p>
+</div>
+            </field></field>
+            <field name="auto_delete" eval="True"/>
+            <field name="user_signature" eval="False"/>
+        </record>
+    </data>
+</odoo>

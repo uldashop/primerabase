@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_physical_condition_form" model="ir.ui.view">
+            <field name="name">hr.physical.condition.form</field>
+            <field name="model">hr.physical.condition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_rick_factor_form" model="ir.ui.view">
+            <field name="name">hr.rick.factor.form</field>
+            <field name="model">hr.rick.factor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_equipment_form" model="ir.ui.view">
+            <field name="name">hr.job.equipment.form</field>
+            <field name="model">hr.job.equipment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="type_equipment" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_decision_form" model="ir.ui.view">
+            <field name="name">hr.job.decision.form</field>
+            <field name="model">hr.job.decision</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_function" model="ir.ui.view">
+            <field name="name">hr.job.function.form</field>
+            <field name="model">hr.job.function</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="periodicity"/>
+                        <field name="type_periodicity"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_challenge" model="ir.ui.view">
+            <field name="name">hr.job.challenge.form</field>
+            <field name="model">hr.job.challenge</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_competition" model="ir.ui.view">
+            <field name="name">hr.job.competition.form</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="address_id" position="after">
+                    <field name="date_end"/>
+                </field>
+                <xpath expr="//sheet" position="inside">
+                    <!-- <group>
+                        <field name="competition_level_ids" groups="hr_recruitment.group_hr_recruitment_user" widget="many2many_tags" options="{'no_create':True}"/>
+                    </group> -->
+                    <notebook groups="hr_recruitment.group_hr_recruitment_user">
+                        <page id="identifier_id" string="Identificacion del Puesto">
+                            <group>
+                                <label for="wage"/>
+                                <div>
+                                    <field name="wage" class="oe_inline"/>
+ -                                    <field name="wage_to" class="oe_inline"/>
+                                </div>
+                                <field name="challenge_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="decision_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="mission"/>
+                            </group>
+                        </page>
+                        <page id="profile_id" string="Generalidades del Perfil">
+                            <!-- <group colspan="2" col="4">
+                            </group> -->
+                            <group>
+                                <field name="study_ids" domain="[('type_study','=','study')]" context="{'default_type_study': 'study'}">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="experience"/>
+                                <field name="further_training_ids" domain="[('type_study','=','complementary')]" context="{'default_type_study': 'complementary'}">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="lang_ids" options="{'no_create':True}" widget="many2many_tags"/>
+                                <field name="equipment_ids" domain="[('type_equipment','=','general')]" widget="many2many_tags" context="{'default_type_equipment': 'general'}"/>
+                                <field name="relation"/>
+                            </group>
+                        </page>
+                        <page id="competitions_ids" string="Competencias">
+                            <field name="competition_ids">
+                                <tree editable="top">
+                                    <field name="name" readonly="1"/>
+                                    <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page id="function_ids" string="Funciones Principales">
+                            <field name="function_ids">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="periodicity"/>
+                                    <field name="type_periodicity"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page id="sso_ids" string="SSO">
+                            <group>
+                                <field name="physical_condition_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="rick_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="protective_ids" domain="[('type_equipment','=','protective')]" context="{'default_type_equipment': 'protective'}">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page id="history_ids" string="Historial de Selección">
+                            <field name="history_ids" readonly="1">
+                                <tree create="false">
+                                    <field name="date_start"/>
+                                    <field name="date_planned"/>
+                                    <field name="date_end"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

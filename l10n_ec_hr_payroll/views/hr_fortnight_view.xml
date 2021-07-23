@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_hr_fortnigth_tree" model="ir.ui.view">
+            <field name="name">view_hr_fortnigth</field>
+            <field name="model">hr.fortnight</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+                    <field name="name"/>
+                    <field name="employee_id" />
+                    <field name="amount"/>
+                    <field name="date"/>
+                    <field name="date_from"/>
+                    <field name="date_to" readonly="1"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_hr_fortnight"
+            name="Anticipos a Empleados"
+            res_model="hr.fortnight"
+            view_mode="tree" />
+
+        <menuitem id="menu_hr_fortnight"
+            name="Anticipos"
+            action="action_hr_fortnight"
+            parent="hr_payroll.menu_hr_payroll_root"
+            groups="hr_payroll.group_hr_payroll_manager"
+            sequence="60" />
+    </data>
+</odoo>

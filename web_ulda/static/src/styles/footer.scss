@@ -1,0 +1,123 @@
+//footer
+.o_footer > #footer{
+    border-top: unset !important;
+}
+#bottom{
+    color: white!important;
+    background-color: var(--web__color4)!important;
+}
+#footer{
+    .footer__body{
+        margin-top: 27px;
+        margin-bottom: 50px;
+    }
+    .footer__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 15px;
+        .columna{
+            font-size: 0.813rem;
+
+            &_center{
+                display: flex;
+                justify-content: center;
+            }
+
+            &_content{
+                width: 80%;
+            }
+            
+            h5{
+                font-weight: 700;
+                font-size: var(--t5);
+            }
+        }
+
+        .columna1{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+            figure{
+                padding-right: 30px;
+                margin-bottom: 0;
+                img{
+                    width: 100%;
+                }
+
+            }
+
+            .footer_social_network{
+                margin-top: 20px;
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+                i{
+                    font-size: 24px;
+                }
+
+                a{
+                    color: white;
+                    &:hover{
+                        color: var(--web__color2);
+                    }
+                }
+
+            }
+        }
+
+        a{
+            color: white;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .columna3{
+            .location{
+                margin-bottom: 20px;
+                .location_info{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    @media(max-width:999px){
+        .footer__grid{
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+
+            .columna1{
+                grid-column-start: 1;
+                grid-column-end: 5;
+                margin: 0 auto;
+
+                figure{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+
+    @media(max-width:599px){
+        .footer__grid{
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 35px;
+
+            .columna1{
+                grid-column-end: 3;
+            }
+        }
+    }
+    
+}
+
+
+.footer__copy{
+    .container{
+        border-top: 1px solid white;
+    }
+}

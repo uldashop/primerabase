@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_hr_fortnigth_tree" model="ir.ui.view">
+            <field name="name">view_hr_fortnigth</field>
+            <field name="model">hr.fortnight</field>
+            <field name="inherit_id" ref="l10n_ec_hr_payroll.view_hr_fortnigth_tree"/>
+            <field name="arch" type="xml">
+                <field name="employee_id" position="after">
+                    <field name="journal_id_id" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

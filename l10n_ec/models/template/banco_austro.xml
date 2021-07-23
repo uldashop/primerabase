@@ -1,0 +1,2 @@
+{% for employee in employees %}PA	{{employee.type_identifier}}	{{employee.identifier}}	{{employee.identifier}}	{{employee.name}}	{{employee.type_account}}	{{employee.account_number}}	USD	{{(employee.amount.replace('.','')).zfill(13)}}	{{(employee.code).zfill(4)}}
+{% endfor %}

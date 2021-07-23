@@ -1,0 +1,3 @@
+id,name,code,payment_type
+in_transfer,Transferencia Bancaria,transfer,inbound
+out_transfer,Transferencia Bancaria,transfer,outbound

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <template id="datafast_form">
+            <input type="hidden" name="checkout_id" t-att-value="acquirer.datafast_checkout_id"/>
+            <input type="hidden" name="mode" t-att-value="acquirer.state"/>
+
+            <script type="text/javascript">
+                odoo.define(function (require) {
+                    var ajax = require('web.ajax');
+                    ajax.loadJS("/payment_datafast/static/src/js/datafast-busts2.js");
+                });
+                
+            </script>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+code,id,name,country_id
+2,country_ec_1,AZUAY,Ecuador
+96,country_ec_2,BOLIVAR,Ecuador
+131,country_ec_3,CAÑAR,Ecuador
+169,country_ec_4,CARCHI,Ecuador
+212,country_ec_5,COTOPAXI,Ecuador
+266,country_ec_6,CHIMBORAZO,Ecuador
+335,country_ec_7,EL ORO,Ecuador
+400,country_ec_8,ESMERALDAS,Ecuador
+468,country_ec_9,GUAYAS,Ecuador
+588,country_ec_10,IMBABURA,Ecuador
+644,country_ec_11,LOJA,Ecuador
+754,country_ec_12,LOS RIOS,Ecuador
+807,country_ec_13,MANABI,Ecuador
+919,country_ec_14,MORONA SANTIAGO,Ecuador
+973,country_ec_15,NAPO,Ecuador
+1019,country_ec_16,PASTAZA,Ecuador
+1041,country_ec_17,PICHINCHA,Ecuador
+1134,country_ec_18,TUNGURAHUA,Ecuador
+1208,country_ec_19,ZAMORA CHINCHIPE,Ecuador
+1240,country_ec_20,GALAPAGOS,Ecuador
+1241,country_ec_21,SUCUMBIOS,Ecuador
+2650000640,country_ec_22,ORELLANA,Ecuador
+10002596,country_ec_23,SANTO DOMINGO DE LOS TSACHILAS,Ecuador
+24,country_ec_24,SANTA ELENA,Ecuador

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notaDebito id="comprobante" version="1.0.0">
+    <infoTributaria>
+        <ambiente>{{ ambiente }}</ambiente>
+        <tipoEmision>{{ tipoEmision }}</tipoEmision>
+        <razonSocial>{{ razonSocial }}</razonSocial>
+        <nombreComercial>{{ razonSocial }}</nombreComercial>
+        <ruc>{{ ruc }}</ruc>
+        <claveAcceso>{{ claveAcceso }}</claveAcceso>
+        <codDoc>{{ codDoc }}</codDoc>
+        <estab>{{ estab }}</estab>
+        <ptoEmi>{{ ptoEmi }}</ptoEmi>
+        <secuencial>{{ secuencial }}</secuencial>
+        <dirMatriz>{{ dirMatriz }}</dirMatriz>
+    </infoTributaria>
+    <infoNotaDebito>
+        <fechaEmision>{{ fechaEmision }}</fechaEmision>
+        <dirEstablecimiento>{{ dirEstablecimiento }}</dirEstablecimiento>
+        <tipoIdentificacionComprador>{{ tipoIdentificacionComprador }}</tipoIdentificacionComprador>
+        <razonSocialComprador>{{ razonSocialComprador }}</razonSocialComprador>
+        <identificacionComprador>{{ identificacionComprador }}</identificacionComprador>
+        <contribuyenteEspecial>{{ contribuyenteEspecial }}</contribuyenteEspecial>
+        <obligadoContabilidad>{{ obligadoContabilidad }}</obligadoContabilidad>
+        <codDocModificado>{{ codDocModificado }}</codDocModificado>
+        <numDocModificado>{{ numDocModificado }}</numDocModificado>
+        <fechaEmisionDocSustento>{{ fechaEmisionDocSustento }}</fechaEmisionDocSustento>
+        <totalSinImpuestos>{{ totalSinImpuestos }}</totalSinImpuestos>
+        <impuestos>{% for c in impuestos %}
+            <impuesto>
+                <codigo>{{ c['codigo'] }}</codigo>
+                <codigoPorcentaje>{{ c['codigoPorcentaje'] }}</codigoPorcentaje>
+                <tarifa>{{ c['tarifa'] }}</tarifa>
+                <baseImponible>{{ c['baseImponible'] }}</baseImponible>
+                <valor>{{ c['valor'] }}</valor>
+            </impuesto>
+        </impuestos>{% endfor %}
+        <valorTotal>{{valorTotal}}</valorTotal>
+        <pagos>
+            <pago>
+                <formaPago>{{ formaPago }}</formaPago>
+                <total>{{ importeTotal }}</total>
+            </pago>
+        </pagos>
+    </infoNotaDebito>
+    <motivos>
+        <motivo>
+            <razon>{{ motivo }}</razon>
+            <valor>{{ valor }}</valor>
+        </motivo>
+    </motivos>
+    <infoAdicional>{% for agent in agent_ids %}
+        <campoAdicional nombre="{{agent.name}}">{{ agent.description }}</campoAdicional>{% endfor %}
+    </infoAdicional>
+    {% endif %}
+</notaDebito>

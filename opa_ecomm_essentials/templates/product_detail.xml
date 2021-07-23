@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="removeTextWarranty" name="Remove Text warranty" inherit_id="website_sale.product">
+            <xpath expr="//div[@id='product_details']/p[hasclass('text-muted')]" position="replace">
+                
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

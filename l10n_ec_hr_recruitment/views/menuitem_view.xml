@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+    
+    <menuitem name="Competencias" id="recruitment_competition_menu" sequence="10"
+    parent="hr_recruitment.menu_hr_recruitment_configuration" action="hr_recruitment_competition_action"/>
+
+    <menuitem name="Niveles de Competencia" id="recruitment_competition_level_menu" sequence="11"
+    parent="hr_recruitment.menu_hr_recruitment_configuration" action="hr_recruitment_competition_level_action"/>
+   
+   <menuitem id="menu_hr_job_view_employee" action="hr.action_hr_job" parent="hr.menu_view_hr_job" sequence="1"/>
+
+   <menuitem name="Desafios del Puesto" id="hr_job_challenge_menu" sequence="3"
+   parent="hr.menu_view_hr_job" action="hr_job_challenge_action"/>
+
+   <menuitem name="Estudios" id="hr_study_menu" sequence="2"
+   parent="hr.menu_view_hr_job" action="hr_study_action"/>
+
+   <menuitem name="Decisiones a Consultar" id="hr_job_decision_menu" sequence="4"
+   parent="hr.menu_view_hr_job" action="hr_job_decision_action"/>
+
+   <menuitem name="Equipos" id="hr_job_equipment_menu" sequence="2"
+   parent="hr.menu_view_hr_job" action="hr_job_equipment_action"/>
+
+   <menuitem name="Funciones del Puesto" id="hr_job_function_menu" sequence="5"
+   parent="hr.menu_view_hr_job" action="hr_job_function_action"/>
+   
+   <menuitem name="Factores de Riesgo" id="hr_rick_factor_menu" sequence="6"
+   parent="hr.menu_view_hr_job" action="hr_rick_factor_action"/>
+
+   <menuitem name="Condiciones Fisicas" id="hr_physical_condition_menu" sequence="7"
+   parent="hr.menu_view_hr_job" action="hr_physical_condition_action"/>
+    </data>
+</odoo>

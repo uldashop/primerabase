@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_authorisation,access_account_authorisation,model_account_authorisation,account.group_account_invoice,1,1,1,1
+access_account_ats_doc,access_account_ats_doc,model_account_ats_doc,account.group_account_invoice,1,1,1,1
+access_account_ats_sustento,access_account_ats_sustento,model_account_ats_sustento,account.group_account_invoice,1,1,1,1
+access_l10n_ec_sale_note_activity_limit,l10n_ec_sale_note.activity_limit,model_activity_limit,,1,1,1,1
+access_account_epayment,access_account_epayment,model_account_epayment,account.group_account_invoice,1,1,1,1
+access_sri_error,access_sri_error,model_sri_error,account.group_account_invoice,1,1,1,1
+access_account_retention_line,access_account_retention_line,model_account_retention_line,account.group_account_invoice,1,1,1,1
+access_account_retention,access_account_retention,model_account_retention,account.group_account_invoice,1,1,1,1
+access_ats_earning,access_ats_earning,model_ats_earning,account.group_account_invoice,1,1,1,1
+access_ats_country,access_ats_country,model_ats_country,account.group_account_invoice,1,1,1,1
+access_res_company_agent,access_res_company_agent,model_res_company_agent,base.group_system,1,1,1,1

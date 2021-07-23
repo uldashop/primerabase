@@ -1,0 +1,3 @@
+id,name,type,code
+journal_payroll,Nomina,general,ROL
+journal_forthnight,Anticipo de Nomina,general,ANROL

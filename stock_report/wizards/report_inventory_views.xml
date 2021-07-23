@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <!-- WIZARD DE REPORTE KARDEX -->
+        <record id="view_report_wizard_kardex" model="ir.ui.view">
+            <field name="name">Reporte Kardex</field>
+            <field name="model">stock.kardex.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Inventario Kardex">
+                    <group>
+                        <field name="warehouse_id"/>
+                    </group>
+                    <group>
+                        <field name="product_id" required='True'/>
+                    </group>
+                    <group>
+                        <field name="date_from" string="Fecha Hasta"/>
+                    </group>
+                    <footer>
+                        <button
+                            name="reporte"
+                            string="Generar Reporte"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_wizards_reports_kardex" model="ir.actions.act_window">
+            <field name="name">Reporte Kardex</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.kardex.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_wizard_kardex"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="menu_report_kardex_new"
+                  parent="stock.menu_warehouse_report"
+                  action="action_wizards_reports_kardex"
+                  />
+        <!-- WIZARD DE REPORTE INVENTARIO -->
+        <record id="view_report_wizard_inventario" model="ir.ui.view">
+            <field name="name">Reporte Inventario</field>
+            <field name="model">stock.report.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Inventario">
+                    <group>
+                        <field name="date" />
+                    </group>
+                    <footer>
+                        <button
+                            name="report"
+                            string="Generar Reporte"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_wizards_reports_inventario" model="ir.actions.act_window">
+            <field name="name">Reporte Inventario</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_wizard_inventario"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="menu_report_inventario_new"
+                  parent="stock.menu_warehouse_report"
+                  action="action_wizards_reports_inventario"
+                  />
+</odoo>

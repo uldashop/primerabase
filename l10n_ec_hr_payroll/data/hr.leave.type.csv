@@ -1,0 +1,2 @@
+id,name,request_unit,validation_type,allocation_type,work_entry_type_id/id
+leave_vacation,Vacaciones,day,hr,no,l10n_ec_hr_payroll.entry_vacation

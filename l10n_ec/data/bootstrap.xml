@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <function model="account.chart.template" name="try_loading_for_current_company">
+            <value eval="[ref('l10n_ec.account_ec_chart_template')]"/>
+        </function>
+    </data>
+</odoo>

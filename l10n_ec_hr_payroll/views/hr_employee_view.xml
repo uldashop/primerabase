@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record id="view_employee_payroll_form" model="ir.ui.view">
+            <field name="name">Employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page name="ecuador" string="Info Pago Nomina">
+                        <group>
+                            <group>
+                                <field name="schedule_pay" required="1"/>
+                                <field name="galapagos_beneficiary"/>
+                                <field name="catastrophic_disease"/>
+                                <field name="disable"/>
+                                <field name="percent_disable" attrs="{ 'invisible' : [('disable', '=', False)]}"/>
+                                <field name="apply_agreement" />
+                                <field name="partner_id" attrs="{ 'invisible' : [('apply_agreement', '=', False)],'required' : [('apply_agreement', '=', True)]}" />
+                                <field name="union_director"/>
+                                <field name="time_services"/>
+                            </group>
+                            <group>
+                                <field name="forthnight"/>
+                                <field name="percent_wage" attrs="{ 'invisible' : [('forthnight', '=', False)]}"/>
+                                <field name="mensualize_13"/>
+                                <field name="mensualize_14"/>
+                                <field name="mensualize_fr"/>
+                                <field name="extra_hour"/>
+                                <field name="supl_hour"/>
+                                <field name="rent_tax"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_employee_filter" model="ir.ui.view">
+        <field name="name">Employee</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator/>
+                <filter string="Pago Quincenal" name="forthnight" domain="[('forthnight', '=', True)]"/>
+            </xpath>
+        </field>
+        </record>
+
+        <act_window id="fortnight_pay_wizard"
+            name="Generar Anticipo"
+            binding_model="hr.employee"
+            res_model="wizard.hr.fortnight"
+            binding_views="list"
+            view_mode="form"
+            target="new" />
+    </data>
+</odoo>

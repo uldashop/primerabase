@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="hr_settlement_report_form_2" model="ir.ui.view">
+            <field name="name">hr.settlement.report.form.2</field>
+            <field name="model">report.liq_settlement</field>
+            <field name="inherit_id" ref="l10n_ec_hr_payroll.hr_settlement_report_form"/>
+            <field name="arch" type="xml">
+                <field name="amount" position="after">
+                    <field name="pay_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

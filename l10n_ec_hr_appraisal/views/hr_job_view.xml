@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    
+    <record model="ir.ui.view" id="hr_job_appraisal_view_form">
+      <field name="name">hr.job.appraisal.view.form</field>
+      <field name="model">hr.job</field>
+      <field name="inherit_id" ref="hr.view_hr_job_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//button[@name='set_open']" position="after">
+          <button name="create_survey" string="Generar Encuesta" type="object" groups="hr_recruitment.group_hr_recruitment_user"/>
+        </xpath>
+      </field>
+    </record>
+   
+  </data>
+</odoo>
