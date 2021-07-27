@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_talent_growth,talent Growth,model_hr_talent_growth,l10n_ec_talent_growth.group_hr_talent_growth_manager,1,1,1,0

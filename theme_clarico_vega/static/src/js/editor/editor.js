@@ -10,6 +10,8 @@ odoo.define('theme_clarico_vega.s_editor_js', function (require) {
 	        var self = this;
 	        var defs = [];
 	        $('div,section').removeClass('aos-animate');
+//	        $('#te_product_tabs > li > a.nav-link').removeClass('active');
+            $('#te_product_tabs a.nav-link').removeClass('active');
 	        $("div[data_aos_ept],section[data_aos_ept]").each(function(){
 				var data_aos_ept = $(this).attr('data_aos_ept');
 				if(data_aos_ept){

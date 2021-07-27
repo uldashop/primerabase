@@ -11,7 +11,7 @@
         </xpath>
     </template>
     <template id="reset_password_button" inherit_id="auth_signup.reset_password">
-        <xpath expr="//div[hasclass('oe_login_buttons')]/button" position="attributes">
+        <xpath expr="//div[hasclass('oe_login_buttons')]//button[hasclass('btn-primary')]" position="attributes">
             <attribute name="class">btn btn-primary te_theme_button py-1 px-4</attribute>
         </xpath>
     </template>

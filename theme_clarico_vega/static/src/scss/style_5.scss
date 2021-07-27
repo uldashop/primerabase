@@ -45,38 +45,43 @@
 .modal-content.ajax_cart_modal {
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-
+    overflow: hidden;
     .close:not(:disabled):not(.disabled):focus,
     .close {
-        @include position(absolute,-15px,-15px);
+        @include position(absolute,0px,0px);
+        @include transition(all,300ms,null);
+        background-color: transparent;
+        color: #000;
+        opacity: 1;
         width: 40px;
         height: 40px;
-        z-index: 1;
-        @include border(2px,08,solid);
-        @include border-radius(50%);
+        border: 0px;
+        line-height: 40px;
+        z-index: 9;
+        padding: 0;
+        box-shadow: 0 1px 10px #bbb;
         background: nth($f_color,5);
-        @include box-shadow(0px 4px 10px 0 rgba(0, 0, 0, 0.1));
-        opacity: 1;
-        text-align: center;
-        @include transition(all,.4s);
         &:hover {
-            transform: rotateZ(180deg);
-            opacity: 1;
-            border-color: nth($f_color,19);
-            &:before {
-                top: -1px;
-            }
-        }
-        @include media-breakpoint-down(sm) {
-            top: -6px;
-            right: -6px;
+	            box-shadow: 0 1px 10px #ddd;
+	    }
+       @include media-breakpoint-down(sm) {
+            /*top: -3px;
+            right: -6px;*/
+            width: 26px;
+            height: 26px;
+            border: 0px;
+            line-height: 28px;
         }
         &:before{
             content: '\00d7';
-            font-size: 1.4rem;
-            font-family: fontAwesome;
-            font-weight: normal;
-            @include position(relative);
+            font-size: 26px;
+            font-family: inherit;
+            font-weight: 200;
+            /*font-weight: normal;
+            line-height: 1;*/
+            @include media-breakpoint-down(sm) {
+	                font-size: 24px;
+	        }
         }
     }
     .oe_website_sale .row {
@@ -87,8 +92,20 @@
     min-height: 400px;
     #product_details {
         @include media-breakpoint-down(md) {
-            margin-top: 0;
+            margin-top: 6px;
         }
+        @include media-breakpoint-down(xs) {
+            margin-top: 10px;
+        }
+    }
+    h4.oe_price_h4{
+        display: inline-block;
+        margin-bottom: 0px;
+        line-height: normal;
+    }
+    h1.te_product_name{
+        font-size: inherit !important;
+        margin-bottom: 0px;
     }
     #product_detail {
         .te_product_quantity,
@@ -96,9 +113,25 @@
         .product_price {
             margin: 0.5rem 0 !important;
         }
+        .te_product_quantity{
+            @include media-breakpoint-down(xs){
+                margin: 0px 0px 15px !important;
+            }
+        }
+        .oe_price_h4 b.oe_price{
+            font-size: $font-size-dynamic;
+            font-weight: 500;
+        }
+        span.text-danger.oe_default_price{
+            font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
+        }
+        .te_discount{
+            font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
+        }
         .te_product_name{
             max-width: 100%;
             @include text-ellipsis
+            width: 100%;
         }
 		.quick-add-to-cart
 		{
@@ -108,44 +141,80 @@
 			    display: block;
 			}
 		}
-        #buy_now{
+        a#buy_now{
              margin-left: 0.2rem !important;
              margin-top: 0 !important;
             @include media-breakpoint-down(md) {
                 margin-left: 0rem !important;
             }
+            @include media-breakpoint-down(sm){
+	                display: inline-block !important;
+	         }
             @include media-breakpoint-down(xs)
             {
-                font-size: 0.8125rem;
+//                 font-size: 0.8125rem;
                 display: block !important;
                 margin-right: 0;
             }
         }
-        #add_to_cart {
+        a#add_to_cart {
             margin-top: 0 !important;
+             @include media-breakpoint-down(sm)
+            {
+                display: inline-block !important;
+            }
             @include media-breakpoint-down(xs)
             {
-                font-size: 0.8125rem;
+//                 font-size: 0.8125rem;
                 display: block !important;
                 margin-right: 0;
                 margin-bottom:10px;
             }
         }
         .product_price{
+            margin: 0px !important;
             @include media-breakpoint-down(md){
                 font-size: 1.15rem;
             }
         }
+        .te_img_container{
+            width: 128px;
+            min-height: 128px;
+            max-height: auto;
+            float: left;
+            padding: 3px;
+            @include media-breakpoint-down(sm){
+               width: 90px;
+               min-height: 90px;
+            }
+        }
+        .col-right-details {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 90%;
+            @include media-breakpoint-down(sm){
+               max-width: 100%;
+            }
+        }
+        .img_section img.variant_image {
+            max-width: 100%;
+            height: auto;
+        }
         .js_add_cart_variants{
             margin: 1rem 0;
+            margin: 0 0 1rem 0;
+
             > li {
                 margin: 0.5rem 0;
                 padding: 0
             }
-            .css_attribute_color {
-                width: 22px;
-                height: 22px;
-            }
+//             .css_attribute_color {
+//                 width: 22px;
+//                 height: 22px;
+//             }
             .variant_attribute {
                 .list-unstyled{
                     max-height: 135px;
@@ -168,13 +237,26 @@
             }
         }
          #mainSlider {
-            width: 90%;
+            width: 100%;
             float: unset;
             margin: 0 auto;
+            overflow: hidden;
+            @include media-breakpoint-down(sm){
+                width: 100%;
+                overflow: initial;
+            }
             .owl-carousel{
                 .owl-item img {
                     max-height: 280px !important;
+                    @include media-breakpoint-down(sm){
+	                        max-height: 440px !important;
+	                }
                 }
+            }
+            .owl-item iframe {
+                height: 280px;
+                width: 90%;
+                max-height: unset !important;
             }
         }
         #thumbnailSlider {

@@ -19,8 +19,13 @@ odoo.define('theme_clarico_vega.category_slider', function(require) {
                     var data_replace = $(data).find(".te_category_slider");
                     $(".te_category_slider").replaceWith(data_replace);
                     $(".te_category_slider").show();
+                    var owl_rtl = false;
+                    if ($('#wrapwrap').hasClass('o_rtl')) {
+                        owl_rtl = true;
+                    }
                     $('.category_carousel').owlCarousel({
                         loop: false,
+                        rtl: owl_rtl,
                         rewind: true,
                         margin: 10,
                         nav: true,

@@ -1,3 +1,110 @@
+Version 13.0.1.9.1 - 15 Jul 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Improved the Highlight Menu as far the translation is concern.
+
+Version 13.0.1.9.0 - 7 Jul 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Minor UI/UX changes.
+
+ Feature
+  - Introduced the Highlight Menu.
+
+
+Version 13.0.1.8.3 - 5 Jul 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Minor UI/UX changes.
+
+ Feature
+  - Added subtotal in Cart Page.
+
+Version 13.0.1.8.2 - 10 Apr 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Made changes in the Product Price in alternative and accessory products on the Product Page.
+
+Version 13.0.1.8.1 - 30 Mar 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Updated UI/UX of Shop and Product Page.
+
+ Feature
+  - Image Magnifier for Product.
+
+Version 13.0.1.8.0 - 26 Feb 21
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+ Improvement
+ - Minor UI/UX changes.
+
+ Feature
+  - Image Magnifier for Product.
+
+Version 13.0.1.7.8 - 15 Feb 21
+===================================
+Note:update theme.
+
+Improvement
+
+ - Improved the variant's behavior in the Quick View.
+
+Version 13.0.1.7.7 - 22 Dec 20
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+Improvement
+
+ - Improved the css for the Headers and Mobile view.
+
+Version 13.0.1.7.6 - 26 Nov 20
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+Improvement
+
+ - Login popup auth signup link.
+ - Changed xpath for ajax cart hidden input for product page.
+ - Fix Buy now not working in AJAX Add To Cart.
+ - Removed pointer event from aos.css
+
+Version 13.0.1.7.5 - 5 Nov 20
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+Improvement
+
+ - Slider code improvement changes.
+ 
+Version 13.0.1.7.4 - 3 Nov 20
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+Improvement
+
+ - Improve Product configuration on brand.
+ - Improve code logic for better categories page render in shop page.
+
+Version 13.0.1.7.3 - 17 Oct 20
+===================================
+Note:First upgrade emipro_theme_base and update theme.
+
+Improvement
+
+ - Minor CSS improvements.
+
 Version 13.0.1.7.2 - 14 Aug 20
 ===================================
 Note:First upgrade emipro_theme_base and pwa_ept.

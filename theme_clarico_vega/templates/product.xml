@@ -8,7 +8,7 @@
         <xpath expr="//hr[@t-if='product.description_sale']" position="replace"/>
         <xpath expr="//p[@t-field='product.description_sale']" position="replace"/>
         <xpath expr="//section[@id='product_detail']" position="before">
-            <div class="te_product_breadcrumb">
+            <div class="te_product_breadcrumb te_prod_bottom_margin">
                 <ol class="breadcrumb">
                     <section class="container">
                         <li class="breadcrumb-item">
@@ -33,14 +33,14 @@
             <attribute name="class">col-lg-6 offset-xl-0</attribute>
         </xpath>
         <xpath expr="//div[@id='product_details']/h1" position="attributes">
-            <attribute name="class">te_product_name</attribute>
+            <attribute name="class">te_product_name te_prod_bottom_margin</attribute>
         </xpath>
         <xpath expr="//div[@id='product_details']/h1" position="after">
             <span id="te_rect_cnt" class="d-none" t-esc="website.number_of_product_line"/>
         </xpath>
         <xpath expr="//h1[@t-field='product.name']" position="after">
             <div class="o_not_editable">
-                <p t-field="product.description_sale" class="te_prod_desc"/>
+                <p t-field="product.description_sale" class="te_prod_desc text-muted"/>
             </div>
             <div class="te_time_main_div">
                 <div class="timer_data"/>
@@ -93,40 +93,78 @@
             <div itemprop="description" t-field="product.website_description"
                  class="oe_structure container te_product_tab tab1C d-none" id="product_full_description"/>
         </xpath>
+
+        <!-- Social buttons to share product -->
         <xpath expr="//div[@id='product_option_block']" position="after">
+            <div class="te_p_sku">
+                <div class="te_sku">SKU:</div>
+                <div class="js_sku_div">N/A</div>
+            </div>
+            <t t-if="product.public_categ_ids.ids">
+                <div class="js_categ_div te_prod_bottom_margin">
+                    <t t-if="product.public_categ_ids">
+                        <t t-if="len(product.public_categ_ids.ids) == 1">
+                            <p class="d-inline-block">Category:</p>
+                        </t>
+                        <t t-else="">
+                            <p class="d-inline-block">Categories:</p>
+                        </t>
+                        <t t-set="categ_count" t-value="1"/>
+                        <t t-foreach="product.public_categ_ids" t-as="categ_rec">
+                            <li class="te_p_categ_item d-inline-flex">
+                                <a class="text-muted" t-att-href="'/shop/category/%s' %slug(categ_rec)">
+                                    <span t-esc="categ_rec.name"/>
+                                </a>
+                                <t t-if="len(product.public_categ_ids.ids)  &gt; categ_count">,</t>
+                            </li>
+                            <t t-set="categ_count" t-value="categ_count + 1"/>
+                        </t>
+                    </t>
+                    <!--                <t t-set="categ_count" t-value="1"/>-->
+                    <!--                <t t-foreach="product.mapped('public_categ_ids.name')" t-as="categ">-->
+                    <!--                    <t t-esc="categ"/>-->
+                    <!--                    <t t-if="len(product.mapped('public_categ_ids.name')) &gt; categ_count">,</t>-->
+                    <!--                    <t t-set="categ_count" t-value="categ_count + 1"/>-->
+                    <!--                </t>-->
+                </div>
+            </t>
+            <t t-if="website.facebook_sharing or website.twitter_sharing or website.linkedin_sharing or website.mail_sharing">
+                <div class="product_share te_prod_bottom_margin">
+                    <div class="d-inline-block align-middle">Share :</div>
+                    <div class="oe_share s_share d-inline-block">
+                        <t t-if="website.facebook_sharing">
+                            <a target="_Blank" href="https://www.facebook.com/sharer/sharer.php?u={url}"
+                               class="oe_share_icon">
+                                <span class="fa fa-facebook"/>
+                            </a>
+                        </t>
+                        <t t-if="website.twitter_sharing">
+                            <a target="_Blank" href="https://twitter.com/intent/tweet?text={title}&amp;url={url}"
+                               class="oe_share_icon">
+                                <span class="fa fa-twitter"/>
+                            </a>
+                        </t>
+                        <t t-if="website.linkedin_sharing">
+                            <a target="_Blank"
+                               href="http://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;"
+                               class="oe_share_icon">
+                                <span class="fa fa-linkedin"/>
+                            </a>
+                        </t>
+                        <t t-if="website.mail_sharing">
+                            <a href="mailto:?body={url}&amp;subject={title}" class="oe_share_icon">
+                                <span class="fa fa-envelope-o"/>
+                            </a>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+
+         <xpath expr="//div[@id='product_option_block']" position="after">
             <div class="availability_messages o_not_editable"/>
         </xpath>
-        <!-- Social buttons to share product -->
-        <xpath expr="//div[@id='product_details']/p[last()]" position="after">
-            <div class="product_share">
-                <div class="oe_share s_share">
-                    <t t-if="website.facebook_sharing">
-                        <a target="_Blank" href="https://www.facebook.com/sharer/sharer.php?u={url}"
-                           class="oe_share_icon">
-                            <span class="fa fa-facebook"/>
-                        </a>
-                    </t>
-                    <t t-if="website.twitter_sharing">
-                        <a target="_Blank" href="https://twitter.com/intent/tweet?text={title}&amp;url={url}"
-                           class="oe_share_icon">
-                            <span class="fa fa-twitter"/>
-                        </a>
-                    </t>
-                    <t t-if="website.linkedin_sharing">
-                        <a target="_Blank"
-                           href="http://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;"
-                           class="oe_share_icon">
-                            <span class="fa fa-linkedin"/>
-                        </a>
-                    </t>
-                    <t t-if="website.mail_sharing">
-                        <a href="mailto:?body={url}&amp;subject={title}" class="oe_share_icon">
-                            <span class="fa fa-envelope-o"/>
-                        </a>
-                    </t>
-                </div>
-            </div>
-        </xpath>
+
         <xpath expr="//section[@id='product_detail']" position="after">
             <t t-if="product">
                 <t t-call="theme_clarico_vega.html_content_tabs_ept"/>
@@ -151,6 +189,7 @@
                             <h3 class="te_product_alt_h3">Alternative Products</h3>
                             <div class="owl-carousel">
                                 <t t-foreach="product.alternative_product_ids" t-as="alt_product">
+                                    <t t-set="combination_info" t-value="alt_product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=website.get_current_pricelist())"/>
                                     <div class="border mt16 prod_details">
                                         <div class="oe_product_image">
                                             <a t-attf-href="/shop/product/#{ slug(alt_product) }">
@@ -177,12 +216,12 @@
                                                           t-attf-class="alt_prod_name #{'te_2_line' if (website.number_of_product_line == '2') else 'te_3_line' if (website.number_of_product_line == '3') else ''}"/>
                                                 </h6>
                                             </a>
-                                            <del t-attf-class="te_shop_del mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
-                                                 style="white-space: nowrap;" t-esc="alt_product.list_price"
-                                                 t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                            <span t-if="combination_info['price']" t-esc="alt_product.price"
+                                            <span t-if="combination_info['price']" t-esc="combination_info['price']"
                                                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                            <span itemprop="price" style="display:none;" t-esc="alt_product.price"/>
+                                            <del t-attf-class="te_shop_del mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                                                 style="white-space: nowrap;" t-esc="combination_info['list_price']"
+                                                 t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                            <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
                                             <span itemprop="priceCurrency" style="display:none;"
                                                   t-esc="website.currency_id.name"/>
                                         </section>
@@ -200,6 +239,7 @@
                         <h3 class="te_product_alt_h3">Accessories Products</h3>
                         <div class="owl-carousel">
                             <t t-foreach="product.accessory_product_ids" t-as="alt_product">
+                                <t t-set="combination_info" t-value="alt_product._get_combination_info_variant(pricelist=website.get_current_pricelist())"/>
                                 <div class="border mt16 prod_details">
                                     <div class="oe_product_image">
                                         <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }">
@@ -226,12 +266,12 @@
                                                       t-attf-class="alt_prod_name #{'te_2_line' if (website.number_of_product_line == '2') else 'te_3_line' if (website.number_of_product_line == '3') else ''}"/>
                                             </h6>
                                         </a>
-                                        <del t-attf-class="te_shop_del mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
-                                             style="white-space: nowrap;" t-esc="alt_product.list_price"
-                                             t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                        <span t-if="combination_info['price']" t-esc="alt_product.price"
+                                        <span t-if="combination_info['price']" t-esc="combination_info['price']"
                                               t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                        <span itemprop="price" style="display:none;" t-esc="alt_product.price"/>
+                                        <del t-attf-class="te_shop_del mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                                             style="white-space: nowrap;" t-esc="combination_info['list_price']"
+                                             t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
                                         <span itemprop="priceCurrency" style="display:none;"
                                               t-esc="website.currency_id.name"/>
                                     </section>
@@ -260,6 +300,21 @@
         <xpath expr="//div[@id='product_details']" position="attributes">
             <attribute name="class">col-lg-6 offset-xl-0 te_product_media</attribute>
         </xpath>
+        <xpath expr="//div[hasclass('row')]/div[hasclass('col-lg-6')]" position="inside">
+            <t t-set="product_wishlist"
+               t-value="request.website.viewref('website_sale_wishlist.product_add_to_wishlist').active"/>
+            <t t-if="product_wishlist">
+                <t t-set="in_wish" t-value="product._is_in_wishlist()"/>
+                <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                <button t-if="product_variant_id" type="button" role="button"
+                        class="btn o_add_wishlist te_btn_add_wishlist d-none d-sm-inline-block d-md-none"
+                        t-att-disabled='in_wish or None' title="Add to Wishlist"
+                        t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant_id"
+                        data-action="o_wishlist">
+                    <span class="fa fa-heart" role="img" aria-label="Add to wishlist"></span>
+                </button>
+            </t>
+        </xpath>
     </template>
     <!--=================== Product add to cart sticky block =====================-->
     <template id="product_sticky_details_container">
@@ -280,33 +335,22 @@
 
                         <div class="prod_details_sticky_right">
                             <div class="prod_add_cart">
-                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update"
-                                      method="POST">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <div class="js_product js_main_product">
-                                        <t t-placeholder="select">
-                                            <input type="hidden" class="product_id" name="product_id"
-                                                   t-att-value="product_variant.id"/>
-                                            <input type="hidden" class="product_template_id" name="product_template_id"
-                                                   t-att-value="product.id"/>
-                                        </t>
-                                        <t t-set="buy_now_show"
-                                           t-value="request.website.viewref('website_sale.product_buy_now').active"/>
-                                        <a role="button" id="add_to_cart"
-                                           class="btn btn-primary btn-md mt16 a-submit te_theme_button" href="#">
-                                            <span class="fa fa-shopping-cart"/>
-                                            Add to Cart
-                                        </a>
-                                        <t t-if="buy_now_show">
-                                            <a role="button" id="buy_now"
-                                               class="btn btn-outline-primary btn-md mt16 d-block d-sm-inline-block te_theme_button"
-                                               href="#">
-                                                <span class="fa fa-bolt"/>
-                                                Buy Now
-                                            </a>
-                                        </t>
-                                    </div>
-                                </form>
+                                <t t-set="buy_now_show"
+                                   t-value="request.website.viewref('website_sale.product_buy_now').active"/>
+                                <a role="button" id="add_to_cart"
+                                   t-attf-class="btn btn-primary btn-md mt16 a-submit te_theme_button te_add_to_cart #{'width-100' if not buy_now_show else 'width-50'}"
+                                   href="#">
+                                    <span class="fa fa-shopping-cart"/>
+                                    Add to Cart
+                                </a>
+                                <t t-if="buy_now_show">
+                                    <a role="button" id="buy_now"
+                                       class="btn btn-outline-primary btn-md mt16 d-block d-sm-inline-block te_theme_button"
+                                       href="#">
+                                        <span class="fa fa-bolt"/>
+                                        Buy Now
+                                    </a>
+                                </t>
                             </div>
                         </div>
                     </div>
@@ -317,16 +361,19 @@
     <!--=================== Product page brand block =====================-->
     <template id="product_brand_container">
         <t t-if="product.product_brand_ept_id.logo or product.product_brand_ept_id.description">
-            <div class="row my-3"
+            <div class="row"
                  t-if="product.product_brand_ept_id and product.product_brand_ept_id.website_id.id == request.website.id or not product.product_brand_ept_id.website_id.id">
-                <div class="te_brand_img  col-xl-3 col-lg-4" t-if="product.product_brand_ept_id.logo"
-                     t-field="product.product_brand_ept_id.logo"
-                     t-options="{'widget': 'image','class':'te_product_brand_img'}"/>
+                <a t-att-href="'/shop?attrib=0-%s' %(product.product_brand_ept_id.id)">
+                    <div class="te_brand_img  col-xl-3 col-lg-4" t-if="product.product_brand_ept_id.logo"
+                         t-field="product.product_brand_ept_id.logo"
+                         t-options="{'widget': 'image','class':'te_product_brand_img'}"/>
+                </a>
                 <div class=" col-xl-9 col-lg-8 col-sm col">
                     <p class="te_product_brand_desc" t-if="product.product_brand_ept_id.description"
                        t-field="product.product_brand_ept_id.description"/>
                 </div>
             </div>
+            <hr class="te_s_hr_line"/>
         </t>
     </template>
     <!--=================== Vertical Multi Image Carousel =====================-->
@@ -368,12 +415,18 @@
     </template>
     <template id="produc_cart_ept" inherit_id="website_sale.product"
               name="product" priority="25">
-        <xpath expr="//a[@id='add_to_cart']" position="before">
-            <span class="te_a2c_divider"></span>
-        </xpath>
+        <!--        <xpath expr="//a[@id='add_to_cart']" position="before">-->
+        <!--            <span class="te_a2c_divider"></span>-->
+        <!--        </xpath>-->
         <xpath expr="//a[@id='add_to_cart']" position="attributes">
             <attribute name="class">
                 btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block te_theme_button
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@id='product_details']//a[@id='add_to_cart']" position="attributes">
+            <attribute name="t-attf-class">btn btn-primary btn-lg mt16 js_check_product a-submit d-block
+                d-sm-inline-block te_theme_button
+                #{'w-50' if request.website.viewref('website_sale.product_buy_now').active else 'w-100'}
             </attribute>
         </xpath>
     </template>
@@ -384,13 +437,64 @@
         <xpath expr="//li/strong" position="replace">
             <h6 t-field="ptal.attribute_id.name"></h6>
         </xpath>
+        <xpath expr="//ul" position="before">
+            <hr class="te_s_hr_line"/>
+            <div class="te_s_variant_text">
+                <span class="pull-left te_show_variants">Customize</span>
+                <span class="pull-right">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+            </div>
+        </xpath>
+        <xpath expr="//li[hasclass('js_attribute_value')]" position="replace">
+            <li class="form-group js_attribute_value" style="margin: 0;">
+                <label class="col-form-label"
+                       data-toggle="tooltip" data-html="true" t-att-data-title="ptav.product_attribute_value_id.name"
+                       data-placement="top">
+                    <div>
+                        <input type="radio"
+                               t-attf-class="js_variant_change radio_input #{ptal.attribute_id.create_variant} d-none"
+                               t-att-checked="ptav in combination"
+                               t-att-name="'ptal-%s' % ptal.id"
+                               t-att-value="ptav.id"
+                               t-att-data-value_id="ptav.id"
+                               t-att-data-value_name="ptav.name"
+                               t-att-data-attribute_name="ptav.attribute_id.name"
+                               t-att-data-is_custom="ptav.is_custom"
+                               t-att-data-is_single_and_custom="single_and_custom"/>
+                        <div class="radio_input_value flex-column align-items-center text-center te-radio-name">
+                            <span t-field="ptav.name"/>
+                            <span class="badge badge-pill badge-secondary" t-if="ptav.price_extra">
+                                <!-- see note above about price_extra -->
+                                <t t-esc="ptav.price_extra > 0 and '+' or '-'"/>
+                                <span t-esc="abs(ptav.price_extra)" class="variant_price_extra"
+                                      style="white-space: nowrap;"
+                                      t-options='{
+                                        "widget": "monetary",
+                                        "from_currency": product.currency_id,
+                                        "display_currency": (pricelist or product).currency_id
+                                    }'/>
+                            </span>
+                        </div>
+                    </div>
+                </label>
+            </li>
+        </xpath>
+        <xpath expr="//ul[@t-att-data-attribute_id='ptal.attribute_id.id']" position="attributes">
+            <attribute name="t-attf-class">list-unstyled d-flex flex-wrap align-items-start te-radio-list
+                #{'d-none' if single_and_custom else ''}
+            </attribute>
+        </xpath>
     </template>
     <!--======================== Product Quantity ======================-->
     <template id="product_quantity_ept" inherit_id="website_sale.product_quantity">
         <xpath expr="//div[hasclass('css_quantity')]" position="attributes">
             <attribute name="class">css_quantity input-group oe_website_spinner
-                te_product_quantity
+                te_product_quantity te_prod_bottom_margin
             </attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('css_quantity')]" position="before">
+            <hr class="te_s_hr_line"/>
         </xpath>
     </template>
     <!--================== Product Rating ======================-->
@@ -431,7 +535,7 @@
                             <div class="product-header">
                                 <ul id="te_product_tabs" class="nav nav-tabs product-header-tabs" role="tablist">
                                     <li class="nav-item"
-                                        t-if="product.website_description or request.env.user._is_admin()">
+                                        t-if="product.website_description or request.env.user.has_group('website.group_website_designer')">
                                         <a class="nav-link active show"
                                            id="nav_tabs_link_1"
                                            data-toggle="tab"
@@ -439,7 +543,9 @@
                                            href="#nav_tabs_content_1"
                                            role="tab"
                                            aria-controls="nav_tabs_content_1"
-                                           aria-selected="true">Description
+                                           aria-selected="true">
+                                            <span class="fa fa-sliders mr-2"></span>
+                                            <span class="nav_tab_title">Description</span>
                                         </a>
                                     </li>
                                     <t t-set="categories"
@@ -452,7 +558,9 @@
                                                href="#nav_tabs_content_2"
                                                role="tab"
                                                aria-controls="nav_tabs_content_2"
-                                               aria-selected="false">Specification
+                                               aria-selected="false">
+                                                <span class="fa fa-sort-amount-desc mr-2"></span>
+                                                <span class="nav_tab_title">Specification</span>
                                             </a>
                                         </li>
                                     </t>
@@ -464,7 +572,9 @@
                                                href="#nav_tabs_content_doc"
                                                role="tab"
                                                aria-controls="nav_tabs_content_doc"
-                                               aria-selected="false">Documents
+                                               aria-selected="false">
+                                                <span class="fa fa-file-text mr-2"></span>
+                                                <span class="nav_tab_title">Documents</span>
                                             </a>
                                         </li>
                                     </t>
@@ -476,7 +586,9 @@
                                                href="#nav_tabs_content_3"
                                                role="tab"
                                                aria-controls="nav_tabs_content_3"
-                                               aria-selected="false">Ratings and Reviews
+                                               aria-selected="false">
+                                                <span class="fa fa-star mr-2"></span>
+                                                <span class="nav_tab_title">Ratings and Reviews</span>
                                             </a>
                                         </li>
                                     </t>
@@ -491,8 +603,8 @@
                                                    role="tab"
                                                    t-att-aria-controls="'nav_tabs_content_%s_%s' % (product.id, tab.id)"
                                                    aria-selected="false">
-                                                    <div t-field="tab.tab_name"
-                                                         class="oe_structure"/>
+                                                    <span class="fa fa-info-circle mr-2"/>
+                                                    <span t-field="tab.tab_name" class="nav_tab_title"/>
                                                 </a>
                                             </li>
                                         </t>
@@ -579,7 +691,10 @@
                                                 <t t-if="not user_id._is_public()">
                                                     <ul>
                                                         <li>
-                                                            <a t-att-href="doc.sudo().website_url" t-att-download="doc.name"><t t-esc="doc.name" /></a>
+                                                            <a t-att-href="doc.sudo().website_url"
+                                                               t-att-download="doc.name">
+                                                                <t t-esc="doc.name"/>
+                                                            </a>
                                                             <a t-att-href="doc.sudo().website_url"
                                                                t-att-download="doc.name">
                                                                 <i class="o_image o_image_thumbnail"
@@ -592,7 +707,10 @@
                                                     <t t-if="doc.public">
                                                         <ul>
                                                             <li>
-                                                                <a t-att-href="doc.sudo().website_url" t-att-download="doc.name"><t t-esc="doc.name" /></a>
+                                                                <a t-att-href="doc.sudo().website_url"
+                                                                   t-att-download="doc.name">
+                                                                    <t t-esc="doc.name"/>
+                                                                </a>
                                                                 <a t-att-href="doc.sudo().website_url"
                                                                    t-att-download="doc.name">
                                                                     <i class="o_image o_image_thumbnail"
@@ -645,21 +763,58 @@
     </template>
     <!--=============== Add Discount line ================-->
     <template id="product_price_ept" inherit_id="website_sale.product_price">
-        <xpath expr="//div[hasclass('product_price')]" position="inside">
-            <t t-if="combination_info['has_discounted_price']">
+        <xpath expr="//div[hasclass('product_price')]" position="replace">
+            <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+                 class="product_price mt16 te_prod_bottom_margin">
                 <t t-set="difference"
                    t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                 <t t-set="discount"
-                   t-value="round(difference*100/combination_info['list_price'])"/>
-
-                <div class="te_discount">
+                   t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
+                <h4 class="oe_price_h4 css_editable_mode_hidden">
+                    <b class="oe_price" style="white-space: nowrap;" t-esc="combination_info['price']"
+                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span t-attf-class="text-danger oe_default_price {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                          style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="combination_info['list_price']"
+                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                </h4>
+                <h4 class="css_non_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">
+                    <span t-field="product.list_price"
+                          t-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: product.currency_id,                }"/>
+                </h4>
+                <div t-if="combination_info['has_discounted_price']" class="te_discount">
                     <span class="te_prod_discount">You Save :</span>
                     <t t-esc="difference"
                        t-options='{"widget": "monetary",
-                        "display_currency": product.currency_id, }'/>
+                        "display_currency": website.currency_id, }'/>
                     <span class="te_percentage" t-esc="'(%s'%(discount)+'&#x25;)'"/>
                 </div>
-            </t>
+            </div>
         </xpath>
     </template>
+
+    <template id="product_shipping_info" inherit_id="website_sale.product">
+        <!-- Shipping Information section  -->
+        <xpath expr="//div[@id='product_details']/p[last()]" position="replace">
+            <div class="te_s_shipping_info">
+                <ul class="">
+                    <li class="te_s_shipping_info_li text-muted border-right">
+                        <span class="fa fa-money text-black mr-1"></span>
+                        <span>30-day money-back</span>
+                    </li>
+                    <li class="te_s_shipping_info_li text-muted border-right">
+                        <span class="fa fa-undo text-black mr-1"></span>
+                        <span>7-day returns</span>
+                    </li>
+                    <li class="te_s_shipping_info_li text-muted border-right">
+                        <span class="fa fa-clock-o text-black mr-1"></span>
+                        <span>Shipping: 2-3 Days</span>
+                    </li>
+                </ul>
+            </div>
+        </xpath>
+    </template>
+
 </odoo>

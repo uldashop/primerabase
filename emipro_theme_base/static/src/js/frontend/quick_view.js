@@ -37,6 +37,7 @@ odoo.define('emipro_theme_base.quick_view', function(require) {
                 }
                 var WebsiteSale = new sAnimations.registry.WebsiteSale();
                 WebsiteSale.init();
+                WebsiteSale._startZoom();
                 var combination = [];
                 xml_load.then(function () {
                     var $message = $(QWeb.render(
@@ -58,20 +59,21 @@ odoo.define('emipro_theme_base.quick_view', function(require) {
                         $(this).find('.a-submit').addClass('disabled');
                     }
                 }, 1000);
-                $('.variant_attribute  .list-inline-item').first().addClass('active_li');
-                $(".variant_attribute li").each(function() {
-                    if($(this).find('.css_attribute_color').hasClass('active')) {
-                        $(this).parent('.list-inline-item').addClass('active_li');
-                    }
-                });
-
-                $( ".list-inline-item .css_attribute_color" ).change(function() {
-                    $('.list-inline-item').removeClass('active_li');
-                    $(this).parent('.list-inline-item').addClass('active_li');
+                $('.variant_attribute  .list-inline-item').find('.active').parent().addClass('active_li');
+                $( ".list-inline-item .css_attribute_color" ).change(function(ev) {
+                    var $parent = $(ev.target).closest('.js_product');
+                    $parent.find('.css_attribute_color').parent('.list-inline-item').removeClass("active_li");
+                    $parent.find('.css_attribute_color').filter(':has(input:checked)').parent('.list-inline-item').addClass("active_li");
                 });
 
             });
 
         },
     });
+    $('#quick_view_model_shop').on('hidden.bs.modal', function (e) {
+        $("#quick_view_model_shop .modal-body").html('');
+    });
+    $('#quick_view_model').on('hidden.bs.modal', function (e) {
+        $("#quick_view_model .modal-body").html('');
+    })
 });

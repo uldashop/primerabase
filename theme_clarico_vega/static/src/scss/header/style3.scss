@@ -188,13 +188,14 @@
 
 		>li > a.nav-link
 		{
-			color : $theme-extra-color;
+          	color : $theme-extra-color;
 			font-family: inherit;
 			padding: 0.8rem 0.8rem;
 			border-top: 2px solid nth($f_color,27);
 			&:hover{
 			    color:$header_text_hover_color;
 			}
+
 		}
 		>li > a.nav-link.active
 		{
@@ -233,8 +234,6 @@
 			{
 				> a.nav-link
 				{
-					padding: 0.5rem !important;
-					border: 0;
 				}
 				> a.nav-link.active
 				{
@@ -450,3 +449,14 @@
 // .te_header_navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main):hover{
 //     color: nth($f_color,19);
 // }
+
+.o_rtl .te_user_account{
+    .dropdown-menu::before,
+    .dropdown-menu::after{
+        left: 70px;
+//         @include media-breakpoint-down(sm){
+//             right: 12px;
+//             left: auto
+//         }
+    }
+}

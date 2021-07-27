@@ -78,8 +78,13 @@ odoo.define('website_slider.front_js', function (require) {
             })
         },
         initOwlSlider: function () {
+            var owl_rtl = false;
+            if ($('#wrapwrap').hasClass('o_rtl')) {
+                owl_rtl = true;
+            }
             $('.te_product_slider_1, .te_slider_style_2_right_pannel, .te_product_slider_5, .te_slider_style_6').owlCarousel({
                 loop: false,
+                rtl: owl_rtl,
                 rewind: true,
                 margin: 10,
                 nav: true,
@@ -107,6 +112,7 @@ odoo.define('website_slider.front_js', function (require) {
             });
             $('.te_product_slider_4').owlCarousel({
                 loop: false,
+                rtl: owl_rtl,
                 rewind: true,
                 nav: true,
                 dots: false,
@@ -160,8 +166,13 @@ odoo.define('website_slider.front_js', function (require) {
             });
         }
     });
+    var owl_rtl = false;
+    if ($('#wrapwrap').hasClass('o_rtl')) {
+        owl_rtl = true;
+    }
     $('#myCarousel_banner_prod_slider').find('.te_product_slider_1.owl-carousel').owlCarousel({
         loop: false,
+        rtl: owl_rtl,
         rewind: true,
         margin: 10,
         nav: true,

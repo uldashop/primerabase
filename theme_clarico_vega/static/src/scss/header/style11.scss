@@ -42,11 +42,16 @@
         display: inline-block;
     }
     .badge-primary {
-        border-radius: 24px;
-        padding: 3px 5px;
-        top: -11px;
-        left: -8px;
+        top: -10px;
+        left: -9px;
+        bottom: auto;
+        right: auto;
+        padding: 0.3em 0.6em;
+        border-radius: 40px;
+        vertical-align: top;
+        font-size: 75%;
         @include media-breakpoint-down(md){
+            top: -4px;
             width: auto;
             padding: 4px 6px;
             font-size: 0.625rem;
@@ -343,6 +348,7 @@ span#menu_label_tx_span span.te_custom_menu_label{
         a.te_search_link {
             padding: 22px 15px;
             width:60px;
+            color:$theme-extra-color;
             @include media-breakpoint-down(md){
                 padding: 20px;
             }
@@ -633,9 +639,6 @@ search_animate{
         min-height:68px;
         padding-right: 0;
         width:100%;
-        @include media-breakpoint-down(md){
-           border-radius: 0px;
-        }
         @media (min-width: 1250px){
             max-width: 1140px;
             width: 100%;
@@ -643,6 +646,12 @@ search_animate{
         @media (min-width: 1500px){
             max-width: 1400px;
             width: 100%;
+        }
+        @include media-breakpoint-down(md){
+           border-radius: 0px;
+        }
+        @include media-breakpoint-down(sm){
+            box-shadow: none;
         }
     }
     #top_menu_collapse #top_menu > li {
@@ -652,9 +661,12 @@ search_animate{
         }
     }
     #top_menu > li > a.nav-link {
-        line-height: 52px;
+        line-height: 55px;
         @include media-breakpoint-down(md){
-            line-height: normal;
+             line-height: 49px;
+        }
+        @include media-breakpoint-down(sm){
+             line-height: inherit;
         }
     }
     label.label_checkbox {

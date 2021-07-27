@@ -15,10 +15,12 @@ class WebsiteMenu(models.Model):
     menu_label_text = fields.Char(string="Menu Label Text",
                                     help="Menu Label text to display on the menu link", translate=True)
     menu_label_text_color = fields.Char(string="Menu Label Text Color")
+    is_highlight_menu = fields.Boolean()
 
     def write(self,vals):
         return super(WebsiteMenu, self).write(vals)
     # Overide get_tree method to add is_dynamic_menu field
+
     @api.model
     def get_tree(self, website_id, menu_id=None):
         """
@@ -41,6 +43,7 @@ class WebsiteMenu(models.Model):
                     'is_dynamic_menu': node.is_dynamic_menu,
                     'menu_label_text': node.menu_label_text,
                     'menu_label_text_color': node.menu_label_text_color,
+                    'is_highlight_menu': node.is_highlight_menu,
                 },
                 'children': [],
                 'is_homepage': is_homepage,

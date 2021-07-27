@@ -5,7 +5,7 @@
         <xpath expr="//form" position="inside">
             <t t-set="curr_web" t-value="request.website.get_current_website()"/>
             <t t-set="range_values" t-value='website.get_min_max_prices(search,category,attrib_values)'/>
-            <t t-if="range_values">
+            <t t-if="range_values and range_values[2] and range_values[3]">
                 <input type="hidden" id="price_slider_min" t-att-value="range_values[2]"/>
                 <input type="hidden" id="price_slider_max" t-att-value="range_values[3]"/>
                 <div class="ept_price_slider_block">
@@ -36,7 +36,7 @@
                                 <label t-att-class="'d-none' if website.currency_id.position == 'after' else ''"
                                        t-field="website.currency_id.symbol"/>
                                 <input name="min_price" type="number" class="sliderValue ept_price_min" data-index="0"
-                                       t-att-value="range_values[0]"/>
+                                       t-att-value="range_values[0] or 1"/>
                                 <label t-att-class="'d-none' if website.currency_id.position == 'before' else ''"
                                        t-field="website.currency_id.symbol"/>
                             </div>

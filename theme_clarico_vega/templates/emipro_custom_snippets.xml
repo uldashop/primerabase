@@ -369,18 +369,26 @@
                 <!-- Category Products Carousel -->
                 <t t-snippet="theme_clarico_vega.category_products"
                    t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/category_products.jpg"/>
+                <!-- Add restriction for if pricelist enable then only display snippets. @Author : Angel Patel (28/10/2020) -->
+                <t t-set="price_list_obj" t-value="request.env['website'].sudo().get_current_website().get_current_pricelist()" />
+                <t t-set="is_sale_pricelist" t-value="request.env.user.has_group('product.group_sale_pricelist')" />
+                <t t-if="is_sale_pricelist">
+                    <!-- Discount Category Carousel -->
+                    <t t-if="price_list_obj and price_list_obj.item_ids and len(price_list_obj.item_ids.filtered(lambda x:x.applied_on == '2_product_category').ids) > 0">
+                        <t t-snippet="theme_clarico_vega.category_discount" t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/category_discount.jpg"/>
+                    </t>
 
-                <!-- Discount Category Carousel -->
-                <t t-snippet="theme_clarico_vega.category_discount"
-                   t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/category_discount.jpg"/>
+                    <!-- Discount Product Carousel -->
+                    <t t-if="price_list_obj and price_list_obj.item_ids and len(price_list_obj.item_ids.filtered(lambda x:x.applied_on == '1_product').ids) > 0">
+                        <t t-snippet="theme_clarico_vega.product_discount" t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/product_discount.jpg"/>
+                    </t>
 
-                <!-- Discount Product Carousel -->
-                <t t-snippet="theme_clarico_vega.product_discount"
-                   t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/product_discount.jpg"/>
+                    <!-- Discount All Product Carousel -->
+                    <t t-if="price_list_obj and price_list_obj.item_ids and len(price_list_obj.item_ids.filtered(lambda x:x.applied_on == '3_global').ids) > 0">
+                        <t t-snippet="theme_clarico_vega.allproduct_discount" t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/all_discount.jpg"/>
+                    </t>
+                </t>
 
-                <!-- Discount All Product Carousel -->
-                <t t-snippet="theme_clarico_vega.allproduct_discount"
-                   t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/all_discount.jpg"/>
             </div>
             <!--==== Inner Snippets =======-->
             <div class="o_panel_header">
@@ -987,7 +995,7 @@
     </template>
     <!--======================= Slider Style 1 ==================-->
     <template id="slider_style_1" name="Full screen 1">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex te_slider_full_screen_1"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators d-none">
@@ -1037,7 +1045,7 @@
     </template>
     <!--===================== Slider Style 2 ==========================-->
     <template id="slider_style_2" name="Full screen 2">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex te_slider_full_screen_2"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -1145,7 +1153,7 @@
     </template>
     <!--======================== Slider Style 3 ===========================-->
     <template id="slider_style_3" name="Full screen 3">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators d-none">
@@ -1174,7 +1182,7 @@
     </template>
     <!--===================== Slider Style 4 ==========================-->
     <template id="slider_style_4" name="Style 1">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -1256,7 +1264,7 @@
     </template>
     <!--=========================== Slider Style 5 ================================-->
     <template id="slider_style_5" name="Style 2">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex te_slider_style_2"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -1333,7 +1341,7 @@
     </template>
     <!--====================== Slider Style 6 ============================-->
     <template id="slider_style_6" name="Full screen 4">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -1415,7 +1423,7 @@
     </template>
     <!--====================== Slider Style 7 ============================-->
     <template id="slider_style_7" name="Style 3">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -1517,7 +1525,7 @@
     </template>
     <!--====================== Slider Style 8 ============================-->
     <template id="slider_style_8" name="Full screen 5">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel carousel-fade slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel carousel-fade slide d-flex te_slider_full_screen_5"
              data-interval="10000">
             <ol class="carousel-indicators d-md-flex d-none">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -1578,7 +1586,7 @@
     </template>
     <!--====================== Slider Style 9 ============================-->
     <template id="slider_style_9" name="Style 4">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex" data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -4194,7 +4202,7 @@
     <!--==================== 3 Columns Style 3 =====================-->
     <template id="three_columns_style_3" name="Style 3">
         <div class="oe_structure"/>
-        <section class="s_three_columns pb32 pt32">
+        <section class="s_three_columns pb32 pt32 te_3_col_sty_3">
             <div class="container">
                 <div class="row d-flex align-items-stretch">
                     <div class="col-lg-4 col-md-4 s_col_no_bgcolor">
@@ -6253,7 +6261,7 @@
     </template>
     <!--======================= Slider style 10 ===========================-->
     <template id="slider_style_10" name="Full screen 6">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide te_s_slider_10"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex te_s_slider_10"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -6319,7 +6327,7 @@
     </template>
     <!--======================= Slider style 11 ===========================-->
     <template id="slider_style_11" name="Full screen 7">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide te_s_slider_11"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide te_s_slider_11 d-flex"
              data-interval="10000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -6599,7 +6607,7 @@
     </template>
     <!--===============Slider style 12================== -->
     <template id="slider_style_12" name="Full screen 8">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active">
@@ -6685,7 +6693,7 @@
     </template>
     <!--===============Slider style 13================== -->
     <template id="slider_style_13" name="Full screen 9">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active">
@@ -7427,7 +7435,7 @@
     </template>
     <!--============== Banner With Slider =====================-->
     <template id="banner_slider" name="Full screen 10">
-        <section class="s_banner parallax s_parallax_is_fixed pt96 pb96" data-scroll-background-ratio="1">
+        <section class="s_banner parallax s_parallax_is_fixed pt96 pb96 d-flex" data-scroll-background-ratio="1">
             <span class="s_parallax_bg oe_img_bg oe_custom_bg"
                   style="background-image: url('/theme_clarico_vega/static/src/img/snippets/structure/banner/1920_800.jpg'); background-position: center"/>
             <div class="container te_banner_slider">
@@ -7525,8 +7533,28 @@
             </div>
         </section>
     </template>
-    <!--========================== Banner Style 3 ============================-->
+
+    <!--========================== Banner Video ============================-->
+    <template id="banner_video_template" name="Banner Video template">
+        <div class="oe_structure"/>
+        <section t-if="banner_video_url">
+            <video t-att-preload="'auto' if is_ios else None" autoplay="" loop="" controls="false" playsinline=""
+                   muted=""
+                   width="100%" height="auto"
+                   t-att-poster="'/web/content/%s' %(banner_video_url.id) if is_ios else None">
+                <source t-attf-src="/web/content/{{banner_video_url.id}}" type="video/mp4"/>
+                <source t-attf-src="/web/content/{{banner_video_url.id}}" type="video/webm"/>
+            </video>
+        </section>
+    </template>
+
     <template id="banner_video" name="Banner Video">
+        <section>
+            <div class="js_banner_video" data-isemipro='true'/>
+        </section>
+    </template>
+    <!--========================== Banner Style 3 ============================-->
+    <!--<template id="banner_video" name="Banner Video">
         <div class="oe_structure"/>
         <t t-if="not website">
             <t t-set="website" t-value="request.env['website'].sudo().get_current_website()"/>
@@ -7539,7 +7567,7 @@
                 </video>
             </section>
         </t>
-    </template>
+    </template>-->
     <!--================== Full Width =====================-->
     <template id="full_width_image_banner" name="Full Image Banner">
         <section>
@@ -7558,7 +7586,7 @@
     </template>
     <!--======================== Slider Style 14 ===========================-->
     <template id="slider_style_14" name="Full screen 11">
-        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide"
+        <div id="myCarousel" class="s_carousel s_carousel_default carousel slide d-flex"
              data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

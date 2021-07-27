@@ -11,5 +11,7 @@ class ProductAttribute(models.Model):
     
     is_quick_filter = fields.Boolean(string='Quick Filter',help="It will show this attribute in quick filter")
     website_ids = fields.Many2many('website', help="You can set the filter in particular website.")
-    exclude_website_ids = fields.Many2many('website','website_exclude_rel',string="Exclude from Website")
+    exclude_website_ids = fields.Many2many('website', 'website_exclude_rel', string="Hide from Product Filter",
+                                           help="Exclude the Attribute from Product Filter listing as well as Quick Filter based on Website selection.")
+
   

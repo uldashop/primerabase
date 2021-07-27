@@ -88,24 +88,38 @@ odoo.define('theme_clarico_vega.dropdown_animate', function (require) {
                         var stickHeight = $('.product_details_sticky .prod_details_sticky_div').height();
                         var fixIconHeight10 = $('.te_header_icon_right').height();
                         var fixIconHeight11 = $('.head_11_rest_icons').height();
-                        if ($(this).scrollTop() > $('div#product_details a#add_to_cart').offset().top) {
+                        var footerPosition = $("main").height() - $("#footer").height();
+                        var stickWindowWidth = window.screen.width - $('.prod_details_sticky_div').outerWidth();
+                        var chatBtnWidth = (stickWindowWidth / 2);
+
+                        if ($(this).scrollTop() > $('div#product_details a#add_to_cart').offset().top - 400 && $(this).scrollTop() < footerPosition - 200) {
                             if ($(window).width() < 992){
                                 if($('.fixed-header-10-bar').length){
                                     $('div#wrapwrap .product_details_sticky').css('bottom',fixIconHeight10+'px').fadeIn();
+                                    $('.openerp.o_livechat_button').css({'bottom': (stickHeight + fixIconHeight10)+'px'});
                                 }
                                 else{
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom',stickHeight+'px').fadeIn();
+                                    $('.openerp.o_livechat_button').css({'bottom': stickHeight+'px'});
                                 }
 
                                 if($('.fixed-header-top-bar').length){
                                     $('div#wrapwrap .product_details_sticky').css('bottom',fixIconHeight11+'px').fadeIn();
+                                    $('.openerp.o_livechat_button').css({'bottom': (stickHeight + fixIconHeight11)+'px'});
                                 }
                                 else{
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom',stickHeight+'px').fadeIn();
+                                    $('.openerp.o_livechat_button').css({'bottom': stickHeight+'px'});
                                 }
                             }
                             else{
                                 $('div#wrapwrap .product_details_sticky').fadeIn();
+                                if ( $('#wrapwrap').hasClass('o_rtl') ){
+                                    $('.openerp.o_livechat_button').css({'left': (chatBtnWidth + 7)+'px', 'bottom': stickHeight+'px', 'right': 'auto'});
+                                }
+                                else{
+                                    $('.openerp.o_livechat_button').css({'left':'auto', 'bottom': stickHeight+'px', 'right': (chatBtnWidth + 7)+'px'});
+                                }
                             }
 
                             if ($(window).width() >= 992){
@@ -131,11 +145,9 @@ odoo.define('theme_clarico_vega.dropdown_animate', function (require) {
                             /* Display prices on add to cart sticky*/
                             if( $( ".js_product.js_main_product" ).hasClass( "css_not_available" )){
                                $('div#wrapwrap .prod_price').html('');
-                               //$(".product_details_sticky .prod_add_cart #add_to_cart, .product_details_sticky .prod_add_cart #buy_now").addClass('disabled');
                             }
                             else{
                                 $('div#wrapwrap .prod_price').html(getPriceHtml);
-                                //$(".product_details_sticky .prod_add_cart #add_to_cart, .product_details_sticky .prod_add_cart #buy_now").removeClass('disabled');
                             }
 
                             $(".product_details_sticky .prod_add_cart #add_to_cart").click(function(e){
@@ -160,22 +172,34 @@ odoo.define('theme_clarico_vega.dropdown_animate', function (require) {
                             if ($(window).width() < 992){
                                 if($('.fixed-header-10-bar').length){
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom', fixIconHeight10+'px');
+                                    $('.openerp.o_livechat_button').css({'bottom': (stickHeight + fixIconHeight10)+'px'});
                                 }
                                 else{
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom', '0px');
+                                    $('.openerp.o_livechat_button').css({'bottom': '0px'});
                                 }
 
                                 if($('.fixed-header-top-bar').length){
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom', fixIconHeight11+'px');
+                                    $('.openerp.o_livechat_button').css({'bottom': (stickHeight + fixIconHeight11)+'px'});
                                 }
                                 else{
                                     $('#product_detail').find('.o_product_feature_panel').css('bottom', '0px');
+                                    $('.openerp.o_livechat_button').css({'bottom': '0px'});
                                 }
                             }
                             else{
                                 $('#product_detail').find('.o_product_feature_panel').css('bottom', '0px');
                             }
                             $('div#wrapwrap .product_details_sticky').fadeOut();
+                            if ($(window).width() > 992){
+                                if ( $('#wrapwrap').hasClass('o_rtl') ){
+                                    $('.openerp.o_livechat_button').css({'bottom': '0px', 'right': 'auto', 'left': '0px'});
+                                }
+                                else{
+                                    $('.openerp.o_livechat_button').css({'bottom': '0px', 'right': '0px', 'left': 'auto'});
+                                }
+                            }
                         }
                     }
                 }
@@ -190,6 +214,7 @@ odoo.define('theme_clarico_vega.dropdown_animate', function (require) {
                     }
                 );
             }
+
         },
         showFooter:function(){
             if ($(window).width() < 768){

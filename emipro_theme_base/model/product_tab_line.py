@@ -3,7 +3,7 @@ from odoo import api, fields, models, tools, _
 
 class ProductTabLine(models.Model):
     _name = "product.tab.line"
-    _description = 'Product Label Line'
+    _description = 'Product Tab Line'
     _order = "sequence, id"
 
     product_id = fields.Many2one('product.template', string='Product Template')

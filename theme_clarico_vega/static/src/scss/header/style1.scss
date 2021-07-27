@@ -22,6 +22,8 @@ header > nav.navbar{
 	@include media-breakpoint-down(sm){
 		border: 0 !important;
 		width:100%;
+		margin: 10px 0px;
+        min-height: unset;
 	}
 }
 .te_header_before_overlay,.te_header_navbar
@@ -75,10 +77,16 @@ header#top, #wrapwrap .o_header_affix{
 		>li > a.nav-link {
 			border-top: 2px solid nth($f_color,27);
 			font-size: 0.875rem;
-			color:$theme-extra-color;
+ 			color:$theme-extra-color;
 			font-weight: 600;
 			@include position(relative) 
 			padding-top:1rem;
+	        @include media-breakpoint-down(sm){
+	           font-size: inherit;
+	           font-weight: normal;
+	           padding: 0.5rem 0rem;
+	           border-top: 0px;
+	        }
 			&:hover{
 			    color:$header_text_hover_color;
 			}
@@ -175,13 +183,18 @@ header.o_header_affix.affix.affixed .te_header_before_overlay {
             color:$theme-extra-color;
 			sup
 			{
-				@include border-radius(12px);
-				width: auto;
-				padding: 3px 5px;
-				vertical-align: top;
-				font-size: nth($f_sizes,9);
-				@include position(absolute, -9px, -10px);
+				/*@include border-radius(12px);*/
+				padding: 0.4em 0.6em;
+                border-radius: 40px;
+                vertical-align: top;
+                font-size: 75%;
+				@include position(absolute, -12px, -15px);
 				display: inline-block !important;
+				@include media-breakpoint-down(sm){
+                    top: -10px;
+                    right: -14px;
+                    padding: 0.3em 0.5em;
+				}
 			}
 			i
 			{
@@ -262,45 +275,6 @@ header.o_header_affix.affix.affixed .te_header_before_overlay {
 	{
 		display: none;
 	}
-}
-/*Header on mobile view*/
-header.o_header_affix.affix {
-    @include media-breakpoint-down(sm){
-        position: relative !important;
-        margin: 0 !important;
-        top: 0 !important;
-        opacity: 0;
-        z-index: -1 !important;
-        pointer-events: none;
-    }
-}
-header.o_affix_enabled {
-    @include media-breakpoint-down(sm){
-        position: fixed !important;
-        top: auto;
-        left: 0;
-        right: 0;
-        z-index: 25;
-        @include transition(all,0.55s,ease);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        height:auto;
-        background-color: nth($f_color, 5) !important;
-    }
-}
-#wrapwrap header.o_header_affix{
-    @include media-breakpoint-down(sm){
-        display: none !important;
-    }
-}
-#wrapwrap > header:not(.o_header_affix){
-    @include media-breakpoint-down(sm){
-        position: absolute;
-        top: auto;
-        right: 0;
-        bottom: auto;
-        left: 0;
-        z-index: 1000;
-    }
 }
 .te_header_style_1_main
 {
@@ -475,5 +449,11 @@ header.o_affix_enabled {
             vertical-align: initial;
             font-weight: initial;
         }
+    }
+}
+/* Product filter option on Mobile view */
+.oe_website_sale .te_shop_filter_resp.sticky-filter{
+    @include media-breakpoint-down(sm){
+        top: 170px !important;
     }
 }

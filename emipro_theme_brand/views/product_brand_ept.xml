@@ -26,6 +26,8 @@
                                 type="object" icon="fa-globe">
                             <field name="website_published" widget="website_publish_button"/>
                         </button>
+                        <!-- Add set_brand_wizard button for configure brand product. @Author : Angel Patel (28/10/2020) -->
+                        <button name="set_brand_wizard" class="oe_stat_button" type="object" icon="fa-plus" string="Configure Products"/>
                         <button name="%(action_open_brand_products)d"
                                 type="action"
                                 class="oe_stat_button"
@@ -50,18 +52,13 @@
                     <xpath>
                         <notebook>
                             <page string="Products">
-                                <separator string="Select Products of this Brand"/>
-                                <tr>
-                                    <td>
-                                        <label for="product_ids" string="Product" class="col-sm-1 p-0 pt-3"/>
-                                    </td>
-                                    <td>
-                                        <field name="product_ids"
-                                               domain="[('product_brand_ept_id','=',False),('website_published','=',True)]"
-                                               options="{'no_create': True}">
-                                        </field>
-                                    </td>
-                                </tr>
+                                <group>
+                                    <field name="product_ids" attrs="{'readonly':1}" nolabel="1" domain="[('product_brand_ept_id','=',False),('website_published','=',True)]" options="{'no_create': True}">
+                                        <tree>
+                                            <field name="name"/>
+                                        </tree>
+                                    </field>
+                                </group>
                             </page>
                             <page string="Description">
                                 <group string="Description">

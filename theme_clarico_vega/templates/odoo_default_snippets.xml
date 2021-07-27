@@ -1018,7 +1018,7 @@
     <!--====================== Carousel Slider ======================-->
     <template id="carouse_slider" name="style 15" inherit_id="website.s_carousel">
         <xpath expr="//div[hasclass('s_carousel')]" position="replace">
-            <div id="myCarousel" class="s_carousel s_carousel_default carousel slide te_arrow_small"
+            <div id="myCarousel" class="s_carousel s_carousel_default carousel slide te_arrow_small d-flex"
                  data-interval="10000">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">

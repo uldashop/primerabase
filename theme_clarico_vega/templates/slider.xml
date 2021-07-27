@@ -5,15 +5,16 @@
         <section t-if="filter_data" class="te_pc_style_main">
             <div class="container oe_website_sale">
                 <!-- Display Filters -->
-                <div class="te_slider_filter_main"
-                     t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
-                    <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True)"
-                       t-as="filter_id" t-if="len(slider_obj.slider_filter_ids.ids) > 1">
-                        <div class="te_filter_value" t-if="filter_id.website_published">
-                            <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                <t t-esc="filter_id.name"/>
-                            </h4>
-                        </div>
+                <div class="te_slider_filter_main">
+                    <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True)"
+                           t-as="filter_id" t-if="len(slider_obj.slider_filter_ids.ids) > 1">
+                            <div class="te_filter_value" t-if="filter_id.website_published">
+                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                    <t t-esc="filter_id.name"/>
+                                </h4>
+                            </div>
+                        </t>
                     </t>
                 </div>
                 <!-- Products container -->
@@ -111,12 +112,12 @@
                                                             <t t-set="difference"
                                                                t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                             <t t-set="discount"
-                                                               t-value="round(difference*100/combination_info['list_price'])"/>
+                                                               t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                             <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                 <div class="te_discount">
                                                                     <span class="te_prod_discount">You Save :</span>
                                                                     <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                       "display_currency": product.currency_id,
+                                                                                       "display_currency": website.currency_id,
                                                                                    }'/>
                                                                     <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                 </div>
@@ -124,7 +125,7 @@
                                                         </t>
                                                         <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                             t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                            <span t-field="product.list_price"
+                                                            <span t-esc="product.list_price"
                                                                   t-options='{"widget": "monetary",
                                                                                    "display_currency": product.currency_id,
                                                                                }'/>
@@ -144,7 +145,6 @@
                                                                    t-att-product-id="product.id"
                                                                    t-att-variant-count="product.product_variant_count">
                                                                     <span class="fa fa-shopping-cart"/>
-                                                                    Add to Cart
                                                                 </a>
                                                             </t>
                                                             <t t-else="">
@@ -155,7 +155,6 @@
                                                                    t-att-product-id="product.id"
                                                                    t-att-variant-count="product.product_variant_count">
                                                                     <span class="fa fa-shopping-cart"/>
-                                                                    Add to Cart
                                                                 </a>
                                                             </t>
                                                             <!--<a role="button"
@@ -212,15 +211,16 @@
             <section class="te_pc_style_main">
                 <div class="product_container container oe_website_sale">
                     <!-- Display Filters -->
-                    <div class="te_slider_filter_main"
-                         t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True ).ids) &gt; 1">
-                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
-                           t-as="filter_id">
-                            <div class="te_filter_value">
-                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                    <t t-esc="filter_id.name"/>
-                                </h4>
-                            </div>
+                    <div class="te_slider_filter_main">
+                        <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                            <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
+                               t-as="filter_id">
+                                <div class="te_filter_value">
+                                    <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                        <t t-esc="filter_id.name"/>
+                                    </h4>
+                                </div>
+                            </t>
                         </t>
                     </div>
                     <!-- Products container -->
@@ -318,12 +318,12 @@
                                                                 <t t-set="difference"
                                                                    t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                                 <t t-set="discount"
-                                                                   t-value="round(difference*100/combination_info['list_price'])"/>
+                                                                   t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                                 <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                     <div class="te_discount pt-2">
                                                                         <span class="te_prod_discount">You Save :</span>
                                                                         <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                           "display_currency": product.currency_id,
+                                                                                           "display_currency": website.currency_id,
                                                                                        }'/>
                                                                         <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                     </div>
@@ -331,7 +331,7 @@
                                                             </t>
                                                             <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                                 t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                                <span t-field="product.list_price"
+                                                                <span t-esc="product.list_price"
                                                                       t-options='{"widget": "monetary",
                                                                                        "display_currency": product.currency_id,
                                                                                    }'/>
@@ -384,15 +384,16 @@
         <section t-if="filter_data" class="ps_style_3_main te_pc_style_main">
             <div class="container oe_website_sale">
                 <!-- Display Filters -->
-                <div class="te_slider_filter_main"
-                     t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True ).ids) &gt; 1">
-                    <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
-                       t-as="filter_id">
-                        <div class="te_filter_value">
-                            <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                <t t-esc="filter_id.name"/>
-                            </h4>
-                        </div>
+                <div class="te_slider_filter_main">
+                    <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
+                           t-as="filter_id">
+                            <div class="te_filter_value">
+                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                    <t t-esc="filter_id.name"/>
+                                </h4>
+                            </div>
+                        </t>
                     </t>
                 </div>
                 <!-- Products container -->
@@ -488,12 +489,12 @@
                                                             <t t-set="difference"
                                                                t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                             <t t-set="discount"
-                                                               t-value="round(difference*100/combination_info['list_price'])"/>
+                                                               t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                             <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                 <div class="te_discount pb-2">
                                                                     <span class="te_prod_discount">You Save :</span>
                                                                     <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                       "display_currency": product.currency_id,
+                                                                                       "display_currency": website.currency_id,
                                                                                    }'/>
                                                                     <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                 </div>
@@ -501,7 +502,7 @@
                                                         </t>
                                                         <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                             t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                            <span t-field="product.list_price"
+                                                            <span t-esc="product.list_price"
                                                                   t-options='{"widget": "monetary",
                                                                                            "display_currency": product.currency_id,
                                                                                        }'/>
@@ -553,15 +554,16 @@
         <section t-if="filter_data" class="ps_style_4_main te_pc_style_main">
             <div class="container oe_website_sale">
                 <!-- For Display a Filter Header -->
-                <div class="te_slider_filter_main"
-                     t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True ).ids) &gt; 1">
-                    <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
-                       t-as="filter_id">
-                        <div class="te_filter_value">
-                            <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                <t t-esc="filter_id.name"/>
-                            </h4>
-                        </div>
+                <div class="te_slider_filter_main">
+                    <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
+                           t-as="filter_id">
+                            <div class="te_filter_value">
+                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                    <t t-esc="filter_id.name"/>
+                                </h4>
+                            </div>
+                        </t>
                     </t>
                 </div>
                 <!-- / For Display a Header And View All -->
@@ -665,12 +667,12 @@
                                                             <t t-set="difference"
                                                                t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                             <t t-set="discount"
-                                                               t-value="round(difference*100/combination_info['list_price'])"/>
+                                                               t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                             <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                 <div class="te_discount">
                                                                     <span class="te_prod_discount">You Save :</span>
                                                                     <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                       "display_currency": product.currency_id,
+                                                                                       "display_currency": website.currency_id,
                                                                                    }'/>
                                                                     <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                 </div>
@@ -678,7 +680,7 @@
                                                         </t>
                                                         <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                             t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                            <span t-field="product.list_price"
+                                                            <span t-esc="product.list_price"
                                                                   t-options='{"widget": "monetary","display_currency": product.currency_id,}'/>
                                                         </h6>
                                                     </div>
@@ -732,15 +734,16 @@
         <section t-if="filter_data" class="te_pc_style_main">
             <div class="container oe_website_sale">
                 <!-- Display Filters -->
-                <div class="te_slider_filter_main"
-                     t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
-                    <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True)"
-                       t-as="filter_id" t-if="len(slider_obj.slider_filter_ids.ids) > 1">
-                        <div class="te_filter_value" t-if="filter_id.website_published">
-                            <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                <t t-esc="filter_id.name"/>
-                            </h4>
-                        </div>
+                <div class="te_slider_filter_main">
+                    <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True)"
+                           t-as="filter_id" t-if="len(slider_obj.slider_filter_ids.ids) > 1">
+                            <div class="te_filter_value" t-if="filter_id.website_published">
+                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                    <t t-esc="filter_id.name"/>
+                                </h4>
+                            </div>
+                        </t>
                     </t>
                 </div>
                 <!-- Products container -->
@@ -865,12 +868,12 @@
                                                             <t t-set="difference"
                                                                t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                             <t t-set="discount"
-                                                               t-value="round(difference*100/combination_info['list_price'])"/>
+                                                               t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                             <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                 <div class="te_discount">
                                                                     <span class="te_prod_discount">You Save :</span>
                                                                     <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                       "display_currency": product.currency_id,
+                                                                                       "display_currency": website.currency_id,
                                                                                    }'/>
                                                                     <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                 </div>
@@ -878,7 +881,7 @@
                                                         </t>
                                                         <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                             t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                            <span t-field="product.list_price"
+                                                            <span t-esc="product.list_price"
                                                                   t-options='{"widget": "monetary",
                                                                                    "display_currency": product.currency_id,
                                                                                }'/>
@@ -932,15 +935,16 @@
             <section class="te_pc_style_main">
                 <div class="product_container container oe_website_sale">
                     <!-- Display Filters -->
-                    <div class="te_slider_filter_main"
-                         t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True ).ids) &gt; 1">
-                        <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
-                           t-as="filter_id">
-                            <div class="te_filter_value">
-                                <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
-                                    <t t-esc="filter_id.name"/>
-                                </h4>
-                            </div>
+                    <div class="te_slider_filter_main">
+                        <t t-if="is_default and len(slider_obj.slider_filter_ids.filtered(lambda r : r.website_published == True).ids) &gt; 1">
+                            <t t-foreach="slider_obj.slider_filter_ids.filtered(lambda r:r.website_published == True )"
+                               t-as="filter_id">
+                                <div class="te_filter_value">
+                                    <h4 class="te_filter_name_h4 js_filter_change" t-att-data-id="filter_id.id">
+                                        <t t-esc="filter_id.name"/>
+                                    </h4>
+                                </div>
+                            </t>
                         </t>
                     </div>
                     <!-- Products container -->
@@ -1094,12 +1098,12 @@
                                                                 <t t-set="difference"
                                                                    t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
                                                                 <t t-set="discount"
-                                                                   t-value="round(difference*100/combination_info['list_price'])"/>
+                                                                   t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
                                                                 <t t-if="category_offer_url or allproduct_offer_url or product_offer_url">
                                                                     <div class="te_discount pt-2">
                                                                         <span class="te_prod_discount">You Save :</span>
                                                                         <t t-esc="difference" t-options='{"widget": "monetary",
-                                                                                           "display_currency": product.currency_id,
+                                                                                           "display_currency": website.currency_id,
                                                                                        }'/>
                                                                         <t t-esc="'(%s'%(discount)+'&#x25;)'"/>
                                                                     </div>
@@ -1107,7 +1111,7 @@
                                                             </t>
                                                             <h6 class="css_non_editable_mode_hidden decimal_precision"
                                                                 t-att-data-precision="str(website.currency_id.decimal_places)">
-                                                                <span t-field="product.list_price"
+                                                                <span t-esc="product.list_price"
                                                                       t-options='{"widget": "monetary",
                                                                                        "display_currency": product.currency_id,
                                                                                    }'/>
@@ -1129,8 +1133,10 @@
     </template>
     <!--====== Product Carousel ====-->
     <template id="p_slider" name="Product Slider">
-        <section class="oe_snippet_body input-group js_slider_snippet"
-             data-isemipro='true'>
+        <section>
+            <div class="input-group js_slider_snippet"
+                 data-isemipro='true'>
+            </div>
         </section>
     </template>
     <!--============= Product slider options ===================-->

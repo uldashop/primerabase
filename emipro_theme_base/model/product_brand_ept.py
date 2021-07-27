@@ -67,3 +67,18 @@ class ProductBrandEpt(models.Model):
         """
         for brand in self:
             brand.products_count = len(brand.product_ids)
+
+    def set_brand_wizard(self):
+        """
+        Added code code open wizard for configure product for brand
+        @Author : Angel Patel (28/10/2020)
+        """
+        action = {
+            'type': 'ir.actions.act_window',
+            'res_model': 'product.brand.config',
+            'name': "Product Brand Configuration",
+            'view_mode': 'form',
+            'target': 'new',
+            'context': dict(default_brand_id=self.id),
+        }
+        return action

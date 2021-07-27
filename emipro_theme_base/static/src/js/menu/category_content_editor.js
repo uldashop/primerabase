@@ -23,8 +23,17 @@ odoo.define('emipro_theme_base.category_content_editor', function (require) {
                         'is_dynamic_menu': link.is_dynamic_menu,
                         'menu_label_text': link.menu_label_text,
                         'menu_label_text_color': link.menu_label_text_color,
+                        'is_highlight_menu': link.is_highlight_menu,
                     });
                     $menu.find('.js_menu_label').first().text(menu.fields['name']);
+                    if (menu.fields['is_highlight_menu']){
+                        if ($menu.find('.te_highlight_menu').length == 0){
+                            $menu.find('.form-control').first().append('<span class="badge te_highlight_menu ml-2" style="cursor: pointer;"><span class="fa fa-paint-brush"/></span>');
+                        }
+                    }
+                    else{
+                       $menu.find('.te_highlight_menu').first().remove();
+                    }
                 });
                 dialog.open();
             } else {
@@ -50,6 +59,7 @@ odoo.define('emipro_theme_base.category_content_editor', function (require) {
                         'is_dynamic_menu': link.is_dynamic_menu,
                         'menu_label_text': link.menu_label_text,
                         'menu_label_text_color': link.menu_label_text_color,
+                        'is_highlight_menu': link.is_highlight_menu,
                     },
                     'children': [],
                     'is_homepage': false,

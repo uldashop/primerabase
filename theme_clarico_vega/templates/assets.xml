@@ -39,6 +39,7 @@
             <script type="text/javascript" src="/theme_clarico_vega/static/src/js/frontend/cart_popup.js"/>
             <script type="text/javascript" src="/emipro_theme_base/static/src/js/frontend/quick_view.js"/>
             <script type="text/javascript" src="/emipro_theme_base/static/src/js/frontend/price_slider.js"/>
+            <script type="text/javascript" src="/emipro_theme_base/static/src/js/frontend/banner_video.js"/>
             <script type="text/javascript" src="/emipro_theme_base/static/src/js/frontend/load_product_through_ajax.js"/>
             <script type="text/javascript" src="/emipro_theme_base/static/src/js/frontend/product_offer_slider.js"/>
             <!-- End by ept_1 -->
@@ -66,6 +67,14 @@
             <script type="text/javascript" src="/theme_clarico_vega/static/src/js/editor/google_map_snippet_backend.js" />
         </xpath>
     </template>
+
+    <!-- Override scss for the drift zoom -->
+    <template id="assets_frontend_editor_ept" inherit_id="web_editor.assets_frontend">
+        <xpath expr="link[@href='/web_editor/static/src/scss/web_editor.frontend.scss']" position="attributes">
+            <attribute name="href">/theme_clarico_vega/static/src/scss/web_editor.frontend.scss</attribute>
+        </xpath>
+    </template>
+
     <!--====================== Customize Color Changes ===========================-->
     <template id="theme_customize_options" inherit_id="web._assets_primary_variables">
         <xpath expr="//link" position="after">
@@ -116,6 +125,17 @@
     <template id="ajax_add_to_cart" inherit_id="website.assets_frontend">
         <xpath expr="script[last()]" position="after">
             <script type="text/javascript" src="/theme_clarico_vega/static/src/js/frontend/ajax_cart.js"/>
+        </xpath>
+    </template>
+
+    <!--============================ Drift Zoom Assets =======================-->
+    <template id="drift_zoom_ept" inherit_id="website.assets_frontend" active="True" name="Image Magnifier">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/theme_clarico_vega/static/lib/drift-zoom/drift.js"/>
+            <script type="text/javascript" src="/theme_clarico_vega/static/src/js/frontend/drift_zoom.js"/>
+        </xpath>
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" href="/theme_clarico_vega/static/lib/drift-zoom/drift-basic.css"/>
         </xpath>
     </template>
 

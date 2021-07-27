@@ -281,14 +281,18 @@ a.dropdown-item.js_change_lang,
     font-size: nth($f_sizes,7);
 }
 .te_header_right_icon .te_cart_icon_head a sup, .te_header_right_icon .te_wish_icon_head a sup {
-    @include border-radius(12px);
+    @include border-radius(40px);
     width: auto;
-    padding: 4px 6px;
+    padding: 0.3em 0.6em;;
     vertical-align: top;
     font-size: nth($f_sizes,9);
     display: inline-block !important;
     top: -10px;
-    right: 10px;
+    right: 8px;
+    @include media-breakpoint-down(md){
+        top: -8px;
+        right: 10px;
+    }
 }
 @include media-breakpoint-down(md){
     .te_header_right_icon .te_header_icon_right {
@@ -588,7 +592,7 @@ header .js_language_selector .dropdown-menu.show {
         margin:0px 10px;
     }
     @include media-breakpoint-down(sm){
-        margin:0px 0px;
+        width: 20px;
     }
 }
 .te_header_10_search {
@@ -605,7 +609,7 @@ header .js_language_selector .dropdown-menu.show {
         left: 4px;
     }
     @include media-breakpoint-down(sm){
-        top: -6px;
+        width: 15px;
     }
 }
 .te_header_10_search.te_header_search {
@@ -683,6 +687,7 @@ header .js_language_selector .dropdown-menu.show {
         position: initial;
     }
 }
+
 /*--------- Menu label text styles --------*/
 .navbar-expand-md .navbar-collapse {
     box-sizing: border-box;
@@ -791,11 +796,34 @@ button.navbar-toggler:not(.te_navbar-toggler) {
 					& a.nav-link{
 						font-size:nth($f_sizes,3) !important;
 						padding: 0.5rem 1rem;
+                        @include media-breakpoint-down(md){
+                              width: 100%;
+                              padding: 1rem 0.5rem;
+                              font-size: inherit !important;
+                        }
+
+
 					}
 					& a.nav-link.active{
 						border-top:none;
 					}
 				}
+                li.nav-item{
+                    @include media-breakpoint-down(md){
+                       border-top: 1px solid #eee;
+                    }
+                }
+                li.nav-item:first-child{
+                    @include media-breakpoint-down(md){
+                        border-top: 0px;
+                    }
+                }
+                li.nav-item:last-child{
+                   @include media-breakpoint-down(md){
+                       border-bottom: 1px solid #eee;
+                   }
+                }
+
 			}
 		}
 	}
@@ -956,5 +984,26 @@ body.editor_enable.editor_has_snippets .te_header_navbar_10 .te_header_right_ico
     color: $theme-extra-color;
     &:hover{
         color: nth($f_color,19);
+    }
+}
+
+/* Tab view header style*/
+#top_menu_collapse_clone, #top_menu_collapse
+{
+    .dropdown-toggle::after
+    {
+        @include media-breakpoint-down(md){
+            content: "\f107";
+            font-size: 25px;
+//             font-size: inherit;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            width: 45px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            margin: 0;
+        }
     }
 }

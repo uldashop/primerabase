@@ -41,6 +41,8 @@
             }
             > a.nav-link.active
             {
+                background-color: nth($f_color,5);
+
                 &:before
                 {
                     left: 0;
@@ -76,7 +78,7 @@
 			& #top_menu > li > a.nav-link
 			{
 				color : nth($f_color,3);
-				padding: 0.5rem !important;
+// 				padding: 0.5rem !important;
 			}
 		}
 	}

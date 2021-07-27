@@ -72,10 +72,14 @@
         display: inline-block;
     }
     .badge-primary {
-        border-radius: 24px;
-        padding: 3px 5px;
         top: -11px;
         left: -8px;
+        bottom: auto;
+        right: auto;
+        padding: 0.3em 0.6em;
+        border-radius: 40px;
+        vertical-align: top;
+        font-size: 75%;
     }
     .te_header_account{
         padding:0px;
@@ -367,6 +371,7 @@ search_animate{
             width: 100%;
         }
         @include media-breakpoint-down(sm){
+            box-shadow: none;
             min-height:44.59px;
             border-radius: 0px;
         }
@@ -378,9 +383,11 @@ search_animate{
         }
     }
     #top_menu > li > a.nav-link {
-        line-height: 52px;
-        @include media-breakpoint-down(md){
+        line-height: 68px;
+        padding: 0px 0.7rem;
+        @include media-breakpoint-down(sm){
             line-height: normal;
+            padding: 0.5rem;
         }
     }
 }

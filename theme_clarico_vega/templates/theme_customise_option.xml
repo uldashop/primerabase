@@ -92,10 +92,6 @@
                              data-icon="/theme_clarico_vega/static/src/img/customise_option/h_style-11.jpg"
                              data-reload="/"
                              string=" "/>
-                         <opt data-xmlid="web_ulda.myweb_header_assets,web_ulda.myweb_header"
-                              data-icon="/web_ulda/static/img/site/customize/aqua-header.jpg"
-                              data-reload="/"
-                              string=" "/>
                     </list>
                 </more>
             </content>
@@ -131,11 +127,6 @@
                              data-reload="/"
                              data-icon="/theme_clarico_vega/static/src/img/customise_option/footer_7.jpg"
                              string=" "/>
-
-                         <opt data-xmlid="web_acerocenter.aqua_footer,web_acerocenter.aqua_footer_assets" 
-                         data-reload="/"
-                         data-icon="/web_acerocenter/static/img/site/customize/aqua-footer.jpg"
-                         string=" "/>
                     </list>
                 </more>
             </content>
@@ -175,6 +166,10 @@
                     <checkbox>
                         <opt data-xmlid="theme_clarico_vega.product_sticky_details_container" data-reload="/"
                              string="Sticky Product Details"/>
+                    </checkbox>
+                    <checkbox>
+                        <opt data-xmlid="theme_clarico_vega.drift_zoom_ept" data-reload="/"
+                             string="Image Magnifier"/>
                     </checkbox>
                     <checkbox>
                         <opt data-xmlid="theme_clarico_vega.product_sticky_gallary" data-reload="/"

@@ -29,6 +29,17 @@ _logger = logging.getLogger(__name__)
 
 class EmiproThemeBase(http.Controller):
 
+    @http.route(['/get_banner_video_data'], type='json', auth="public", website=True)
+    def get_banner_video_data(self, is_ios):
+        template = request.env['ir.ui.view'].sudo().search([('key', '=', 'theme_clarico_vega.banner_video_template')])
+        if template:
+            values ={
+                'banner_video_url': request.website.banner_video_url or False,
+                'is_ios' : is_ios,
+            }
+            response = http.Response(template="theme_clarico_vega.banner_video_template", qcontext=values)
+            return response.render()
+
     @http.route('/get_test_homepage_data', type='json', auth="user")
     def get_homepage_test_data(self):
         response = http.Response(template="theme_clarico_vega.js_home_page_1_test")
@@ -265,16 +276,18 @@ class EmiproThemeBase(http.Controller):
             return response.render()
 
     @http.route(['/ajax_cart_sucess_data'], type='json', auth="public", website=True)
-    def get_ajax_cart_sucess(self, product_id=None):
+    def get_ajax_cart_sucess(self, product_id=None, product_product=None):
         """
         This controller return the template for Ajax Add to Cart with product details
         :param product_id: get product id
-        :return: ajax cart template html
+        :return: ajax cart template for success html
         """
         if product_id:
             product = request.env['product.template'].search([['id', '=', product_id]])
+            product_variant = request.env['product.product'].search([['id', '=', product_product]])
             values = {
                 'product': product,
+                'product_variant': product_variant,
             }
             response = http.Response(template="emipro_theme_base.ajax_cart_success_container", qcontext=values)
             return response.render()
@@ -639,11 +652,10 @@ class EmiproThemeBaseExtended(WebsiteSaleWishlist):
                                                                          attrib_values=attrib_values,
                                                                          search_in_description=True)
         if attrib_values:
-            ids = []
-            for value in attrib_values:
-                if value[0] == 0:
-                    ids.append(value[1])
-                    domain += [('product_brand_ept_id.id', 'in', ids)]
+            ids = [attrib[1] for attrib in attrib_values if attrib[0] == 0]
+            if ids:
+                domain += [('product_brand_ept_id.id', 'in', ids)]
+
         cust_min_val = request.httprequest.values.get('min_price', False)
         cust_max_val = request.httprequest.values.get('max_price', False)
 
@@ -653,24 +665,19 @@ class EmiproThemeBaseExtended(WebsiteSaleWishlist):
                 cust_min_val = float(cust_min_val)
             except ValueError:
                 raise NotFound()
-
-            # if not cust_max_val.isunumeric() or not cust_min_val.isnumeric():
-            #     raise NotFound()
             products = request.env['product.template'].sudo().search(domain)
-            new_prod_ids = []
             pricelist = request.website.pricelist_id
             if products:
-                for prod in products:
-                    context = dict(request.context, quantity=1, pricelist=pricelist.id if pricelist else False)
-                    product_template = prod.with_context(context)
-
-                    list_price = product_template.price_compute('list_price')[product_template.id]
-                    price = product_template.price if pricelist else list_price
-                    if price and price >= float(cust_min_val) and price <= float(cust_max_val):
-                        new_prod_ids.append(prod.id)
+                # Add code for filter product based on the price list price
+                # @Author : Angel Patel - (28/10/2020)
+                context = dict(request.context, quantity=1, pricelist=pricelist.id if pricelist else False)
+                products = products.with_context(context)
+                new_prod_ids = products.filtered(
+                    lambda r: r.price >= float(cust_min_val) and r.price <= float(cust_max_val)).ids
                 domain += [('id', 'in', new_prod_ids)]
             else:
                 domain = [('id', '=', False)]
+
         return domain
 
 
@@ -695,7 +702,10 @@ class EptWebsiteSaleVariantController(VariantController):
         products_qty_partner.append((product, add_qty, partner))
         pricelist = request.website.get_current_pricelist()
         suitable_rule = False
-        res.update({'is_offer': False})
+        # set internal reference
+        product_temp = request.env['product.template'].sudo().search([('id', '=', product_template_id)])
+        res.update({'is_offer': False,
+                    'sku_details': product.default_code if product_temp.product_variant_count > 1 else product_temp.default_code})
         try:
             if pricelist and product:
                 vals = pricelist._compute_price_rule(products_qty_partner)

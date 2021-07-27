@@ -20,6 +20,8 @@ odoo.define('emipro_theme_base.product_offer_timer', function(require) {
             var start_date = combination.start_date
             var end_date= combination.end_date
             var msg= combination.offer_msg
+            var difference = 0;
+            var discount = 0;
             if(end_date != parseInt($(".end_date").val())) {
                 if(combination.is_offer && combination.current_date !== 'undefined') {
                     var append_date = "<div class='timer_input'><input type='hidden' class='current_date' value="+ current_date+"></input><input type='hidden' class='start_date' value="+ start_date +"></input><input type='hidden' class='end_date' value="+ end_date +"></input><p class='te_offer_timer_prod'>"+msg+"</p></div>"
@@ -34,9 +36,9 @@ odoo.define('emipro_theme_base.product_offer_timer', function(require) {
             }
             if(combination.has_discounted_price) {
                  $(".js_product .te_discount").show();
-                 var difference = combination.list_price - combination.price;
-                 var discount = Math.round(difference*100/combination.list_price);
-                 $(".js_product .te_discount .oe_currency_value").html(difference.toFixed(2));
+                 difference = combination.list_price - combination.price;
+                 discount = Math.round(difference*100/combination.list_price);
+                 $(".js_product .te_discount .oe_currency_value").html(this._priceToStr(difference));
                  $(".js_product .te_discount .te_percentage").html("("+discount+"%)");
             } else{
                 $(".js_product .te_discount").hide();
@@ -47,6 +49,43 @@ odoo.define('emipro_theme_base.product_offer_timer', function(require) {
                 $('.prod_details_sticky_div #add_to_cart').attr('class', addToCart);
                 $('.prod_details_sticky_div #buy_now').attr('class', buyNow);
             }, 200);
+            /* For update price on ajax cart */
+            var self = this;
+            var $parent = $(".te_ajax_cart_content");
+            if ( $parent ){
+                var $price = $parent.find(".oe_price:first .oe_currency_value");
+                var $default_price = $parent.find(".oe_default_price:first .oe_currency_value");
+                var $optional_price = $parent.find(".oe_optional:first .oe_currency_value");
+                var $difference_price = $parent.find(".te_discount .oe_currency_value");
+
+                $price.text(self._priceToStr(combination.price));
+                $default_price.text(self._priceToStr(combination.list_price));
+                $difference_price.text(self._priceToStr(difference));
+
+                var isCombinationPossible = true;
+                if (!_.isUndefined(combination.is_combination_possible)) {
+                    isCombinationPossible = combination.is_combination_possible;
+                }
+                this._toggleDisable($parent, isCombinationPossible);
+
+                if (combination.has_discounted_price) {
+                    $default_price
+                        .closest('.oe_website_sale')
+                        .addClass("discount");
+                    $optional_price
+                        .closest('.oe_optional')
+                        .removeClass('d-none')
+                        .css('text-decoration', 'line-through');
+
+                    $default_price.parent().removeClass('d-none');
+                } else {
+                    $default_price
+                        .closest('.oe_website_sale')
+                        .removeClass("discount");
+                    $optional_price.closest('.oe_optional').addClass('d-none');
+                    $default_price.parent().addClass('d-none');
+                }
+            }
         },
     });
     publicWidget.registry.timer_data = publicWidget.Widget.extend({

@@ -18,12 +18,17 @@ odoo.define('emipro_theme_base.brand_slider', function(require) {
                     var data_replace = $(data).find(".te_brand_slider");
                     $(".te_brand_slider").replaceWith(data_replace);
                     /* Brand Slider */
+                    var owl_rtl = false;
+                    if ($('#wrapwrap').hasClass('o_rtl')) {
+                        owl_rtl = true;
+                    }
                     $(".te_brand_slider").show();
                     $('.brand_carousel').owlCarousel({
                         loop: false,
                         rewind: true,
                         margin: 10,
                         nav: true,
+                        rtl: owl_rtl,
                         lazyLoad:true,
                         dots: false,
                         autoplay: $('.te_auto_play_value span').text() == "True" ? true : false,

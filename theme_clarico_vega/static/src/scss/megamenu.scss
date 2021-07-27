@@ -13,29 +13,12 @@ INDEX:
 ******************************/
 
 /*================= 01 - Megamenu_style_1 =================*/
-
 .te_menu_category_heading {
-	@include style(8,19,inherit,null,uppercase);
-	background-image: linear-gradient(to left, $theme-extra-color, $theme-extra-color, nth($f_color,19), nth($f_color,19));
-	background-size: 250% auto;
-	background-position: 100% 0;
-	transition: background-position 0.5s;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 
-	&:hover {
-		background-position: 0 0;
-	}
-	@include media-breakpoint-down(md)
-	{
-		background-image: linear-gradient(to left, nth($f_color,19), nth($f_color,19));
-	}
-	@include media-breakpoint-down(sm)
-	{
-		font-size:nth($f_sizes,1);
-	}
+        font-size:$font-size-dynamic;
+	    color: rgba(0, 0, 0, 0.9) !important;
+	    font-family: inherit;
 }
-
 .te_category-heading-center
 {
 	& a.te_menu_item
@@ -48,9 +31,8 @@ INDEX:
 		transform: perspective(1px) translateZ(0);
 		@include position(relative)
 		overflow: hidden;
-        color: $theme-extra-color;
-        opacity:0.5;
-		
+		color: $navbar-light-color !important;
+
 		&:before
 		{
 			content: "";
@@ -65,7 +47,7 @@ INDEX:
 			color: nth($f_color,19);
 		}
 	}
-	
+
 	& > a:first-child
 	{
 		padding: 0.5rem 0;
@@ -73,7 +55,8 @@ INDEX:
 	}
 	p
 	{
-		font-size:nth($f_sizes,2);
+		font-size:$font-size-dynamic - 0.125rem; // 2px reduce
+
 		@include media-breakpoint-down(sm)
 		{
 			@include style(3,3)
@@ -83,15 +66,15 @@ INDEX:
 .te_category-heading-center a:hover::before, .te_category-heading-center:focus::before, .te_category-heading-center:active::before {
     right: 0;
 }
-.te_img_hide_small_devices 
+.te_img_hide_small_devices
 {
-	@include media-breakpoint-down(md)
-	{
-		img
-		{
-			display:none !important;
-		}		
-	}
+// 	@include media-breakpoint-down(md)
+// 	{
+// 		img
+// 		{
+// 			display:none !important;
+// 		}
+// 	}
 	.te_menu-right-side-img-div
 	{
 		overflow:hidden;
@@ -122,33 +105,55 @@ INDEX:
     padding-left: 0px !important;
 }
 
+#top_menu > li.o_extra_menu_items.show > ul.dropdown-menu .te_menu_style_1 .row section {
+	    flex: 0 0 100%;
+	    max-width: 100%;
+}
+.te_menu_style_1 {
+	    @include media-breakpoint-down(sm)
+		{
+		    .te_category-heading-center{
+		        a.te_menu_item{
+		            margin: 0px auto;
+		        }
+		    }
+		    .te_menu_category_heading{
+		        margin: 0px auto !important;
+		    }
+		}
+}
 /*================== 02 - Megamenu_style_2 =================*/
 .te_menu_content
 {
 	@include position(absolute,auto,20px,30px,20px)
 	min-height: 35px;
-	background: rgba(255,255,255,0.6);
+	background: rgba(0,0,0,0.55);
 	padding: 10px 15px;
 	text-align: center;
 	max-width: 365px;
+	color: nth($f_color,05);
 	h4,p
 	{
 		word-break: break-word;
-		color: $theme-extra-color;
 	}
 	p
 	{
-		color: $theme-extra-color;
-		opacity:0.5;
+        font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
 	}
+	@include media-breakpoint-down(md){
+	   h4{
+	      font-size : 1rem; // new added
+	   }
+	}
+
 }
-.te_menu_style_2 
+.te_menu_style_2
 {
 	.te_btn_category:hover{
 		color:nth($f_color,19);
 	}
 	.te_hover:hover{
-		color:nth($f_color,19);	
+		color:nth($f_color,19);
 	}
 	section.te_image {
         margin-bottom: 15px;
@@ -176,8 +181,28 @@ INDEX:
 			{
 				left: 10px;
 				right: 10px;
+				bottom:5px // new added
 			}
 		}
+		@include media-breakpoint-down(sm)
+		    {
+			    .cat-column
+			    {
+			        margin-top: 16px;
+	                .te_menu_content
+	                {
+	                    position: relative;
+	                    top: auto;
+	                    right: auto;
+	                    bottom: auto;
+	                    left: auto;
+	                    background: rgba(0, 0, 0, 0.25);
+	                    & a.nav-link{
+	                       margin: 0px auto;
+	                    }
+	                }
+	            }
+	        }
 	}
 	@include media-breakpoint-down(sm)
 	{
@@ -188,7 +213,15 @@ INDEX:
         }
 	}
 	section.te_menu_content a.nav-link {
-        padding-bottom: 0.5rem !important;
+//         padding-bottom: 0.5rem !important;
+            padding: 0;
+	        border: 0px solid;
+	        color: nth($f_color,05);
+	        &:focus,
+	        &:active,
+	        &:hover {
+	            color: nth($f_color,05);
+	        }
     }
 	@include media-breakpoint-down(sm)
 	{
@@ -220,7 +253,7 @@ INDEX:
 {
 	overflow: hidden;
 	@include position(relative);
-	
+
 	&:before {
         @include position(absolute,0,auto,auto,-100%);
         content: "";
@@ -245,6 +278,11 @@ INDEX:
     }
 }
 
+#top_menu > li.o_extra_menu_items.show > ul.dropdown-menu .te_menu_style_2 .row section {
+	    flex: 0 0 100%;
+	    max-width: 100%;
+	    padding: 8px;
+	}
 /*================== 03 - Megamenu_style_3 =================*/
 .te_service_items {
 	ul {
@@ -254,12 +292,15 @@ INDEX:
 			padding : 4px 20px 5px 20px;
 			@include position(relative)
 			p{
-			    color: $theme-extra-color;
 			    opacity:1;
+			    @include media-breakpoint-down(sm){
+ 		                font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
+		        }
 			}
 			a {
+			    color: $navbar-light-color !important;
 				&:after {
-					@include position(absolute,13px,unset,unset,0)
+                    @include position(absolute,10px,unset,unset,0)
 				    content: " ";
 				    width: 10px;
 				    height: 10px;
@@ -280,7 +321,7 @@ INDEX:
 		}
 	}
 	/*------------ Use this variable because 960px breakpoint is not include in odoo variable --------------*/
-	@media (max-width: 960px) and (min-width: 767.98px) 
+	@media (max-width: 960px) and (min-width: 767.98px)
 	{
 		ul
 		{
@@ -289,14 +330,13 @@ INDEX:
 	}
 	@include media-breakpoint-down(md)
 	{
-		ul {	
+		ul {
             padding: 0;
         }
 	}
 }
 .te_megamenu_service_heading {
-    font-size:nth($f_sizes,2);
-    color: $theme-extra-color;
+    font-size: $font-size-dynamic;
     text-transform:uppercase;
 
 }
@@ -307,15 +347,13 @@ INDEX:
         @include style(2,3)
     }
 }
-.te_megamenu_service_content_heading {
-	color: $theme-extra-color;
-}
+
 @include media-breakpoint-down(md)
 {
 	.te_megamenu_service_content_heading,.te_menu_category_heading
 	{
 		font-size:nth($f_sizes,1)
-	}	
+	}
 }
 
 .te_menu_style_3
@@ -329,9 +367,16 @@ INDEX:
 	    padding:0px !important;
 	}
 	p{
-        color: $theme-extra-color;
-        opacity:0.5;
+//         color: $theme-extra-color;
+//         opacity:0.5;
     }
+      .col-lg-8.col-8 > p,
+	  .col-lg-6.align-self-lg-center > p{
+ 		    font-size: $font-size-dynamic    - 0.125rem; /* Reduced 2px */
+		}
+	  .col-lg-8.col-8 > p{
+		    color: $navbar-light-color !important;
+		}
 }
 .te_menu_icon
 {
@@ -341,6 +386,10 @@ INDEX:
 		transform: rotate(360deg);
 	}
 }
+#top_menu > li.o_extra_menu_items.show > ul.dropdown-menu .te_menu_style_3 .row section {
+	    flex: 0 0 100%;
+	    max-width: 100%;
+	}
 
 /*------------ Use this variable because 600px breakpoint is not include in odoo variable --------------*/
 @include media-breakpoint-down(xs)
@@ -374,7 +423,8 @@ INDEX:
 		}
 		.te_icon_text a
 		{
-			@include style(7,20);
+			font-size: $font-size-dynamic;
+			color: nth($f_color,19);
 			padding-bottom:4px;
 			@include position(relative);
 			overflow: hidden;
@@ -465,14 +515,23 @@ INDEX:
     	max-height: 45px;
 	}
 }
-
+.nav .nav-item.o_extra_menu_items{
+    .dropdown-menu{
+        .te_menu_style_4{
+            [class*='col-']{
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
 /*====================== 05 - Megamenu_style_5 ===================*/
 .te_catalog_menu_main
-{	
+{
 	.img_container
 	{
 		@include position(relative);
-		@include border(1px,27,solid) 
+		@include border(1px,27,solid)
 		overflow: hidden;
 		img
 		{
@@ -491,7 +550,7 @@ INDEX:
 				@include position(absolute, auto, auto, auto, 0);
 				width: 5px;
 				height: 100%;
-				background: $theme-extra-color;
+// 				background: $theme-extra-color;
 				@include transform(scale(0));
 				@include transition(all,0.3s,ease-in-out);
 			}
@@ -509,15 +568,17 @@ INDEX:
 	}
 	.te_menu_ctg_main
 	{
-		@include style(3,19,null,null,uppercase);
+        font-size: $font-size-dynamic;
 		letter-spacing: 1px;
-		font-weight: 600;
+		font-weight: 400;
 		word-break: break-word;
+		margin-bottom: 8px;
+	    display: block;
 	}
 	ul
 	{
 		margin: 0;
-		padding: 4px 14px;
+        padding: 4px 14px 4px 0px;
 		list-style-type: none;
 		color: nth($f_color,1);
 		> li
@@ -525,7 +586,7 @@ INDEX:
 			padding:0.2rem 0;
 			a
 			{
-				color:nth($f_color,4);
+ 				color:nth($f_color,4);
 				padding-left: 0;
 				@include transition(all,0.5s,ease-in-out);
 				display: inline-block;
@@ -536,6 +597,9 @@ INDEX:
 					padding-left: 10px;
 				}
 			}
+			a.te_menu_sub{
+				font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
+			}
 		}
 	}
 }
@@ -543,17 +607,46 @@ INDEX:
     section a.nav-link {
         padding:0px !important;
     }
-    .te_menu_sub{
-        color: $theme-extra-color;
-        opacity:0.5;
-    }
+//     .te_menu_sub{
+//         color: $theme-extra-color;
+//         opacity:0.5;
+//     }
 }
 @include media-breakpoint-down(sm)
 {
 	.te_menu_style_5 .te_menu_sub,.te_catalog_menu_main ul > li a
 	{
-		@include style(3,3)
+// 		@include style(3,3)
+        font-size:nth($f_sizes, 3);
+		color: $navbar-light-color !important;
 	}
+}
+
+#top_menu > li.o_extra_menu_items.show > ul.dropdown-menu .te_menu_style_5 .row section {
+	    flex: 0 0 100%;
+	    max-width: 100%;
+	}
+	.te_catalog_menu_main ul > li {
+	    padding: 0.2rem 0;
+	}
+	.te_menu_style_5 section a.nav-link {
+	    padding: 0px !important;
+	    margin: 0px !important;
+        font-size: $font-size-dynamic - 0.125rem; /* Reduced 2px */
+	}
+	.te_designation_name_sub_ti.nav-link {
+	    margin: 0px !important;
+	    padding: 0px !important;
+	}
+	/* Mobile view specific */
+.te_menu_style_5{
+	   @include media-breakpoint-down(sm)
+	   {
+	        section.col-lg-2{
+	            flex: 0 0 50%;
+	            max-width: 50%;
+	        }
+	   }
 }
 /*=========================== 06 - Megamenu_style_6 ======================*/
 .te_m6_container
@@ -588,6 +681,11 @@ INDEX:
 		}
 	}
 }
+#top_menu > li.o_extra_menu_items.show > ul.dropdown-menu .te_menu_style_6 .row > section {
+	    width: 100%;
+	    flex: 0 0 100%;
+	    max-width: 100%;
+}
 .te_m6_list_column
 {
 	img
@@ -596,23 +694,30 @@ INDEX:
 	}
 }
 .te_employee_name_ti{
-	@include style(7,10);
+     font-size: $font-size-dynamic;
+	> a{
+            font-size: $font-size-dynamic;
+	    }
 }
 .te_designation_name_sub_ti{
-	color: $theme-extra-color;
-    opacity:0.5;
+
+    font-size: $font-size-dynamic - 0.125rem;
+	color: $navbar-light-color !important;
+	@include media-breakpoint-down(sm){
+ 	        font-size: $font-size-dynamic - 0.188rem; /* Reduced 3px */
+	    }
 }
 .te_feature_image_1{
-	max-width: 100%;	
+	max-width: 100%;
 	max-height: 265px;
 }
-.te_m6_img
-{
-	@include media-breakpoint-down(sm)
-	{
-		display:none;
-	}
-}
+// .te_m6_img
+// {
+// 	@include media-breakpoint-down(sm)
+// 	{
+// 		display:none;
+// 	}
+// }
 .te_sub_menu_main_img
 {
 	@include position(relative);
@@ -649,6 +754,19 @@ INDEX:
 		margin-bottom:8px;
 	}
 }
+/* Mobile view specific */
+.te_menu_style_6{
+	   @include media-breakpoint-down(sm)
+	   {
+	        section.col-lg-6{
+	            flex: 0 0 50%;
+	            max-width: 50%;
+	            & .row.pb-4{
+	                padding-bottom: 0.5rem !important;
+	            }
+	        }
+	   }
+}
 .o_editable{
 	.te_sub_menu_main_img{
 		&:after{
@@ -663,6 +781,7 @@ INDEX:
 		}
 	}
 }
+
 /*--------------------- To Drag and Drop Mega Menu --------------------*/
 .dropdown-menu.o_mega_menu .oe_vertical {
 	width: 100% !important;
@@ -716,7 +835,7 @@ INDEX:
 			&.dropdown-item
 			{
 				padding: 0.7rem 1.5rem;
-				color: $theme-extra-color;
+// 				color: $theme-extra-color;
 				background-color:#FFFFFF;
 				&:hover{
 				    color: nth($f_color,19);
@@ -785,7 +904,8 @@ INDEX:
 	}
 	@include media-breakpoint-down(sm)
 	{
-		width: 250px
+// 		width: 250px
+        width:100%;
 	}
 	.te_active, .te_active >a
 	{
@@ -810,13 +930,14 @@ INDEX:
 	#custom_menu_li
 	{
 		padding: 4px 8px;
-		color: nth($f_color,22);
+// 		color: nth($f_color,22);
+        color: rgba(0, 0, 0, 0.5);
 		border-bottom: 1px solid $border-color;
 		cursor: pointer;
 		display:block;
 		 > a
 		{
-			color: $theme-extra-color;
+// 			color: $theme-extra-color;
 			vertical-align: middle;
 			@include text-ellipsis;
 			max-width:135px;
@@ -939,11 +1060,24 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
     {
         @include media-breakpoint-down(lg)
         {
-            content: "\f078" !important;
+            content: "\f078";
 			font-family: "FontAwesome";
 			border: none;
 			vertical-align: baseline;
 			font-size:nth($f_sizes,18);
+        }
+        @include media-breakpoint-down(sm){
+            content: "\f107";
+            font-size: 25px;
+//             font-size: inherit;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            width: 45px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            margin: 0;
         }
     }
     .te_dynamic_ept
@@ -962,6 +1096,14 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
             {
                 font-size: 0.75rem;
                 padding: 3px 4px 4px 8px;
+            }
+        }
+        @include media-breakpoint-down(md){
+              .te_icon
+            {
+                   position: absolute;
+                   right: 1rem;
+                   font-size: 1.5625rem;
             }
         }
     }
@@ -990,6 +1132,14 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
 .te_header_navbar #top_menu_collapse #top_menu > li > a.nav-link
 {
 	cursor: pointer;
+	@include media-breakpoint-down(md){
+	    margin: 0px 5px;
+	}
+	@include media-breakpoint-down(sm){
+	    width: 100%;
+	    padding: 1rem 0.5rem;
+	    font-size: $font-size-base !important;
+	}
 }
 .te_header_navbar #top_menu_collapse #top_menu > li > a.nav-link.active{
     color:$header_text_hover_color;
@@ -1030,6 +1180,21 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
 			}
 		}
 	}
+	li.nav-item{
+	   @include media-breakpoint-down(sm){
+	        border-top: 1px solid #eee;
+	   }
+	}
+	li.nav-item:first-child{
+	   @include media-breakpoint-down(sm){
+	        border-top: 0px;
+	   }
+	}
+	li.nav-item:last-child{
+	   @include media-breakpoint-down(sm){
+	        border-bottom: 1px solid #eee;
+	   }
+	}
 }
 /*========================== 09 - Changes the style of menu-snippet when Extra menu ==========================*/
 .navbar .o_extra_menu_items.show > ul
@@ -1049,7 +1214,7 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
 		z-index: 998;
 		@include position(fixed,0,0,0,0);
 	}
-	header 
+	header
 	{
 		> nav.navbar
 		{
@@ -1057,7 +1222,7 @@ li.nav-item.dropdown.o_extra_menu_items.show ul.dropdown-menu.dropdown-menu-righ
 		}
 	}
 }
-header 
+header
 {
 	z-index: 997 !important;
 }
@@ -1084,7 +1249,7 @@ header
 		width:350px;
 		/*------ For screen size less then 375px width of vertical section -----*/
 		@media (max-width: 375px) {
-		
+
 			width:280px;
 		}
 	}
@@ -1109,12 +1274,12 @@ header
 		}
 	}
 }
-.menu_vertical_option	
+.menu_vertical_option
 {
 	.te_side_bar
 	{
 		padding:2rem;
-		
+
 		.te_sidenav_menu
 		{
 			ul
@@ -1124,7 +1289,7 @@ header
 				padding: 0;
 				max-height: 300px;
 				overflow-y: auto;
-				li 
+				li
 				{
 					a
 					{
@@ -1134,7 +1299,7 @@ header
 						outline: none;
 						@include media-breakpoint-down(xs)
 						{
-							font-size:nth($f_sizes,1); 
+							font-size:nth($f_sizes,1);
 						}
 						&:hover
 						{
@@ -1161,7 +1326,7 @@ header
 			a{
 				display: block;
 				@include style(3,6);
-				
+
 				&:hover
 				{
 					color:nth($f_color,19);
@@ -1215,17 +1380,17 @@ header
 			margin-top: 10px;
 			max-height: calc(100vh - 105px);
 			overflow: scroll;
-			
+
 			& #top_menu{
 				text-align: left !important;
 				padding: 5px 15px;
 				& li.nav-item{
 					& a.nav-link{
-						font-size:nth($f_sizes,3) !important;				
+						font-size:nth($f_sizes,3) !important;
 					}
 					& a.nav-link.active{
 						border-top:none;
-					}				
+					}
 				}
 			}
 		}
@@ -1258,29 +1423,30 @@ header
 	.o_header_affix{
 		.navbar-toggler{
 			margin: 5px 0;
-		}	
+		}
 	}
-	header .navbar-brand.logo img {   
+	header .navbar-brand.logo img {
 	    height: 2.713rem;
 	}
 }
 /* Extra color on header links */
 .menu_vertical_option .te_side_bar .te_sidenav_menu ul li a,
 .te_user_account > .dropdown-menu a.dropdown-item,
-header.affix.affixed .menu_vertical_option .te_side_bar .te_sidenav_menu ul li a,
-header.affix.affixed .te_user_account > .dropdown-menu a.dropdown-item,
-header.affix.affixed .te_header_lang .js_language_selector .dropdown-menu a.dropdown-item,
-header.affix.affixed .te_header_pricelist .dropdown-menu a.dropdown-item,
-header.affix.affixed .te_header_navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main),
-.te_header_navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main){
-	color: $theme-extra-color;
+// header.affix.affixed .menu_vertical_option .te_side_bar .te_sidenav_menu ul li a,
+// header.affix.affixed .te_user_account > .dropdown-menu a.dropdown-item,
+// header.affix.affixed .te_header_lang .js_language_selector .dropdown-menu a.dropdown-item,
+// header.affix.affixed .te_header_pricelist .dropdown-menu a.dropdown-item,
+// header.affix.affixed .te_header_navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main),
+// .te_header_navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main){
+// 	color: $theme-extra-color;
+    .navbar #top_menu li.dropdown .dropdown-menu:not(.te_custom_submenu).o_mega_menu a:not(.te_menu_ctg_main){
 	&:hover {
 	    color: nth($f_color,19);
 	}
 }
 .te_header_navbar #top_menu_collapse #top_menu > li > a.nav-link,
 header.affix.affixed .te_header_navbar #top_menu_collapse #top_menu > li > a.nav-link{
-    color: $theme-extra-color;
+     color: $theme-extra-color;
 	&:hover {
 	    color:$header_text_hover_color;
 	}
@@ -1294,9 +1460,9 @@ header.affix.affixed .te_header_navbar #top_menu_collapse #top_menu > li > a.nav
 	    opacity:1;
 	}
 }
-.te_catalog_menu_main .te_menu_ctg_main{
-    color: $theme-extra-color;
-}
+// .te_catalog_menu_main .te_menu_ctg_main{
+//     color: $theme-extra-color;
+// }
 /* Odoo Mega Menu */
 .s_mega_menu_multi_menus, .s_mega_menu_menu_image_menu{
     h4{

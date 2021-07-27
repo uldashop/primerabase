@@ -326,6 +326,7 @@ div[name="mail_button"]
     @include media-breakpoint-down(md)
     {
 		z-index:99;
+		bottom:65px;
 	}
     &:hover{
     	 background: nth($f_color,19);

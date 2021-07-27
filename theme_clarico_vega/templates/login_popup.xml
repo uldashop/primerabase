@@ -11,7 +11,8 @@
                     <div class="modal-body">
                         <div role="tabpanel">
                             <!-- Nav tabs -->
-                            <t t-set="b2c_selected" t-value="request.env['res.users']._get_signup_invitation_scope() == 'b2c' and request.website.is_public_user()"/>
+                            <t t-set="b2c_selected"
+                               t-value="request.env['res.users']._get_signup_invitation_scope() == 'b2c' and request.website.is_public_user()"/>
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation"
                                     t-attf-class="login_register_tab #{'full-width' if not b2c_selected else ''} ">
@@ -107,21 +108,17 @@
                 <t t-set="enable"
                    t-value="request.env['ir.module.module'].sudo().search([['name', '=', 'auth_oauth']])"/>
                 <t t-if="enable and enable.state == 'installed'">
-                    <t t-set="providers"
-                       t-value="request.env['auth.oauth.provider'].sudo().search_read([('enabled', '=', True)])"/>
+                    <t t-set="providers" t-value="request.env['website'].sudo().list_providers_ept()"/>
                     <t t-if="len(providers) &gt; 0">
                         <em t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">
                             - or -
                         </em>
                         <div class="o_auth_oauth_providers list-group mt-1 mb-1 text-left">
-                            <t t-foreach="providers" t-as="p">
-                                <t t-set="return_url" t-value="request.env['website'].sudo().list_providers_ept()"/>
-                                <t t-set="auth_link" t-value="'%s?%s' % (p['auth_endpoint'], return_url)"/>
-                                <a class="list-group-item list-group-item-action py-2" t-att-href="auth_link">
-                                    <i t-att-class="p['css_class']"/>
-                                    <t t-esc="p['body']"/>
-                                </a>
-                            </t>
+                            <a t-foreach="providers" t-as="p" class="list-group-item list-group-item-action py-2"
+                               t-att-href="p['auth_link']">
+                                <i t-att-class="p['css_class']"/>
+                                <t t-esc="p['body']"/>
+                            </a>
                         </div>
                     </t>
                 </t>
@@ -186,21 +183,17 @@
                 <t t-set="enable"
                    t-value="request.env['ir.module.module'].sudo().search([['name', '=', 'auth_oauth']])"/>
                 <t t-if="enable and enable.state == 'installed'">
-                    <t t-set="providers"
-                       t-value="request.env['auth.oauth.provider'].sudo().search_read([('enabled', '=', True)])"/>
+                    <t t-set="providers" t-value="request.env['website'].sudo().list_providers_ept()"/>
                     <t t-if="len(providers) &gt; 0">
                         <em t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">
                             - or -
                         </em>
                         <div class="o_auth_oauth_providers list-group mt-1 mb-1 text-left">
-                            <t t-foreach="providers" t-as="p">
-                                <t t-set="return_url" t-value="request.env['website'].sudo().list_providers_ept()"/>
-                                <t t-set="auth_link" t-value="'%s?%s' % (p['auth_endpoint'], return_url)"/>
-                                <a class="list-group-item list-group-item-action py-2" t-att-href="auth_link">
-                                    <i t-att-class="p['css_class']"/>
-                                    <t t-esc="p['body']"/>
-                                </a>
-                            </t>
+                            <a t-foreach="providers" t-as="p" class="list-group-item list-group-item-action py-2"
+                               t-att-href="p['auth_link']">
+                                <i t-att-class="p['css_class']"/>
+                                <t t-esc="p['body']"/>
+                            </a>
                         </div>
                     </t>
                 </t>

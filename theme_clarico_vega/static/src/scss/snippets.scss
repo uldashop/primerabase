@@ -268,6 +268,9 @@
 .carousel-control-prev, .carousel-control-next {
     opacity: 1;
     color: nth($f_color,28);
+    @include media-breakpoint-down(sm){
+        display:none;
+    }
 }
 /*======================== 08. Slider Style 2 ================================*/
 @include media-breakpoint-down(sm)
@@ -280,6 +283,20 @@
 		height: auto;	
 	}
 }
+
+.te_slider_style_2{
+        .carousel-control-prev,.carousel-control-next{
+            @include media-breakpoint-down(md){
+                        top: 0;
+                        bottom: 33%;
+                }
+            @include media-breakpoint-down(xs){
+                    display:block;
+                    top: 23%;
+                }
+        }
+}
+
 /*======================= 09. Slider Style 4 ===========================*/
 .carousel-item.oe_img_bg
 {
@@ -337,6 +354,7 @@
 {
 	margin: 0px auto;
 	background-color: nth($f_color,8);
+	opacity: 0.7;
 }
 
 @include media-breakpoint-down(xs)
@@ -834,6 +852,14 @@
 	    margin-bottom: 10px;
 	}
 }
+.te_3_col_sty_3{
+    .s_col_no_bgcolor{
+        @include media-breakpoint-down(xs){
+	        margin-bottom: 10px;
+	    }
+    }
+}
+
 /*==================== 24. 3 Columns (Style 4) =====================*/
 .te_t3_col_bg_div
 {
@@ -1594,6 +1620,9 @@
 		{
 			@include style(15,28);
 			padding-bottom: 20px;
+			@media (max-width: 1366px) and (min-width: 992px) {
+	            font-size:1.450rem;
+	        }
 			@include media-breakpoint-down(md)
 			{
 				font-size:nth($f_sizes,12); 
@@ -1623,6 +1652,14 @@
 	@include media-breakpoint-down(sm)
 	{
 		padding-bottom: 0px !important;
+	}
+	.te_3_col_section:nth-child(2){
+	    .te_3_col_block{
+	            margin-bottom: 0.875rem !important;
+// 	            @include media-breakpoint-down(xs){
+// 	                margin-bottom: 0.5rem !important;
+// 	             }
+	        }
 	}
 }
 .te_3_col_section
@@ -3479,7 +3516,7 @@
 	.te_title_style2
 	{
 		position: relative;
-		display: inline-block;
+		display: block;
 		padding-bottom: 10px;
 		padding-right: 70px;
 
@@ -3911,6 +3948,7 @@
 		@include media-breakpoint-down(xs)
 		{
 			font-size:nth($f_sizes,2);
+			display:none;
 		}
 	}
 	.te_banner_slider_info
@@ -4133,7 +4171,7 @@
 	.te_title_style3
 	{
 		position: relative;
-		display: inline-block;
+		display: block;
 		padding-bottom: 10px;
 		padding-right: 70px;
 		background: -webkit-gradient(linear,left top,right top,from(var(--delta)),to(var(--epsilon)));
@@ -5282,7 +5320,7 @@ font-size:nth($f_sizes,8);
 }
 /* For snippet animation */
 body {
-    overflow-x:hidden;
+    //overflow-x:hidden;
 }
 .te_footer_map
 {
@@ -5364,4 +5402,35 @@ body {
 			}
 		}
 	}
+}
+// 	slider full screen 1 styles
+.te_slider_full_screen_1{
+    .oe_custom_bg{
+        @include media-breakpoint-down(xs) {
+                  background-size: contain;
+//                   padding: 20px 0 !important;
+                }
+    }
+}
+
+// 	slider full screen 2 styles
+
+.te_slider_full_screen_2{
+    .oe_custom_bg{
+        @include media-breakpoint-down(xs) {
+                  background-size: contain;
+//                   padding: 20px 0 !important;
+                }
+    }
+}
+
+// 	slider full screen 5 styles
+.te_slider_full_screen_5{
+        .carousel-control-prev,.carousel-control-next{
+            @include media-breakpoint-down(xs)
+                {
+                    display:block !important;
+                    top: 32%;
+                }
+            }
 }

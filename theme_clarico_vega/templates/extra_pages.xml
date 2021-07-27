@@ -140,7 +140,7 @@
         </xpath>
     </template>
     <!--================= Home Page 1 ==============================-->
-    <template id="home_page_1" name="Style 1">
+    <template id="home_page_1" name="Furniture style 1">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <div id="myCarousel1574945515214"
@@ -443,7 +443,7 @@
         </section>
     </template>
     <!--================= Home Page 2 ==============================-->
-    <template id="home_page_2" name="Style 2">
+    <template id="home_page_2" name="Furniture style 2">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <section class="s_banner parallax row s_parallax_is_fixed oe_img_bg pt96 pb96 bg-white-75"
@@ -768,7 +768,7 @@
         </section>
     </template>
     <!--================= Home Page 3 ==============================-->
-    <template id="home_page_3" name="Style 3">
+    <template id="home_page_3" name="Furniture style 3">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <div id="myCarousel1574922416957" class="s_carousel s_carousel_default carousel slide"
@@ -1161,7 +1161,7 @@
         </section>
     </template>
     <!--================= Home Page 4 ==============================-->
-    <template id="home_page_4" name="Style 4">
+    <template id="home_page_4" name="Furniture page">
         <section>
             <div id="wrap" class="oe_structure" spellcheck="false">
                 <div class="oe_structure" data-name="Style 3" data-editor-message="DRAG BUILDING BLOCKS HERE">
@@ -1623,7 +1623,7 @@
         </section>
     </template>
     <!--================== Home Page 5 =============================-->
-    <template id="home_page_5" name="Style 5">
+    <template id="home_page_5" name="Electronics page">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <div id="myCarousel1578907501920" class="s_carousel s_carousel_default carousel slide"
@@ -2044,7 +2044,7 @@
         </section>
     </template>
     <!--================== Home Page 6 =============================-->
-    <template id="home_page_6" name="Style 6">
+    <template id="home_page_6" name="Fashion page">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <div id="myCarousel1578908302092" class="s_carousel s_carousel_default carousel slide te_s_slider_10"
@@ -2383,7 +2383,7 @@
         </section>
     </template>
     <!--================== Home Page 7 =============================-->
-    <template id="home_page_7" name="style 7">
+    <template id="home_page_7" name="Jewellery page">
         <section class="dd_jewellery_page">
             <div id="wrap" class="oe_structure">
                 <section class="te_banner_s3" data-name="Banner Style 3">
@@ -2757,7 +2757,7 @@
         </section>
     </template>
     <!--================== Home Page 8 =============================-->
-    <template id="home_page_8" name="style 8">
+    <template id="home_page_8" name="Food page">
         <section>
             <div id="wrap" class="oe_structure oe_empty">
                 <div id="myCarousel1593669857830" class="s_carousel s_carousel_default carousel slide"

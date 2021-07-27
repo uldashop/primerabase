@@ -4,7 +4,7 @@
     'name': 'Theme Clarico Vega',
     'category': 'Theme/eCommerce',
     'summary': 'Fully Responsive, Clean, Modern & Sectioned Odoo Theme. Crafted to be Pixel Perfect, It is suitable for eCommerce Businesses like Furniture, Fashion, Electronics, Beauty, Health & Fitness, Jewellery, Sports etc.',
-    'version': '1.7.2',
+    'version': '1.9.1',
     'license': 'OPL-1',
     'depends': [
         'website_theme_install',
@@ -61,7 +61,7 @@
     # Odoo Store Specific
     'live_test_url': 'http://claricovega.theme13demo.emiprotechnologies.com/',
     'images': [
-        'static/description/main_screenshot.jpg',
+        'static/description/main_poster.jpg',
         'static/description/main_screenshot.gif',
     ],
 

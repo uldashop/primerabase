@@ -7,7 +7,7 @@ odoo.define('theme_clarico_vega.snippetEpt', function (require) {
 
     SnippetOption.Class.include({
         selectClass: function (previewMode, value, $opt) {
-            var $group = $opt && $opt.closest('.te_animation_ept');
+            var $group = $opt && $opt.parents('we-collapse-area').last();
             if (!$group || !$group.length) {
                 $group = this.$el;
             }
