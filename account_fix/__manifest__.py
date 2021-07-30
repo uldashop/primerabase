@@ -13,6 +13,5 @@
     "installable": True,
     "auto_install": False,
     "external_dependencies": {"python": [],},
-    "post_init_hook": "post_init_hook",
 }
 
