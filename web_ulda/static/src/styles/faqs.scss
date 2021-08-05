@@ -1,0 +1,36 @@
+.ulda.faqs{
+
+    .s_faq_collapse{
+        .card{
+            a{
+                font-size: 20px;
+                font-weight: 600;
+                color: #55555a;
+            }
+
+            .card-body{
+                p{
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #515151;
+                }
+            }
+        }
+    }
+    form{
+        max-width: 1024px;
+        margin-bottom: 80px;
+        h1{
+            font-size: 32px;
+            display: block;
+            text-align: center;
+            font-weight: 700;
+
+            span{
+                display: block;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
